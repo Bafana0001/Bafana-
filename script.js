@@ -24,7 +24,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Mobile Menu Toggle Logic
+// Mobile Menu Toggle Logic (With Smooth Transitions Included)
 const openMenuBtn = document.getElementById('openMenu');
 const closeMenuBtn = document.getElementById('closeMenu');
 const sideMenu = document.getElementById('sideMenu');
@@ -32,12 +32,20 @@ const menuOverlay = document.getElementById('menuOverlay');
 
 function openMenu() {
     if (sideMenu) sideMenu.classList.remove('translate-x-full');
-    if (menuOverlay) menuOverlay.classList.remove('hidden');
+    if (menuOverlay) {
+        menuOverlay.classList.remove('opacity-0', 'pointer-events-none');
+        menuOverlay.classList.add('opacity-100', 'pointer-events-auto');
+    }
+    document.body.classList.add('overflow-hidden');
 }
 
 function closeMenu() {
     if (sideMenu) sideMenu.classList.add('translate-x-full');
-    if (menuOverlay) menuOverlay.classList.add('hidden');
+    if (menuOverlay) {
+        menuOverlay.classList.remove('opacity-100', 'pointer-events-auto');
+        menuOverlay.classList.add('opacity-0', 'pointer-events-none');
+    }
+    document.body.classList.remove('overflow-hidden');
 }
 
 // ===============================
@@ -126,9 +134,22 @@ window.onload = function () {
     // Room quantity buttons
     const plus = document.getElementById("plusRoom");
     const minus = document.getElementById("minusRoom");
+    const roomCountInput = document.getElementById("roomCount");
     
-    if (plus) plus.addEventListener("click", () => { roomCount++; document.getElementById("roomCount").value = roomCount; calculateBooking(); });
-    if (minus) minus.addEventListener("click", () => { if (roomCount > 1) roomCount--; document.getElementById("roomCount").value = roomCount; calculateBooking(); });
+    if (plus) {
+        plus.addEventListener("click", () => { 
+            roomCount++; 
+            if (roomCountInput) roomCountInput.value = roomCount; 
+            calculateBooking(); 
+        });
+    }
+    if (minus) {
+        minus.addEventListener("click", () => { 
+            if (roomCount > 1) roomCount--; 
+            if (roomCountInput) roomCountInput.value = roomCount; 
+            calculateBooking(); 
+        });
+    }
 
     console.log("%cBafana Hotel Kaduna - Website Ready! 🏨", "color:#9f1239;font-size:14px;font-weight:bold;");
 };
