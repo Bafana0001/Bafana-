@@ -1,0 +1,248 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta name="description" content="Bafana Hotel Kaduna - Discover our world-class facilities including our swimming pool, conference halls, and smart gym.">  
+    <title>Facilities & Amenities | Bafana Hotel Kaduna</title>  
+    <script src="https://cdn.tailwindcss.com"></script>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">  
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">  
+    <style>  
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap');  
+          
+        .heading-font {  
+            font-family: 'Playfair Display', serif;  
+        }  
+    </style>
+</head>  
+<body class="tail-container bg-white text-gray-800">  
+
+<nav id="navbar" class="fixed top-0 w-full z-30 bg-white shadow-sm transition-all duration-300">  
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">  
+        <div class="flex items-center gap-x-3">  
+            <div class="w-10 h-10 bg-rose-700 rounded-full flex items-center justify-center text-white font-bold text-2xl">B</div>  
+            <div>  
+                <span class="heading-font text-3xl font-bold">Bafana</span>  
+                <span class="text-sm block -mt-1 text-rose-600">INTERNATIONAL</span>  
+            </div>  
+        </div>  
+
+        <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">  
+            <a href="index.html" class="hover:text-rose-700">Home</a>  
+            <a href="about.html" class="hover:text-rose-700">About</a>  
+            <a href="rooms.html" class="hover:text-rose-700">Rooms</a>  
+            <a href="facilities.html" class="text-rose-700 font-semibold">Facilities</a>  
+            <a href="restaurant.html" class="hover:text-rose-700">Restaurant</a>  
+            <a href="gallery.html" class="hover:text-rose-700">Gallery</a>  
+            <a href="booking.html" class="hover:text-rose-700">Booking</a>  
+            <a href="contact.html" class="hover:text-rose-700">Contact</a>  
+        </div>  
+
+        <div class="flex items-center gap-4">
+            <button onclick="window.location.href='booking.html'"   
+                    class="hidden md:block bg-rose-700 text-white px-6 py-3 rounded-2xl hover:bg-rose-800 font-semibold">  
+                Book Now  
+            </button> 
+            <button id="openMenu" class="md:hidden text-2xl text-gray-800 focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div> 
+    </div>  
+</nav>  
+
+<div id="menuOverlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden z-40 transition-opacity"></div>  
+
+<div id="sideMenu" class="fixed top-0 right-0 h-full w-4/5 md:w-1/2 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50">  
+    <div class="flex justify-end p-6">  
+        <button id="closeMenu" class="text-4xl text-gray-700 hover:text-red-500">  
+            &times;  
+        </button>  
+    </div>  
+
+    <nav class="px-8">  
+        <ul id="dynamicMenuLinks" class="space-y-6 text-xl font-semibold">  
+            <li><a href="index.html" class="hover:text-rose-700 transition">Home</a></li>  
+            <li><a href="about.html" class="hover:text-rose-700 transition">About</a></li>  
+            <li><a href="rooms.html" class="hover:text-rose-700 transition">Rooms</a></li>  
+            <li><a href="facilities.html" class="text-rose-700 transition">Facilities</a></li>  
+            <li><a href="restaurant.html" class="hover:text-rose-700 transition">Restaurant</a></li>  
+            <li><a href="gallery.html" class="hover:text-rose-700 transition">Gallery</a></li>  
+            <li><a href="booking.html" class="hover:text-rose-700 transition">Booking</a></li>  
+            <li><a href="contact.html" class="hover:text-rose-700 transition">Contact</a></li>  
+            <li><a href="faq.html" class="hover:text-rose-700 transition">FAQ</a></li>  
+        </ul>  
+
+        <div class="mt-10">  
+            <a href="https://wa.me/xxxxxx" target="_blank" class="block text-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-full transition">  
+                🟢 WhatsApp  
+            </a>  
+        </div>  
+    </nav>
+</div>
+
+<section class="pt-40 pb-12 text-center bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+        <span class="text-rose-600 font-semibold tracking-widest uppercase text-sm block mb-2">World-Class Standard</span>
+        <h1 class="heading-font text-5xl font-bold text-gray-900 mb-6">
+            Our Elite Facilities
+        </h1>
+        <p class="text-gray-600 max-w-xl mx-auto text-lg mb-8">
+            Experience curated hospitality tailored for both heavy corporate utility and peaceful weekend relaxation during your stay.
+        </p>
+        <a href="index.html" class="inline-flex items-center gap-2 border border-gray-300 hover:border-rose-700 hover:text-rose-700 px-6 py-3 rounded-2xl font-medium transition duration-300 bg-white shadow-sm">
+            <i class="fas fa-arrow-left text-sm"></i> Back to Home Page
+        </a>
+    </div>
+</section>
+
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 space-y-24">
+        
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="h-[400px] overflow-hidden rounded-3xl shadow-md">
+                <img src="https://picsum.photos/id/164/1000/800" alt="Swimming Pool" class="w-full h-full object-cover">
+            </div>
+            <div>
+                <span class="text-rose-700 font-bold text-sm tracking-widest uppercase block mb-2">Relaxation</span>
+                <h2 class="heading-font text-4xl font-bold text-gray-900 mb-4">Oasis Swimming Pool</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Escape the afternoon heat in our crystal-clear outdoor swimming pool. Complete with a dedicated poolside lounge area and refreshment bar, it offers the perfect ambiance for casual relaxation or early morning lap exercises.
+                </p>
+                <div class="flex gap-6 text-sm font-semibold text-gray-700">
+                    <span><i class="fas fa-clock text-rose-700 mr-1"></i> 7:00 AM - 8:00 PM</span>
+                    <span><i class="fas fa-glass-martini-alt text-rose-700 mr-1"></i> Poolside Bar</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center md:flex-row-reverse">
+            <div class="md:order-last h-[400px] overflow-hidden rounded-3xl shadow-md">
+                <img src="https://picsum.photos/id/221/1000/800" alt="Conference Hall" class="w-full h-full object-cover">
+            </div>
+            <div>
+                <span class="text-rose-700 font-bold text-sm tracking-widest uppercase block mb-2">Corporate</span>
+                <h2 class="heading-font text-4xl font-bold text-gray-900 mb-4">Smart Conference & Event Halls</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Host your corporate retreats, board meetings, or private wedding receptions inside our sound-insulated event spaces. Fully equipped with modern high-definition projectors, professional sound systems, and ultra-fast Wi-Fi.
+                </p>
+                <div class="flex gap-6 text-sm font-semibold text-gray-700">
+                    <span><i class="fas fa-users text-rose-700 mr-1"></i> Up to 250 Guests</span>
+                    <span><i class="fas fa-projector text-rose-700 mr-1"></i> AV Equipment Support</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="h-[400px] overflow-hidden rounded-3xl shadow-md">
+                <img src="https://picsum.photos/id/841/1000/800" alt="Fitness Gym" class="w-full h-full object-cover">
+            </div>
+            <div>
+                <span class="text-rose-700 font-bold text-sm tracking-widest uppercase block mb-2">Wellness</span>
+                <h2 class="heading-font text-4xl font-bold text-gray-900 mb-4">State-of-the-Art Fitness Gym</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Maintain your workout schedule away from home. Our modern fitness studio features professional treadmills, elliptical trainers, free weights, and dedicated strength training machinery. Free access is granted to all in-house guests.
+                </p>
+                <div class="flex gap-6 text-sm font-semibold text-gray-700">
+                    <span><i class="fas fa-clock text-rose-700 mr-1"></i> 24/7 Access</span>
+                    <span><i class="fas fa-dumbbell text-rose-700 mr-1"></i> Modern Equipment</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="py-24 bg-rose-700 text-white text-center">  
+    <div class="max-w-2xl mx-auto px-6">  
+        <h2 class="heading-font text-4xl font-bold mb-4">Want to Book a Space?</h2>  
+        <p class="text-white/80 mb-8">Reach out to our reception desk to secure our conference hall or book private event slots.</p>
+        <a href="contact.html" class="inline-block bg-white text-rose-700 px-12 py-5 rounded-3xl text-xl font-semibold hover:scale-105 transition-all">  
+            Contact Events Team  
+        </a>  
+    </div>  
+</section>  
+
+<footer class="bg-black text-white py-16">  
+    <div class="max-w-7xl mx-auto px-6">  
+        <div class="grid md:grid-cols-4 gap-10">  
+            <div>  
+                <div class="flex items-center gap-x-3 mb-6">  
+                    <div class="w-10 h-10 bg-rose-700 rounded-full flex items-center justify-center text-white font-bold text-2xl">B</div>  
+                    <div>  
+                        <span class="heading-font text-3xl font-bold">Bafana</span>  
+                        <span class="text-sm block -mt-1 text-rose-600">INTERNATIONAL</span>  
+                    </div>  
+                </div>  
+                <p class="text-gray-400">Luxury hospitality in the heart of Kaduna.</p>  
+            </div>  
+              
+            <div>  
+                <h4 class="font-semibold mb-4">Quick Links</h4>  
+                <ul class="space-y-2 text-gray-400">  
+                    <li><a href="rooms.html" class="hover:text-white">Rooms & Suites</a></li>  
+                    <li><a href="facilities.html" class="hover:text-white">Facilities</a></li>  
+                    <li><a href="restaurant.html" class="hover:text-white">Dining</a></li>  
+                    <li><a href="gallery.html" class="hover:text-white">Gallery</a></li>  
+                </ul>  
+            </div>  
+              
+            <div>  
+                <h4 class="font-semibold mb-4">Contact</h4>  
+                <ul class="space-y-2 text-gray-400">  
+                    <li>CCJ3+MVR, Abuja - Kaduna - Zaria Express Way</li>  
+                    <li>Goni Gora, Kaduna 800104</li>  
+                    <li class="mt-4">+234 XXX XXX XXXX</li>  
+                    <li>info@bafanahotel.com</li>  
+                </ul>  
+            </div>  
+              
+            <div>  
+                <h4 class="font-semibold mb-4">Follow Us</h4>  
+                <div class="flex gap-4 text-2xl">  
+                    <a href="#" class="hover:text-rose-500"><i class="fab fa-instagram"></i></a>  
+                    <a href="#" class="hover:text-rose-500"><i class="fab fa-facebook"></i></a>  
+                    <a href="#" class="hover:text-rose-500"><i class="fab fa-twitter"></i></a>  
+                </div>  
+            </div>  
+        </div>  
+          
+        <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">  
+            © 2026 Bafana Hotel International. All Rights Reserved.  
+        </div>  
+    </div>  
+</footer>  
+
+<script>  
+    window.addEventListener('scroll', () => {  
+        const navbar = document.getElementById('navbar');  
+        if (window.scrollY > 50) {  
+            navbar.classList.add('bg-white/95', 'backdrop-blur-md');  
+        } else {  
+            navbar.classList.remove('bg-white/95', 'backdrop-blur-md');  
+        }  
+    });  
+
+    const openMenuBtn = document.getElementById('openMenu');
+    const closeMenuBtn = document.getElementById('closeMenu');
+    const sideMenu = document.getElementById('sideMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+
+    function openMenu() {
+        sideMenu.classList.remove('translate-x-full');
+        menuOverlay.classList.remove('hidden');
+    }
+
+    function closeMenu() {
+        sideMenu.classList.add('translate-x-full');
+        menuOverlay.classList.add('hidden');
+    }
+
+    openMenuBtn.addEventListener('click', openMenu);
+    closeMenuBtn.addEventListener('click', closeMenu);
+    menuOverlay.addEventListener('click', closeMenu);
+</script>
+
+</body>  
+  </html>
+  
