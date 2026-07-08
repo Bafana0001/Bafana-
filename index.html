@@ -330,4 +330,176 @@
                 <div class="bg-gray-50 p-8 rounded-3xl">
                     <div class="flex text-amber-400 mb-6">★★★★★</div>
                     <p class="italic">"The service here is unmatched. Felt like family from the moment we arrived."</p>
-                    <div
+                     <div class="mt-8 flex items-center gap-x-4">
+                        <div class="w-12 h-12 bg-gray-300 rounded-full"></div>
+                        <div>
+                            <div class="font-medium">James Thompson</div>
+                            <div class="text-sm text-gray-500">London, UK</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & BOOKING -->
+    <section id="contact" class="py-24 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16">
+                <!-- Contact Info -->
+                <div>
+                    <h2 class="heading-font text-5xl font-bold mb-10">Get in Touch</h2>
+                    
+                    <div class="space-y-8">
+                        <div class="flex gap-x-6">
+                            <i class="fa-solid fa-phone text-3xl text-rose-400 mt-1"></i>
+                            <div>
+                                <div class="text-lg font-medium">+27 82 123 4567</div>
+                                <div class="text-gray-400">Reservations &amp; Enquiries</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-x-6">
+                            <i class="fa-brands fa-whatsapp text-3xl text-green-400 mt-1"></i>
+                            <div>
+                                <a href="https://wa.me/27821234567" target="_blank" class="text-lg font-medium hover:text-green-400">WhatsApp: +27 82 123 4567</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-x-6">
+                            <i class="fa-solid fa-envelope text-3xl text-rose-400 mt-1"></i>
+                            <div>
+                                <div class="text-lg font-medium">reservations@bafanahotel.co.za</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-16">
+                        <h3 class="text-xl font-medium mb-6">Find Us</h3>
+                        <div class="bg-gray-800 p-6 rounded-3xl">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.9999999999995!2d28.047999999999998!3d-26.107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950d1b5f5f5f5f%3A0x1f5f5f5f5f5f5f5f5f!2sSandton%2C%20Johannesburg!5e0!3m2!1sen!2sza!4v1720000000000" 
+                                    width="100%" height="320" style="border:0; border-radius: 20px;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                        <p class="mt-4 text-gray-400">123 Rivonia Road, Sandton, Johannesburg, South Africa</p>
+                    </div>
+                </div>
+                
+                <!-- Booking Form -->
+                <div class="bg-white text-gray-900 rounded-3xl p-10 shadow-2xl">
+                    <h3 class="text-3xl font-semibold mb-8">Make a Reservation</h3>
+                    <form id="bookingForm" onsubmit="handleBooking(event)">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Check-in</label>
+                                <input type="date" id="checkin" class="w-full border border-gray-300 rounded-2xl px-5 py-4 focus:outline-none focus:border-rose-500" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Check-out</label>
+                                <input type="date" id="checkout" class="w-full border border-gray-300 rounded-2xl px-5 py-4 focus:outline-none focus:border-rose-500" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6">
+                            <label class="block text-sm font-medium mb-2">Full Name</label>
+                            <input type="text" id="name" placeholder="John Doe" 
+                                   class="w-full border border-gray-300 rounded-2xl px-5 py-4 focus:outline-none focus:border-rose-500" required>
+                        </div>
+                        
+                        <div class="mt-6 grid grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Email</label>
+                                <input type="email" id="email" placeholder="you@email.com" 
+                                       class="w-full border border-gray-300 rounded-2xl px-5 py-4 focus:outline-none focus:border-rose-500" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Phone</label>
+                                <input type="tel" id="phone" placeholder="+27 82 123 4567" 
+                                       class="w-full border border-gray-300 rounded-2xl px-5 py-4 focus:outline-none focus:border-rose-500" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6">
+                            <label class="block text-sm font-medium mb-2">Room Preference</label>
+                            <select id="roomtype" class="w-full border border-gray-300 rounded-2xl px-5 py-4 focus:outline-none focus:border-rose-500">
+                                <option value="">Any Room</option>
+                                <option value="Deluxe King">Deluxe King (R2,850)</option>
+                                <option value="Executive Suite">Executive Suite (R5,900)</option>
+                                <option value="Family Suite">Family Suite (R7,200)</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="mt-10 w-full bg-rose-700 hover:bg-rose-800 text-white py-6 rounded-3xl font-semibold text-lg transition-all">
+                            REQUEST RESERVATION
+                        </button>
+                        <p class="text-center text-xs text-gray-500 mt-6">You can pay on arrival • Free cancellation up to 48 hours prior</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-white py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-10">
+                <div>
+                    <div class="flex items-center gap-x-3 text-white">
+                        <div class="w-10 h-10 bg-rose-700 rounded-full flex items-center justify-center font-bold text-3xl">B</div>
+                        <span class="heading-font text-4xl font-bold">Bafana</span>
+                    </div>
+                    <p class="text-gray-400 mt-6">Luxury hospitality with a South African soul.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-medium mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#rooms" class="hover:text-white">Rooms &amp; Rates</a></li>
+                        <li><a href="#facilities" class="hover:text-white">Facilities</a></li>
+                        <li><a href="#gallery" class="hover:text-white">Gallery</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-medium mb-6">Contact</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li>+27 82 123 4567</li>
+                        <li>reservations@bafanahotel.co.za</li>
+                        <li>Sandton, Johannesburg</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-medium mb-6">Follow Us</h4>
+                    <div class="flex gap-x-6 text-3xl">
+                        <a href="#" class="hover:text-rose-500">📸</a>
+                        <a href="#" class="hover:text-rose-500">𝕏</a>
+                        <a href="#" class="hover:text-rose-500">▶️</a>
+                    </div>
+                    <div class="mt-10 text-xs text-gray-500">
+                        © 2026 Bafana Hotel. All rights reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOOKING MODAL -->
+    <div id="bookingModal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-[100]">
+        <div class="bg-white text-gray-900 max-w-lg w-full mx-4 rounded-3xl p-10">
+            <div class="flex justify-between items-center mb-8">
+                <h3 class="text-3xl font-semibold">Quick Booking</h3>
+                <button onclick="hideBookingModal()" class="text-4xl text-gray-300 hover:text-gray-700">×</button>
+            </div>
+            <p class="text-gray-600">Our team will get back to you within minutes during business hours.</p>
+            <button onclick="hideBookingModal()" 
+                    class="mt-12 w-full py-6 bg-rose-700 text-white rounded-3xl font-semibold">
+                I'll use the form below instead
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
