@@ -41,37 +41,43 @@
             <h1 class="heading-font text-5xl font-bold text-center mb-4">Make a Reservation</h1>
             <p class="text-center text-gray-600 mb-12">Fill the form below and we’ll confirm your booking shortly</p>
 
-            <form id="bookingForm" onsubmit="handleBooking(event)" class="bg-white rounded-3xl shadow-2xl p-10">
+            <form id="bookingForm" class="bg-white rounded-3xl shadow-2xl p-10">
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-sm font-medium mb-2">Check-in Date</label>
-                        <input type="date" id="checkin" required class="w-full border border-gray-300 rounded-2xl px-5 py-4 focus:outline-none focus:border-rose-500">
+                        <input type="date" id="checkin" required 
+                               class="w-full border border-gray-300 rounded-2xl px-5 py-4 focus:outline-none focus:border-rose-500">
                     </div>
                     <div>
                         <label class="block text-sm font-medium mb-2">Check-out Date</label>
-                        <input type="date" id="checkout" required class="w-full border border-gray-300 rounded-2xl px-5 py-4 focus:outline-none focus:border-rose-500">
+                        <input type="date" id="checkout" required 
+                               class="w-full border border-gray-300 rounded-2xl px-5 py-4 focus:outline-none focus:border-rose-500">
                     </div>
                 </div>
 
                 <div class="mt-6">
                     <label class="block text-sm font-medium mb-2">Full Name</label>
-                    <input type="text" id="name" placeholder="John Doe" required class="w-full border border-gray-300 rounded-2xl px-5 py-4">
+                    <input type="text" id="name" placeholder="John Doe" required 
+                           class="w-full border border-gray-300 rounded-2xl px-5 py-4">
                 </div>
 
                 <div class="mt-6 grid md:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-sm font-medium mb-2">Email Address</label>
-                        <input type="email" id="email" placeholder="you@email.com" required class="w-full border border-gray-300 rounded-2xl px-5 py-4">
+                        <input type="email" id="email" placeholder="you@email.com" required 
+                               class="w-full border border-gray-300 rounded-2xl px-5 py-4">
                     </div>
                     <div>
                         <label class="block text-sm font-medium mb-2">Phone Number</label>
-                        <input type="tel" id="phone" placeholder="+234 801 234 5678" required class="w-full border border-gray-300 rounded-2xl px-5 py-4">
+                        <input type="tel" id="phone" placeholder="+234 801 234 5678" required 
+                               class="w-full border border-gray-300 rounded-2xl px-5 py-4">
                     </div>
                 </div>
 
                 <div class="mt-6">
                     <label class="block text-sm font-medium mb-2">Room Type</label>
-                    <select id="roomtype" class="w-full border border-gray-300 rounded-2xl px-5 py-4">
+                    <select id="roomtype" required 
+                            class="w-full border border-gray-300 rounded-2xl px-5 py-4">
                         <option value="">Select Room Type</option>
                         <option value="Deluxe Room">Deluxe Room - ₦45,000</option>
                         <option value="Executive Suite">Executive Suite - ₦85,000</option>
@@ -81,7 +87,9 @@
 
                 <div class="mt-6">
                     <label class="block text-sm font-medium mb-2">Special Requests (Optional)</label>
-                    <textarea id="requests" rows="4" class="w-full border border-gray-300 rounded-3xl px-5 py-4" placeholder="Any special requests..."></textarea>
+                    <textarea id="requests" rows="4" 
+                              class="w-full border border-gray-300 rounded-3xl px-5 py-4" 
+                              placeholder="Any special requests..."></textarea>
                 </div>
 
                 <button type="submit" 
