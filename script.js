@@ -1,4 +1,4 @@
-// script.js
+// script.js - Bafana Hotel Kaduna
 
 // Navbar scroll effect
 window.addEventListener('scroll', () => {
@@ -29,22 +29,35 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Booking Form Handler
 function handleBooking(e) {
-    if (e) e.preventDefault();
-    
-    const name = document.getElementById('name');
-    if (!name) return;
-    
-    const nameValue = name.value.trim() || "Guest";
+    e.preventDefault();
 
-    alert(`🎉 Thank you, ${nameValue}!\n\nYour reservation request has been received.\n\nOur team will contact you within 30 minutes to confirm availability and details.`);
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const checkin = document.getElementById('checkin').value;
+    const checkout = document.getElementById('checkout').value;
+    const roomtype = document.getElementById('roomtype').value;
+    const requests = document.getElementById('requests').value.trim();
 
-    // Reset form if it exists
-    if (e && e.target) {
-        e.target.reset();
+    // Validation
+    if (!name || !email || !phone || !checkin || !checkout || !roomtype) {
+        alert("Please fill all required fields.");
+        return;
     }
+
+    if (new Date(checkout) <= new Date(checkin)) {
+        alert("Check-out date must be after check-in date.");
+        return;
+    }
+
+    // Success message
+    alert(`🎉 Thank you, ${name}!\n\nYour reservation request has been received.\n\nOur team will contact you within 30 minutes to confirm availability and details.`);
+
+    // Reset form after submission
+    e.target.reset();
 }
 
-// Show/Hide Booking Modal (for pages that use modal)
+// Show/Hide Booking Modal (for other pages if needed)
 function showBookingModal() {
     const modal = document.getElementById('bookingModal');
     if (modal) modal.classList.remove('hidden');
@@ -57,7 +70,6 @@ function hideBookingModal() {
 
 // Room selection helper
 function selectRoom(roomType) {
-    // Redirect to booking page with room pre-selected (optional)
     window.location.href = `booking.html?room=${encodeURIComponent(roomType)}`;
 }
 
@@ -69,10 +81,16 @@ function setMinDates() {
     const checkout = document.getElementById('checkout');
     
     if (checkin) checkin.min = today;
-    if (checkout) checkout.min = today;
+    if (checkout) {
+        checkout.min = today;
+        // Also set checkout min to checkin date dynamically (optional enhancement)
+        checkin.addEventListener('change', () => {
+            if (checkin.value) checkout.min = checkin.value;
+        });
+    }
 }
 
-// Mobile menu toggle (if you add a hamburger menu later)
+// Mobile menu toggle (ready for future use)
 function toggleMobileMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
     if (mobileMenu) {
@@ -84,7 +102,13 @@ function toggleMobileMenu() {
 window.onload = function() {
     setMinDates();
     
-    // Auto-fill room type from URL parameter (e.g., booking.html?room=Deluxe%20Room)
+    // Attach form handler
+    const bookingForm = document.getElementById('bookingForm');
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', handleBooking);
+    }
+
+    // Auto-fill room type from URL parameter
     const urlParams = new URLSearchParams(window.location.search);
     const roomParam = urlParams.get('room');
     if (roomParam) {
