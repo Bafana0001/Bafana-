@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Bafana Hotel Kaduna</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        .heading-font { font-family: 'Playfair Display', serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- NAVBAR -->
+<nav class="bg-white shadow-sm p-6 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="index.html" class="text-2xl font-bold text-rose-700">Bafana Hotel</a>
+        <div class="flex gap-6 font-medium">
+            <a href="index.html" class="hover:text-rose-700">Home</a>
+            <a href="about.html" class="text-rose-700 border-b-2 border-rose-700">About</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ABOUT SECTION -->
+<section class="py-16 px-6 max-w-4xl mx-auto text-center">
+    <h1 class="heading-font text-5xl font-bold mb-6">About Bafana Hotel</h1>
+    <p class="text-lg text-gray-600 leading-relaxed">
+        Located in the vibrant heart of Kaduna, Bafana Hotel International offers a blend of modern luxury and traditional Nigerian hospitality. Since our inception, we have been dedicated to providing a home away from home for travelers and local guests alike.
+    </p>
+</section>
+
+<!-- REVIEWS GRID -->
+<section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+        <h2 class="heading-font text-4xl font-bold text-center mb-12">What Our Guests Say</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+            <!-- Review 1-20 Content -->
+            <script>
+                const reviews = [
+                    "An absolute gem in Kaduna! World-class hospitality.", "Stunning decor and the most comfortable beds.",
+                    "The wedding planning team made our big day effortless.", "The 24/7 room service is a life-saver.",
+                    "A peaceful oasis! The staff feels like family.", "Exquisite dining and professional atmosphere.",
+                    "High-speed Wi-Fi made working remotely easy.", "Concierge service is so helpful and polite.",
+                    "Everything about the Bafana Hotel screams luxury.", "Impeccable cleanliness and friendly staff.",
+                    "An unforgettable stay. Service is prompt.", "The best hotel in Kaduna by far.",
+                    "My family and I loved our stay.", "Meeting rooms were perfect for my presentation.",
+                    "Fantastic location and even better service.", "Luxury at its finest. Highly recommend.",
+                    "The laundry service was quick and professional.", "Safe, secure, and incredibly comfortable.",
+                    "A true five-star experience.", "They make every guest feel special."
+                ];
+                reviews.forEach(text => {
+                    document.write(`
+                        <div class="bg-gray-50 p-8 rounded-3xl shadow-sm border border-gray-100">
+                            <div class="text-yellow-500 mb-2">★★★★★</div>
+                            <p class="text-gray-600 mb-4 italic">"${text}"</p>
+                            <div class="font-bold text-rose-800">— Valued Guest</div>
+                        </div>
+                    `);
+                });
+            </script>
+        </div>
+    </div>
+</section>
+
+<!-- REVIEW FORM -->
+<section class="py-16 px-6 max-w-2xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-8">Share Your Experience</h2>
+    <form id="reviewForm" class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 space-y-5">
+        <input type="text" placeholder="Your Name" class="w-full p-3 border rounded-xl" required>
+        <textarea placeholder="Your Review" rows="4" class="w-full p-3 border rounded-xl" required></textarea>
+        <button type="submit" class="w-full bg-rose-700 text-white py-4 rounded-xl font-bold hover:bg-rose-800 transition">Submit Review</button>
+    </form>
+</section>
+
+<script>
+    document.getElementById('reviewForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Thank you! Your review has been submitted for moderation.');
+        e.target.reset();
+    });
+</script>
+
+</body>
+</html>
