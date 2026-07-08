@@ -1,4 +1,13 @@
-// script.js - Bafana Hotel Kaduna
+// ===============================
+// Room Prices
+// ===============================
+const roomPrices = {
+    "Deluxe Room": 45000,
+    "Executive Suite": 85000,
+    "Family Suite": 110000
+};
+
+let roomCount = 1;
 
 // Navbar scroll effect
 window.addEventListener('scroll', () => {
@@ -12,12 +21,12 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Smooth scrolling for anchor links
+// Smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const targetId = this.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
-        
+
         if (targetElement) {
             e.preventDefault();
             targetElement.scrollIntoView({
@@ -27,8 +36,57 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// ===============================
+// Calculate Booking Total
+// ===============================
+function calculateBooking() {
+
+    const roomType = document.getElementById("roomtype");
+    const checkin = document.getElementById("checkin");
+    const checkout = document.getElementById("checkout");
+
+    if (!roomType || !checkin || !checkout) return;
+
+    const price = roomPrices[roomType.value] || 0;
+
+    let nights = 0;
+
+    if (checkin.value && checkout.value) {
+        const inDate = new Date(checkin.value);
+        const outDate = new Date(checkout.value);
+
+        if (outDate > inDate) {
+            nights = Math.ceil(
+                (outDate - inDate) / (1000 * 60 * 60 * 24)
+            );
+        }
+    }
+
+    const total = price * nights * roomCount;
+
+    const pricePerNight = document.getElementById("pricePerNight");
+    const nightCount = document.getElementById("nightCount");
+    const roomDisplay = document.getElementById("roomDisplay");
+    const totalAmount = document.getElementById("totalAmount");
+
+    if (pricePerNight)
+        pricePerNight.textContent = `₦${price.toLocaleString()}`;
+
+    if (nightCount)
+        nightCount.textContent = nights;
+
+    if (roomDisplay)
+        roomDisplay.textContent = roomCount;
+
+    if (totalAmount)
+        totalAmount.textContent = `₦${total.toLocaleString()}`;
+}
+
+// ===============================
 // Booking Form Handler
+// ===============================
 function handleBooking(e) {
+
     e.preventDefault();
 
     const name = document.getElementById('name').value.trim();
@@ -39,7 +97,6 @@ function handleBooking(e) {
     const roomtype = document.getElementById('roomtype').value;
     const requests = document.getElementById('requests').value.trim();
 
-    // Validation
     if (!name || !email || !phone || !checkin || !checkout || !roomtype) {
         alert("Please fill all required fields.");
         return;
@@ -50,14 +107,41 @@ function handleBooking(e) {
         return;
     }
 
-    // Success message
-    alert(`🎉 Thank you, ${name}!\n\nYour reservation request has been received.\n\nOur team will contact you within 30 minutes to confirm availability and details.`);
+    const price = roomPrices[roomtype];
+    const nights = Math.ceil(
+        (new Date(checkout) - new Date(checkin)) /
+        (1000 * 60 * 60 * 24)
+    );
 
-    // Reset form after submission
+    const total = price * nights * roomCount;
+
+    alert(
+`🎉 Thank you, ${name}!
+
+Your reservation request has been received.
+
+Room Type: ${roomtype}
+Rooms: ${roomCount}
+Nights: ${nights}
+
+Total Amount:
+₦${total.toLocaleString()}
+
+Our team will contact you within 30 minutes to confirm availability and details.`
+    );
+
     e.target.reset();
+
+    roomCount = 1;
+
+    const roomInput = document.getElementById("roomCount");
+    if (roomInput)
+        roomInput.value = roomCount;
+
+    calculateBooking();
 }
 
-// Show/Hide Booking Modal (for other pages if needed)
+// Show/Hide Booking Modal
 function showBookingModal() {
     const modal = document.getElementById('bookingModal');
     if (modal) modal.classList.remove('hidden');
@@ -70,59 +154,122 @@ function hideBookingModal() {
 
 // Room selection helper
 function selectRoom(roomType) {
-    window.location.href = `booking.html?room=${encodeURIComponent(roomType)}`;
+    window.location.href =
+        `booking.html?room=${encodeURIComponent(roomType)}`;
 }
 
-// Set minimum dates for booking forms
+// Set minimum dates
 function setMinDates() {
+
     const today = new Date().toISOString().split('T')[0];
-    
+
     const checkin = document.getElementById('checkin');
     const checkout = document.getElementById('checkout');
-    
+
     if (checkin) checkin.min = today;
+
     if (checkout) {
+
         checkout.min = today;
-        // Also set checkout min to checkin date dynamically (optional enhancement)
+
         checkin.addEventListener('change', () => {
-            if (checkin.value) checkout.min = checkin.value;
+
+            if (checkin.value)
+                checkout.min = checkin.value;
+
+            calculateBooking();
+
         });
+
+        checkout.addEventListener('change', calculateBooking);
     }
 }
 
-// Mobile menu toggle (ready for future use)
+// Mobile Menu
 function toggleMobileMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
-    if (mobileMenu) {
+
+    if (mobileMenu)
         mobileMenu.classList.toggle('hidden');
-    }
 }
 
-// Initialize everything when page loads
-window.onload = function() {
+// ===============================
+// Initialize
+// ===============================
+window.onload = function () {
+
     setMinDates();
-    
-    // Attach form handler
+
     const bookingForm = document.getElementById('bookingForm');
-    if (bookingForm) {
+
+    if (bookingForm)
         bookingForm.addEventListener('submit', handleBooking);
-    }
 
-    // Auto-fill room type from URL parameter
     const urlParams = new URLSearchParams(window.location.search);
+
     const roomParam = urlParams.get('room');
+
     if (roomParam) {
+
         const roomSelect = document.getElementById('roomtype');
-        if (roomSelect) {
+
+        if (roomSelect)
             roomSelect.value = roomParam;
-        }
     }
 
-    console.log('%cBafana Hotel Kaduna - Website Ready! 🏨', 
-        'color: #9f1239; font-size: 14px; font-weight: bold;');
+    // Room Type Change
+    const roomType = document.getElementById("roomtype");
+
+    if (roomType)
+        roomType.addEventListener("change", calculateBooking);
+
+    // Plus Button
+    const plus = document.getElementById("plusRoom");
+
+    if (plus) {
+
+        plus.addEventListener("click", function () {
+
+            roomCount++;
+
+            document.getElementById("roomCount").value = roomCount;
+
+            calculateBooking();
+
+        });
+
+    }
+
+    // Minus Button
+    const minus = document.getElementById("minusRoom");
+
+    if (minus) {
+
+        minus.addEventListener("click", function () {
+
+            if (roomCount > 1) {
+
+                roomCount--;
+
+                document.getElementById("roomCount").value = roomCount;
+
+                calculateBooking();
+
+            }
+
+        });
+
+    }
+
+    calculateBooking();
+
+    console.log(
+        "%cBafana Hotel Kaduna - Website Ready! 🏨",
+        "color:#9f1239;font-size:14px;font-weight:bold;"
+    );
 };
 
-// Make functions globally available
+// Global Functions
 window.handleBooking = handleBooking;
 window.showBookingModal = showBookingModal;
 window.hideBookingModal = hideBookingModal;
