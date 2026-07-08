@@ -1,11 +1,20 @@
 // ===============================
-// Room Prices
+// Room Prices & Navigation Data
 // ===============================
 const roomPrices = {
     "Deluxe Room": 45000,
     "Executive Suite": 85000,
     "Family Suite": 110000
 };
+
+// --- NEW: Dynamic Navigation Links ---
+const menuLinks = [
+    { text: "Home", href: "#home" },
+    { text: "Rooms", href: "#rooms" },
+    { text: "Amenities", href: "#amenities" },
+    { text: "Booking", href: "#booking" },
+    { text: "Contact", href: "#contact" }
+];
 
 let roomCount = 1;
 
@@ -24,7 +33,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Mobile Menu Toggle Logic (With Smooth Transitions Included)
+// Mobile Menu Toggle Logic
 const openMenuBtn = document.getElementById('openMenu');
 const closeMenuBtn = document.getElementById('closeMenu');
 const sideMenu = document.getElementById('sideMenu');
@@ -46,6 +55,19 @@ function closeMenu() {
         menuOverlay.classList.add('opacity-0', 'pointer-events-none');
     }
     document.body.classList.remove('overflow-hidden');
+}
+
+// --- NEW: Render Menu Links Dynamically ---
+function renderMobileMenu() {
+    const menuContainer = document.getElementById('dynamicMenuLinks');
+    if (!menuContainer) return;
+
+    // Generate HTML for links and inject them
+    menuContainer.innerHTML = menuLinks.map(link => `
+        <a href="${link.href}" class="block py-3 px-6 text-lg font-medium text-gray-800 hover:bg-rose-50 hover:text-rose-700 transition-colors duration-200">
+            ${link.text}
+        </a>
+    `).join('');
 }
 
 // ===============================
@@ -108,12 +130,15 @@ function handleBooking(e) {
 // Initialization
 // ===============================
 window.onload = function () {
+    // --- NEW: Load Mobile Menu ---
+    renderMobileMenu();
+
     // 1. Event Listeners for Mobile Menu
     if (openMenuBtn) openMenuBtn.addEventListener('click', openMenu);
     if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMenu);
     if (menuOverlay) menuOverlay.addEventListener('click', closeMenu);
 
-    // Auto-close menu when a link is clicked
+    // Auto-close menu when a link is clicked (Targets dynamically created links too)
     const sideMenuLinks = document.querySelectorAll('#sideMenu a');
     sideMenuLinks.forEach(link => {
         link.addEventListener('click', closeMenu);
@@ -125,11 +150,17 @@ window.onload = function () {
 
     // 3. Date and Room Logic
     const today = new Date().toISOString().split('T')[0];
+    const roomType = document.getElementById('roomtype');
     const checkin = document.getElementById('checkin');
     const checkout = document.getElementById('checkout');
     
     if (checkin) checkin.min = today;
     if (checkout) checkout.min = today;
+
+    // Live price calculation listeners
+    if (roomType) roomType.addEventListener('change', calculateBooking);
+    if (checkin) checkin.addEventListener('input', calculateBooking);
+    if (checkout) checkout.addEventListener('input', calculateBooking);
 
     // Room quantity buttons
     const plus = document.getElementById("plusRoom");
@@ -150,6 +181,9 @@ window.onload = function () {
             calculateBooking(); 
         });
     }
+
+    // Run initial calculation once on load
+    calculateBooking();
 
     console.log("%cBafana Hotel Kaduna - Website Ready! 🏨", "color:#9f1239;font-size:14px;font-weight:bold;");
 };
