@@ -1,7 +1,10 @@
+/* styles.css */
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap');
 
 :root {
     --primary: #9f1239;
+    --rose: #9f1239;
 }
 
 .tail-container {
@@ -12,26 +15,33 @@
     font-family: 'Playfair Display', sans-serif;
 }
 
+/* Navbar */
+.nav-scrolled {
+    background-color: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/* Hero Background */
 .hero-bg {
-    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://picsum.photos/id/1015/2000/1200');
+    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), 
+                      url('https://picsum.photos/id/1015/2000/1200');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
 }
 
-.nav-scrolled {
-    background-color: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-}
-
+/* Room Cards */
 .room-card {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .room-card:hover {
     transform: translateY(-12px);
-    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 
+                0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
 
+/* Gallery Images */
 .gallery-img {
     transition: all 0.4s ease;
 }
@@ -39,3 +49,50 @@
 .gallery-img:hover {
     transform: scale(1.08);
 }
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--rose);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #881337;
+    transform: translateY(-2px);
+}
+
+/* Form Inputs */
+input, select, textarea {
+    transition: all 0.2s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--rose);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(159, 18, 57, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .heading-font {
+        font-size: 2.5rem;
+    }
+    
+    .hero-bg h1 {
+        font-size: 3rem;
+    }
+}
+
+/* Utility Classes */
+.text-rose {
+    color: var(--rose);
+}
+
+.bg-rose {
+    background-color: var(--rose);
+}
+
+/* Testimonials */
+.testimonial-card {
+    transition:
