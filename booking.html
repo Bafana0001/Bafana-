@@ -4,21 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Your Stay - Bafana Hotel Kaduna</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="tail-container text-gray-800">
 
     <!-- NAVBAR -->
     <nav id="navbar" class="fixed top-0 w-full z-50 bg-white shadow-sm">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+
             <div class="flex items-center gap-x-3">
-                <div class="w-10 h-10 bg-rose-700 rounded-full flex items-center justify-center text-white font-bold text-2xl">B</div>
+                <div class="w-10 h-10 bg-rose-700 rounded-full flex items-center justify-center text-white font-bold text-2xl">
+                    B
+                </div>
+
                 <div>
                     <span class="heading-font text-3xl font-bold">Bafana</span>
-                    <span class="text-sm block -mt-1 text-rose-600">HOTEL</span>
+                    <span class="block text-sm -mt-1 text-rose-600">HOTEL</span>
                 </div>
             </div>
 
@@ -29,7 +38,10 @@
                 <a href="contact.html" class="hover:text-rose-700">Contact</a>
             </div>
 
-            <a href="index.html" class="text-rose-700 font-medium">← Back to Home</a>
+            <a href="index.html" class="text-rose-700 font-medium">
+                ← Back to Home
+            </a>
+
         </div>
     </nav>
 
@@ -37,69 +49,216 @@
 
     <!-- BOOKING SECTION -->
     <section class="py-20 bg-gray-50">
+
         <div class="max-w-4xl mx-auto px-6">
-            <h1 class="heading-font text-5xl font-bold text-center mb-4">Make a Reservation</h1>
-            <p class="text-center text-gray-600 mb-12">Fill the form below and we’ll confirm your booking shortly</p>
+
+            <h1 class="heading-font text-5xl font-bold text-center mb-4">
+                Make a Reservation
+            </h1>
+
+            <p class="text-center text-gray-600 mb-12">
+                Fill the form below and we'll confirm your booking shortly
+            </p>
 
             <form id="bookingForm" class="bg-white rounded-3xl shadow-2xl p-10">
+
+                <!-- Dates -->
                 <div class="grid md:grid-cols-2 gap-6">
+
                     <div>
-                        <label class="block text-sm font-medium mb-2">Check-in Date</label>
-                        <input type="date" id="checkin" required 
-                               class="w-full border border-gray-300 rounded-2xl px-5 py-4 focus:outline-none focus:border-rose-500">
+                        <label class="block text-sm font-medium mb-2">
+                            Check-in Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="checkin"
+                            required
+                            class="w-full border border-gray-300 rounded-2xl px-5 py-4 focus:outline-none focus:border-rose-500">
                     </div>
+
                     <div>
-                        <label class="block text-sm font-medium mb-2">Check-out Date</label>
-                        <input type="date" id="checkout" required 
-                               class="w-full border border-gray-300 rounded-2xl px-5 py-4 focus:outline-none focus:border-rose-500">
+                        <label class="block text-sm font-medium mb-2">
+                            Check-out Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="checkout"
+                            required
+                            class="w-full border border-gray-300 rounded-2xl px-5 py-4 focus:outline-none focus:border-rose-500">
                     </div>
+
                 </div>
 
+                <!-- Name -->
                 <div class="mt-6">
-                    <label class="block text-sm font-medium mb-2">Full Name</label>
-                    <input type="text" id="name" placeholder="John Doe" required 
-                           class="w-full border border-gray-300 rounded-2xl px-5 py-4">
+
+                    <label class="block text-sm font-medium mb-2">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="John Doe"
+                        required
+                        class="w-full border border-gray-300 rounded-2xl px-5 py-4">
+
                 </div>
 
+                <!-- Email & Phone -->
                 <div class="mt-6 grid md:grid-cols-2 gap-6">
+
                     <div>
-                        <label class="block text-sm font-medium mb-2">Email Address</label>
-                        <input type="email" id="email" placeholder="you@email.com" required 
-                               class="w-full border border-gray-300 rounded-2xl px-5 py-4">
+                        <label class="block text-sm font-medium mb-2">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="you@email.com"
+                            required
+                            class="w-full border border-gray-300 rounded-2xl px-5 py-4">
                     </div>
+
                     <div>
-                        <label class="block text-sm font-medium mb-2">Phone Number</label>
-                        <input type="tel" id="phone" placeholder="+234 801 234 5678" required 
-                               class="w-full border border-gray-300 rounded-2xl px-5 py-4">
+                        <label class="block text-sm font-medium mb-2">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="+234 801 234 5678"
+                            required
+                            class="w-full border border-gray-300 rounded-2xl px-5 py-4">
                     </div>
+
                 </div>
 
+                <!-- Room Type -->
                 <div class="mt-6">
-                    <label class="block text-sm font-medium mb-2">Room Type</label>
-                    <select id="roomtype" required 
-                            class="w-full border border-gray-300 rounded-2xl px-5 py-4">
+
+                    <label class="block text-sm font-medium mb-2">
+                        Room Type
+                    </label>
+
+                    <select
+                        id="roomtype"
+                        required
+                        class="w-full border border-gray-300 rounded-2xl px-5 py-4">
+
                         <option value="">Select Room Type</option>
                         <option value="Deluxe Room">Deluxe Room - ₦45,000</option>
                         <option value="Executive Suite">Executive Suite - ₦85,000</option>
                         <option value="Family Suite">Family Suite - ₦110,000</option>
+
                     </select>
+
                 </div>
 
+                <!-- Number of Rooms -->
                 <div class="mt-6">
-                    <label class="block text-sm font-medium mb-2">Special Requests (Optional)</label>
-                    <textarea id="requests" rows="4" 
-                              class="w-full border border-gray-300 rounded-3xl px-5 py-4" 
-                              placeholder="Any special requests..."></textarea>
+
+                    <label class="block text-sm font-medium mb-2">
+                        Number of Rooms
+                    </label>
+
+                    <div class="flex items-center gap-4">
+
+                        <button
+                            type="button"
+                            id="minusRoom"
+                            class="w-12 h-12 rounded-full bg-gray-200 hover:bg-gray-300 text-2xl font-bold transition">
+                            −
+                        </button>
+
+                        <input
+                            type="text"
+                            id="roomCount"
+                            value="1"
+                            readonly
+                            class="w-20 text-center border border-gray-300 rounded-2xl py-3 text-lg font-bold bg-white">
+
+                        <button
+                            type="button"
+                            id="plusRoom"
+                            class="w-12 h-12 rounded-full bg-rose-700 hover:bg-rose-800 text-white text-2xl font-bold transition">
+                            +
+                        </button>
+
+                    </div>
+
                 </div>
 
-                <button type="submit" 
-                        class="mt-10 w-full bg-rose-700 hover:bg-rose-800 text-white py-6 rounded-3xl text-xl font-semibold transition-all">
+                <!-- Special Requests -->
+                <div class="mt-6">
+
+                    <label class="block text-sm font-medium mb-2">
+                        Special Requests (Optional)
+                    </label>
+
+                    <textarea
+                        id="requests"
+                        rows="4"
+                        placeholder="Any special requests..."
+                        class="w-full border border-gray-300 rounded-3xl px-5 py-4"></textarea>
+
+                </div>
+
+                <!-- Booking Summary -->
+                <div class="mt-8 bg-gray-50 border border-gray-200 rounded-3xl p-6">
+
+                    <h2 class="text-2xl font-semibold mb-6">
+                        Booking Summary
+                    </h2>
+
+                    <div class="space-y-4">
+
+                        <div class="flex justify-between">
+                            <span>Price Per Night</span>
+                            <span id="pricePerNight">₦0</span>
+                        </div>
+
+                        <div class="flex justify-between">
+                            <span>Number of Nights</span>
+                            <span id="nightCount">0</span>
+                        </div>
+
+                        <div class="flex justify-between">
+                            <span>Number of Rooms</span>
+                            <span id="roomDisplay">1</span>
+                        </div>
+
+                        <hr>
+
+                        <div class="flex justify-between text-2xl font-bold text-rose-700">
+                            <span>Total Amount</span>
+                            <span id="totalAmount">₦0</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Submit Button -->
+                <button
+                    type="submit"
+                    class="mt-10 w-full bg-rose-700 hover:bg-rose-800 text-white py-6 rounded-3xl text-xl font-semibold transition-all">
+
                     CONFIRM RESERVATION
+
                 </button>
+
             </form>
+
         </div>
+
     </section>
 
     <script src="script.js"></script>
+
 </body>
 </html>
