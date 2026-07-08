@@ -1,0 +1,306 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta name="description" content="Bafana Hotel Kaduna - Frequently Asked Questions regarding reservations, accommodations, and amenities.">  
+    <title>Frequently Asked Questions | Bafana Hotel Kaduna</title>  
+    <script src="https://cdn.tailwindcss.com"></script>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">  
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">  
+    <style>  
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap');  
+          
+        .heading-font {  
+            font-family: 'Playfair Display', serif;  
+        }
+
+        /* Accordion transition configuration */
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        }
+        
+        .faq-item.active .faq-content {
+            max-height: 500px; /* Adjust maximum flowing block height */
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>  
+<body class="tail-container bg-white text-gray-800">  
+
+<nav id="navbar" class="fixed top-0 w-full z-30 bg-white shadow-sm transition-all duration-300">  
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">  
+        <div class="flex items-center gap-x-3">  
+            <div class="w-10 h-10 bg-rose-700 rounded-full flex items-center justify-center text-white font-bold text-2xl">B</div>  
+            <div>  
+                <span class="heading-font text-3xl font-bold">Bafana</span>  
+                <span class="text-sm block -mt-1 text-rose-600">INTERNATIONAL</span>  
+            </div>  
+        </div>  
+
+        <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">  
+            <a href="index.html" class="hover:text-rose-700">Home</a>  
+            <a href="about.html" class="hover:text-rose-700">About</a>  
+            <a href="rooms.html" class="hover:text-rose-700">Rooms</a>  
+            <a href="facilities.html" class="hover:text-rose-700">Facilities</a>  
+            <a href="restaurant.html" class="hover:text-rose-700">Restaurant</a>  
+            <a href="gallery.html" class="hover:text-rose-700">Gallery</a>  
+            <a href="booking.html" class="hover:text-rose-700">Booking</a>  
+            <a href="contact.html" class="hover:text-rose-700">Contact</a>  
+        </div>  
+
+        <div class="flex items-center gap-4">
+            <button onclick="window.location.href='booking.html'"   
+                    class="hidden md:block bg-rose-700 text-white px-6 py-3 rounded-2xl hover:bg-rose-800 font-semibold">  
+                Book Now  
+            </button> 
+            <button id="openMenu" class="md:hidden text-2xl text-gray-800 focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div> 
+    </div>  
+</nav>  
+
+<div id="menuOverlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden z-40 transition-opacity"></div>  
+
+<div id="sideMenu" class="fixed top-0 right-0 h-full w-4/5 md:w-1/2 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50">  
+    <div class="flex justify-end p-6">  
+        <button id="closeMenu" class="text-4xl text-gray-700 hover:text-red-500">  
+            &times;  
+        </button>  
+    </div>  
+
+    <nav class="px-8">  
+        <ul id="dynamicMenuLinks" class="space-y-6 text-xl font-semibold">  
+            <li><a href="index.html" class="hover:text-rose-700 transition">Home</a></li>  
+            <li><a href="about.html" class="hover:text-rose-700 transition">About</a></li>  
+            <li><a href="rooms.html" class="hover:text-rose-700 transition">Rooms</a></li>  
+            <li><a href="facilities.html" class="hover:text-rose-700 transition">Facilities</a></li>  
+            <li><a href="restaurant.html" class="hover:text-rose-700 transition">Restaurant</a></li>  
+            <li><a href="gallery.html" class="hover:text-rose-700 transition">Gallery</a></li>  
+            <li><a href="booking.html" class="hover:text-rose-700 transition">Booking</a></li>  
+            <li><a href="contact.html" class="hover:text-rose-700 transition">Contact</a></li>  
+            <li><a href="faq.html" class="text-rose-700 transition">FAQ</a></li>  
+        </ul>  
+
+        <div class="mt-10">  
+            <a href="https://wa.me/xxxxxx" target="_blank" class="block text-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-full transition">  
+                🟢 WhatsApp  
+            </a>  
+        </div>  
+    </nav>
+</div>
+
+<section class="pt-40 pb-12 text-center bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+        <span class="text-rose-600 font-semibold tracking-widest uppercase text-sm block mb-2">Help & Support</span>
+        <h1 class="heading-font text-5xl font-bold text-gray-900 mb-6">
+            Frequently Asked Questions
+        </h1>
+        <p class="text-gray-600 max-w-xl mx-auto text-lg">
+            Find quick details regarding check-in times, luxury room options, amenities, security frameworks, and booking terms at Bafana Hotel Kaduna.
+        </p>
+    </div>
+</section>
+
+<section class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-6">
+        <div class="space-y-4">
+            
+            <div class="faq-item border border-gray-200 rounded-2xl bg-white overflow-hidden shadow-sm transition">
+                <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none bg-white hover:bg-gray-50">
+                    <span class="font-bold text-lg text-gray-900">What are the standard check-in and check-out hours?</span>
+                    <i class="fas fa-chevron-down text-rose-700 faq-icon transition-transform duration-300 ml-4"></i>
+                </button>
+                <div class="faq-content bg-gray-50/50">
+                    <p class="p-6 pt-0 text-gray-600 leading-relaxed">
+                        Standard check-in begins at 2:00 PM, and check-out is strictly at 12:00 PM (Noon). Early check-ins or late check-outs are subject to room availability and may attract nominal hourly surcharges. Please alert our front desk ahead of your arrival.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item border border-gray-200 rounded-2xl bg-white overflow-hidden shadow-sm transition">
+                <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none bg-white hover:bg-gray-50">
+                    <span class="font-bold text-lg text-gray-900">Where is Bafana Hotel International located in Kaduna?</span>
+                    <i class="fas fa-chevron-down text-rose-700 faq-icon transition-transform duration-300 ml-4"></i>
+                </button>
+                <div class="faq-content bg-gray-50/50">
+                    <p class="p-6 pt-0 text-gray-600 leading-relaxed">
+                        Our hotel is situated at CCJ3+MVR, along the main Abuja - Kaduna - Zaria Express Way, Goni Gora, Kaduna (Postcode: 800104). We offer an accessible hub for travelers looking to secure high-tier hospitality straight off the expressway network.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item border border-gray-200 rounded-2xl bg-white overflow-hidden shadow-sm transition">
+                <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none bg-white hover:bg-gray-50">
+                    <span class="font-bold text-lg text-gray-900">Do you offer complimentary Wi-Fi and breakfast?</span>
+                    <i class="fas fa-chevron-down text-rose-700 faq-icon transition-transform duration-300 ml-4"></i>
+                </button>
+                <div class="faq-content bg-gray-50/50">
+                    <p class="p-6 pt-0 text-gray-600 leading-relaxed">
+                        Yes! High-speed complimentary Wi-Fi is standard throughout our entire property, covering all corporate boardrooms, public zones, and private chambers. Complimentary breakfast services are attached directly to specified premium suite bookings.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item border border-gray-200 rounded-2xl bg-white overflow-hidden shadow-sm transition">
+                <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none bg-white hover:bg-gray-50">
+                    <span class="font-bold text-lg text-gray-900">Is there secure parking space on site?</span>
+                    <i class="fas fa-chevron-down text-rose-700 faq-icon transition-transform duration-300 ml-4"></i>
+                </button>
+                <div class="faq-content bg-gray-50/50">
+                    <p class="p-6 pt-0 text-gray-600 leading-relaxed">
+                        Absolutely. We provide spacious, highly secure on-premises parking that is entirely free of charge for all verified lodging and restaurant visitors. The area is monitored 24/7 by fully trained security personnel and integrated CCTV coverage.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item border border-gray-200 rounded-2xl bg-white overflow-hidden shadow-sm transition">
+                <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none bg-white hover:bg-gray-50">
+                    <span class="font-bold text-lg text-gray-900">Can I order food to my room at any time of the night?</span>
+                    <i class="fas fa-chevron-down text-rose-700 faq-icon transition-transform duration-300 ml-4"></i>
+                </button>
+                <div class="faq-content bg-gray-50/50">
+                    <p class="p-6 pt-0 text-gray-600 leading-relaxed">
+                        Yes, our Bafana International kitchen maintains a professional 24-hour room service desk. Guests can explore both authentic local delicacies and continental selections detailed inside our restaurant index directly from the comfort of their suites.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item border border-gray-200 rounded-2xl bg-white overflow-hidden shadow-sm transition">
+                <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none bg-white hover:bg-gray-50">
+                    <span class="font-bold text-lg text-gray-900">What is your reservation cancellation policy?</span>
+                    <i class="fas fa-chevron-down text-rose-700 faq-icon transition-transform duration-300 ml-4"></i>
+                </button>
+                <div class="faq-content bg-gray-50/50">
+                    <p class="p-6 pt-0 text-gray-600 leading-relaxed">
+                        Cancellations completed up to 24 hours prior to your scheduled reservation date do not attract any penalties. Any failure to show up or cancellations finalized past this specified window will be billed for the value of the initial booking night.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-20 bg-gray-50 border-t border-gray-100">
+    <div class="max-w-2xl mx-auto text-center px-6">
+        <h2 class="heading-font text-3xl font-bold text-gray-900 mb-4">Still Have Questions?</h2>
+        <p class="text-gray-600 mb-8 text-lg">If you cannot find the solution to your explicit requirements above, please do not hesitate to ping our support team directly.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="contact.html" class="bg-rose-700 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-rose-800 transition shadow-md">
+                Contact Desk
+            </a>
+            <a href="https://wa.me/xxxxxx" target="_blank" class="bg-green-500 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-green-600 transition shadow-md flex items-center gap-2">
+                <i class="fab fa-whatsapp"></i> Chat via WhatsApp
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-black text-white py-16">  
+    <div class="max-w-7xl mx-auto px-6">  
+        <div class="grid md:grid-cols-4 gap-10">  
+            <div>  
+                <div class="flex items-center gap-x-3 mb-6">  
+                    <div class="w-10 h-10 bg-rose-700 rounded-full flex items-center justify-center text-white font-bold text-2xl">B</div>  
+                    <div>  
+                        <span class="heading-font text-3xl font-bold">Bafana</span>  
+                        <span class="text-sm block -mt-1 text-rose-600">INTERNATIONAL</span>  
+                    </div>  
+                </div>  
+                <p class="text-gray-400">Luxury hospitality in the heart of Kaduna.</p>  
+            </div>  
+              
+            <div>  
+                <h4 class="font-semibold mb-4">Quick Links</h4>  
+                <ul class="space-y-2 text-gray-400">  
+                    <li><a href="rooms.html" class="hover:text-white">Rooms & Suites</a></li>  
+                    <li><a href="facilities.html" class="hover:text-white">Facilities</a></li>  
+                    <li><a href="restaurant.html" class="hover:text-white">Dining</a></li>  
+                    <li><a href="gallery.html" class="hover:text-white">Gallery</a></li>  
+                </ul>  
+            </div>  
+              
+            <div>  
+                <h4 class="font-semibold mb-4">Contact</h4>  
+                <ul class="space-y-2 text-gray-400">  
+                    <li>CCJ3+MVR, Abuja - Kaduna - Zaria Express Way</li>  
+                    <li>Goni Gora, Kaduna 800104</li>  
+                    <li class="mt-4">+234 XXX XXX XXXX</li>  
+                    <li>info@bafanahotel.com</li>  
+                </ul>  
+            </div>  
+              
+            <div>  
+                <h4 class="font-semibold mb-4">Follow Us</h4>  
+                <div class="flex gap-4 text-2xl">  
+                    <a href="#" class="hover:text-rose-500"><i class="fab fa-instagram"></i></a>  
+                    <a href="#" class="hover:text-rose-500"><i class="fab fa-facebook"></i></a>  
+                    <a href="#" class="hover:text-rose-500"><i class="fab fa-twitter"></i></a>  
+                </div>  
+            </div>  
+        </div>  
+          
+        <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">  
+            © 2026 Bafana Hotel International. All Rights Reserved.  
+        </div>  
+    </div>  
+</footer>  
+
+<script>  
+    window.addEventListener('scroll', () => {  
+        const navbar = document.getElementById('navbar');  
+        if (window.scrollY > 50) {  
+            navbar.classList.add('bg-white/95', 'backdrop-blur-md');  
+        } else {  
+            navbar.classList.remove('bg-white/95', 'backdrop-blur-md');  
+        }  
+    });  
+
+    // Mobile Panel Drawer Scripts
+    const openMenuBtn = document.getElementById('openMenu');
+    const closeMenuBtn = document.getElementById('closeMenu');
+    const sideMenu = document.getElementById('sideMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+
+    function openMenu() {
+        sideMenu.classList.remove('translate-x-full');
+        menuOverlay.classList.remove('hidden');
+    }
+
+    function closeMenu() {
+        sideMenu.classList.add('translate-x-full');
+        menuOverlay.classList.add('hidden');
+    }
+
+    openMenuBtn.addEventListener('click', openMenu);
+    closeMenuBtn.addEventListener('click', closeMenu);
+    menuOverlay.addEventListener('click', closeMenu);
+
+    // FAQ Accordion Click Logic
+    document.querySelectorAll('.faq-item button').forEach(button => {
+        button.addEventListener('click', () => {
+            const currentItem = button.parentElement;
+            const isActive = currentItem.classList.contains('active');
+            
+            // Optional: Close other open accordion tabs automatically
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            if (!isActive) {
+                currentItem.classList.add('active');
+            }
+        });
+    });
+</script>
+
+</body>  
+          </html>
+          
