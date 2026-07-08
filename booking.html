@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Stay - Bafana Hotel Kaduna</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="tail-container text-gray-800">
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-x-3">
+                <div class="w-10 h-10 bg-rose-700 rounded-full flex items-center justify-center text-white font-bold text-2xl">B</div>
+                <div>
+                    <span class="heading-font text-3xl font-bold">Bafana</span>
+                    <span class="text-sm block -mt-1 text-rose-600">HOTEL</span>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                <a href="index.html" class="hover:text-rose-700">Home</a>
+                <a href="rooms.html" class="hover:text-rose-700">Rooms</a>
+                <a href="booking.html" class="text-rose-700 font-semibold">Booking</a>
+                <a href="contact.html" class="hover:text-rose-700">Contact</a>
+            </div>
+
+            <a href="index.html" class="text-rose-700 font-medium">← Back to Home</a>
+        </div>
+    </nav>
+
+    <div class="pt-24"></div>
+
+    <!-- BOOKING SECTION -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-6">
+            <h1 class="heading-font text-5xl font-bold text-center mb-4">Make a Reservation</h1>
+            <p class="text-center text-gray-600 mb-12">Fill the form below and we’ll confirm your booking shortly</p>
+
+            <form id="bookingForm" onsubmit="handleBooking(event)" class="bg-white rounded-3xl shadow-2xl p-10">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Check-in Date</label>
+                        <input type="date" id="checkin" required class="w-full border border-gray-300 rounded-2xl px-5 py-4 focus:outline-none focus:border-rose-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Check-out Date</label>
+                        <input type="date" id="checkout" required class="w-full border border-gray-300 rounded-2xl px-5 py-4 focus:outline-none focus:border-rose-500">
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <label class="block text-sm font-medium mb-2">Full Name</label>
+                    <input type="text" id="name" placeholder="John Doe" required class="w-full border border-gray-300 rounded-2xl px-5 py-4">
+                </div>
+
+                <div class="mt-6 grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Email Address</label>
+                        <input type="email" id="email" placeholder="you@email.com" required class="w-full border border-gray-300 rounded-2xl px-5 py-4">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="+234 801 234 5678" required class="w-full border border-gray-300 rounded-2xl px-5 py-4">
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <label class="block text-sm font-medium mb-2">Room Type</label>
+                    <select id="roomtype" class="w-full border border-gray-300 rounded-2xl px-5 py-4">
+                        <option value="">Select Room Type</option>
+                        <option value="Deluxe Room">Deluxe Room - ₦45,000</option>
+                        <option value="Executive Suite">Executive Suite - ₦85,000</option>
+                        <option value="Family Suite">Family Suite - ₦110,000</option>
+                    </select>
+                </div>
+
+                <div class="mt-6">
+                    <label class="block text-sm font-medium mb-2">Special Requests (Optional)</label>
+                    <textarea id="requests" rows="4" class="w-full border border-gray-300 rounded-3xl px-5 py-4" placeholder="Any special requests..."></textarea>
+                </div>
+
+                <button type="submit" 
+                        class="mt-10 w-full bg-rose-700 hover:bg-rose-800 text-white py-6 rounded-3xl text-xl font-semibold transition-all">
+                    CONFIRM RESERVATION
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
