@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms & Suites - Bafana Hotel Kaduna</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="tail-container text-gray-800">
+
+    <!-- NAVBAR (Same as index.html) -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-x-3">
+                <div class="w-10 h-10 bg-rose-700 rounded-full flex items-center justify-center text-white font-bold text-2xl">B</div>
+                <div>
+                    <span class="heading-font text-3xl font-bold">Bafana</span>
+                    <span class="text-sm block -mt-1 text-rose-600">HOTEL</span>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                <a href="index.html" class="hover:text-rose-700">Home</a>
+                <a href="about.html" class="hover:text-rose-700">About</a>
+                <a href="rooms.html" class="text-rose-700 font-semibold">Rooms</a>
+                <a href="facilities.html" class="hover:text-rose-700">Facilities</a>
+                <a href="restaurant.html" class="hover:text-rose-700">Restaurant</a>
+                <a href="gallery.html" class="hover:text-rose-700">Gallery</a>
+                <a href="booking.html" class="hover:text-rose-700">Booking</a>
+                <a href="contact.html" class="hover:text-rose-700">Contact</a>
+                <a href="faq.html" class="hover:text-rose-700">FAQ</a>
+            </div>
+
+            <a href="booking.html" class="bg-rose-700 text-white px-6 py-3 rounded-2xl hover:bg-rose-800 font-semibold">
+                Book Now
+            </a>
+        </div>
+    </nav>
+
+    <div class="pt-24"></div>
+
+    <!-- ROOMS HERO -->
+    <section class="bg-gray-900 text-white py-20">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h1 class="heading-font text-6xl font-bold mb-4">Our Rooms & Suites</h1>
+            <p class="text-xl text-gray-300">Comfort, elegance, and unforgettable experiences</p>
+        </div>
+    </section>
+
+    <!-- FEATURED ROOMS -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-10">
+
+                <!-- Deluxe Room -->
+                <div id="deluxe" class="room-card bg-white rounded-3xl overflow-hidden shadow-xl">
+                    <img src="https://picsum.photos/id/201/800/600" class="w-full h-72 object-cover">
+                    <div class="p-8">
+                        <h3 class="text-3xl font-semibold mb-2">Deluxe Room</h3>
+                        <p class="text-rose-700 text-3xl font-bold">₦45,000 <span class="text-base font-normal text-gray-500">/ night</span></p>
+                        <ul class="mt-6 space-y-3">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-500"></i> King Bed</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-500"></i> Free Wi-Fi</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-500"></i> Air Conditioning</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-500"></i> City View</li>
+                        </ul>
+                        <a href="booking.html" class="mt-10 block w-full text-center py-4 bg-rose-700 text-white rounded-2xl hover:bg-rose-800 font-semibold">
+                            Book This Room
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Executive Suite -->
+                <div id="executive" class="room-card bg-white rounded-3xl overflow-hidden shadow-xl">
+                    <img src="https://picsum.photos/id/251/800/600" class="w-full h-72 object-cover">
+                    <div class="p-8">
+                        <h3 class="text-3xl font-semibold mb-2">Executive Suite</h3>
+                        <p class="text-rose-700 text-3xl font-bold">₦85,000 <span class="text-base font-normal text-gray-500">/ night</span></p>
+                        <ul class="mt-6 space-y-3">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-500"></i> Separate Living Area</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-500"></i> Balcony</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-500"></i> Mini Bar</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-500"></i> Jacuzzi</li>
+                        </ul>
+                        <a href="booking.html" class="mt-10 block w-full text-center py-4 bg-rose-700 text-white rounded-2xl hover:bg-rose-800 font-semibold">
+                            Book This Room
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Family Suite -->
+                <div id="family" class="room-card bg-white rounded-3xl overflow-hidden shadow-xl">
+                    <img src="https://picsum.photos/id/316/800/600" class="w-full h-72 object-cover">
+                    <div class="p-8">
+                        <h3 class="text-3xl font-semibold mb-2">Family Suite</h3>
+                        <p class="text-rose-700 text-3xl font-bold">₦110,000 <span class="text-base font-normal text-gray-500">/ night</span></p>
+                        <ul class="mt-6 space-y-3">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-500"></i> 2 Bedrooms</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-500"></i> Living Room</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-500"></i> Kitchenette</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-500"></i> Kids Area</li>
+                        </ul>
+                        <a href="booking.html" class="mt-10 block w-full text-center py-4 bg-rose-700 text-white rounded-2xl hover:bg-rose-800 font-semibold">
+                            Book This Room
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
