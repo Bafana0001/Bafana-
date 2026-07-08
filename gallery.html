@@ -1,0 +1,333 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta name="description" content="Bafana Hotel Kaduna - Photo gallery showcasing luxury rooms, fine dining, and facilities.">  
+    <title>Gallery | Bafana Hotel Kaduna</title>  
+    <script src="https://cdn.tailwindcss.com"></script>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">  
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">  
+    <style>  
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap');  
+          
+        .heading-font {  
+            font-family: 'Playfair Display', serif;  
+        }
+
+        /* Pure Liquid Glass Styling */
+        .liquid-glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px) saturate(120%);
+            -webkit-backdrop-filter: blur(16px) saturate(120%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .liquid-glass-hover:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(212, 175, 55, 0.3); /* Soft subtle gold rim shift */
+            box-shadow: 0 12px 40px 0 rgba(212, 175, 55, 0.1);
+        }
+
+        /* Liquid Gold Typography & Effects */
+        .liquid-gold-text {
+            background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 400% 400%;
+            animation: goldFlow 12s ease infinite;
+        }
+
+        /* Liquid Gold Borders & Accents */
+        .liquid-gold-border {
+            border-image: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #AA771C) 1;
+        }
+
+        .liquid-gold-bg {
+            background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 30%, #B38728 70%, #AA771C 100%);
+            background-size: 300% 300%;
+            animation: goldFlow 8s ease infinite;
+        }
+
+        @keyframes goldFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>  
+<body class="bg-[#0b0b0b] text-gray-200 antialiased">  
+
+<nav id="navbar" class="fixed top-0 w-full z-30 bg-[#0b0b0b]/80 backdrop-blur-md border-b border-white/5 transition-all duration-300">  
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">  
+        <div class="flex items-center gap-x-3">  
+            <div class="w-10 h-10 liquid-gold-bg rounded-full flex items-center justify-center text-black font-bold text-2xl shadow-lg">B</div>  
+            <div>  
+                <span class="heading-font text-3xl font-bold tracking-wide text-white">Bafana</span>  
+                <span class="text-xs block tracking-widest -mt-1 liquid-gold-text font-semibold">INTERNATIONAL</span>  
+            </div>  
+        </div>  
+
+        <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">  
+            <a href="index.html" class="hover:text-amber-400 transition">Home</a>  
+            <a href="about.html" class="hover:text-amber-400 transition">About</a>  
+            <a href="rooms.html" class="hover:text-amber-400 transition">Rooms</a>  
+            <a href="facilities.html" class="hover:text-amber-400 transition">Facilities</a>  
+            <a href="restaurant.html" class="hover:text-amber-400 transition">Restaurant</a>  
+            <a href="gallery.html" class="liquid-gold-text font-semibold">Gallery</a>  
+            <a href="booking.html" class="hover:text-amber-400 transition">Booking</a>  
+            <a href="contact.html" class="hover:text-amber-400 transition">Contact</a>  
+        </div>  
+
+        <div class="flex items-center gap-4">
+            <button onclick="window.location.href='booking.html'"   
+                    class="hidden md:block liquid-gold-bg text-black px-6 py-3 rounded-xl font-bold tracking-wide hover:brightness-110 transition duration-300 shadow-xl">  
+                Book Now  
+            </button> 
+            <button id="openMenu" class="md:hidden text-2xl text-white focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div> 
+    </div>  
+</nav>  
+
+<div id="menuOverlay" class="fixed inset-0 bg-black/70 backdrop-blur-md hidden z-40 transition-opacity"></div>  
+
+<div id="sideMenu" class="fixed top-0 right-0 h-full w-4/5 md:w-1/2 bg-[#0d0d0d] border-l border-white/10 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50">  
+    <div class="flex justify-end p-6">  
+        <button id="closeMenu" class="text-4xl text-gray-400 hover:text-amber-400">  
+            &times;  
+        </button>  
+    </div>  
+
+    <nav class="px-8">  
+        <ul id="dynamicMenuLinks" class="space-y-6 text-xl font-semibold">  
+            <li><a href="index.html" class="hover:text-amber-400 transition block">Home</a></li>  
+            <li><a href="about.html" class="hover:text-amber-400 transition block">About</a></li>  
+            <li><a href="rooms.html" class="hover:text-amber-400 transition block">Rooms</a></li>  
+            <li><a href="facilities.html" class="hover:text-amber-400 transition block">Facilities</a></li>  
+            <li><a href="restaurant.html" class="hover:text-amber-400 transition block">Restaurant</a></li>  
+            <li><a href="gallery.html" class="liquid-gold-text block">Gallery</a></li>  
+            <li><a href="booking.html" class="hover:text-amber-400 transition block">Booking</a></li>  
+            <li><a href="contact.html" class="hover:text-amber-400 transition block">Contact</a></li>  
+        </ul>  
+
+        <div class="mt-10">  
+            <a href="https://wa.me/xxxxxx" target="_blank" class="block text-center bg-green-600 hover:bg-green-500 text-white font-bold py-3 rounded-xl transition shadow-lg">  
+                🟢 WhatsApp  
+            </a>  
+        </div>  
+    </nav>
+</div>
+
+<section class="pt-40 pb-12 text-center relative overflow-hidden">
+    <div class="absolute -top-40 left-1/2 transform -translate-x-1/2 w-[600px] h-[600px] bg-amber-500/5 rounded-full blur-[160px] pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <span class="liquid-gold-text font-semibold tracking-widest uppercase text-sm block mb-3">Visual Splendor</span>
+        <h1 class="heading-font text-5xl md:text-6xl font-bold tracking-tight text-white mb-4">
+            Our Visual Gallery
+        </h1>
+        <p class="text-gray-400 max-w-xl mx-auto text-lg">
+            Immerse yourself in the sleek architecture, refined spaces, and golden luxury defining the Bafana Hotel experience.
+        </p>
+    </div>
+</section>
+
+<section class="pb-32">
+    <div class="max-w-7xl mx-auto px-6">
+        
+        <div class="flex flex-wrap justify-center gap-3 mb-16 max-w-2xl mx-auto p-2 rounded-2xl liquid-glass">
+            <button class="px-6 py-2.5 rounded-xl font-medium text-sm transition liquid-gold-bg text-black shadow-md">All Spaces</button>
+            <button class="px-6 py-2.5 rounded-xl font-medium text-sm transition text-gray-400 hover:text-white hover:bg-white/5">Suites</button>
+            <button class="px-6 py-2.5 rounded-xl font-medium text-sm transition text-gray-400 hover:text-white hover:bg-white/5">Dining</button>
+            <button class="px-6 py-2.5 rounded-xl font-medium text-sm transition text-gray-400 hover:text-white hover:bg-white/5">Wellness</button>
+        </div>
+
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+            
+            <div class="group relative rounded-2xl overflow-hidden liquid-glass liquid-glass-hover p-3 transition-all duration-300">
+                <div class="relative overflow-hidden rounded-xl h-64">
+                    <img src="https://picsum.photos/id/429/800/600" alt="Executive Suite" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 filter brightness-90 group-hover:brightness-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80"></div>
+                </div>
+                <div class="p-4 flex justify-between items-center">
+                    <div>
+                        <span class="text-xs tracking-wider liquid-gold-text font-medium uppercase block mb-1">Luxury Accommodation</span>
+                        <h3 class="font-semibold text-lg text-white">Executive Master Suite</h3>
+                    </div>
+                    <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-amber-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i class="fas fa-expand text-xs"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative rounded-2xl overflow-hidden liquid-glass liquid-glass-hover p-3 transition-all duration-300">
+                <div class="relative overflow-hidden rounded-xl h-64">
+                    <img src="https://picsum.photos/id/292/800/600" alt="Gourmet Restaurant" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 filter brightness-90 group-hover:brightness-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80"></div>
+                </div>
+                <div class="p-4 flex justify-between items-center">
+                    <div>
+                        <span class="text-xs tracking-wider liquid-gold-text font-medium uppercase block mb-1">Fine Dining</span>
+                        <h3 class="font-semibold text-lg text-white">Bafana Fine Restaurant</h3>
+                    </div>
+                    <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-amber-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i class="fas fa-expand text-xs"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative rounded-2xl overflow-hidden liquid-glass liquid-glass-hover p-3 transition-all duration-300">
+                <div class="relative overflow-hidden rounded-xl h-64">
+                    <img src="https://picsum.photos/id/164/800/600" alt="Swimming Pool" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 filter brightness-90 group-hover:brightness-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80"></div>
+                </div>
+                <div class="p-4 flex justify-between items-center">
+                    <div>
+                        <span class="text-xs tracking-wider liquid-gold-text font-medium uppercase block mb-1">Relaxation & Pools</span>
+                        <h3 class="font-semibold text-lg text-white">Oasis Swimming Pool</h3>
+                    </div>
+                    <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-amber-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i class="fas fa-expand text-xs"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative rounded-2xl overflow-hidden liquid-glass liquid-glass-hover p-3 transition-all duration-300">
+                <div class="relative overflow-hidden rounded-xl h-64">
+                    <img src="https://picsum.photos/id/433/800/600" alt="Lounge Area" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 filter brightness-90 group-hover:brightness-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80"></div>
+                </div>
+                <div class="p-4 flex justify-between items-center">
+                    <div>
+                        <span class="text-xs tracking-wider liquid-gold-text font-medium uppercase block mb-1">Social Lounge</span>
+                        <h3 class="font-semibold text-lg text-white">Premium Cigar & Gold Bar</h3>
+                    </div>
+                    <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-amber-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i class="fas fa-expand text-xs"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative rounded-2xl overflow-hidden liquid-glass liquid-glass-hover p-3 transition-all duration-300">
+                <div class="relative overflow-hidden rounded-xl h-64">
+                    <img src="https://picsum.photos/id/221/800/600" alt="Conference Room" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 filter brightness-90 group-hover:brightness-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80"></div>
+                </div>
+                <div class="p-4 flex justify-between items-center">
+                    <div>
+                        <span class="text-xs tracking-wider liquid-gold-text font-medium uppercase block mb-1">Corporate Spaces</span>
+                        <h3 class="font-semibold text-lg text-white">Smart Conference Hall</h3>
+                    </div>
+                    <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-amber-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i class="fas fa-expand text-xs"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative rounded-2xl overflow-hidden liquid-glass liquid-glass-hover p-3 transition-all duration-300">
+                <div class="relative overflow-hidden rounded-xl h-64">
+                    <img src="https://picsum.photos/id/1015/800/600" alt="Hotel Main Exterior" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 filter brightness-90 group-hover:brightness-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80"></div>
+                </div>
+                <div class="p-4 flex justify-between items-center">
+                    <div>
+                        <span class="text-xs tracking-wider liquid-gold-text font-medium uppercase block mb-1">Architecture</span>
+                        <h3 class="font-semibold text-lg text-white">Main Entrance Facade</h3>
+                    </div>
+                    <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-amber-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i class="fas fa-expand text-xs"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-24 relative overflow-hidden border-t border-white/5">
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+        <div class="p-12 md:p-16 rounded-3xl liquid-glass relative overflow-hidden">
+            <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-amber-500/10 rounded-full blur-[80px] pointer-events-none"></div>
+            <h2 class="heading-font text-4xl font-bold text-white mb-4">Eager to Live the Experience?</h2>
+            <p class="text-gray-400 mb-8 max-w-lg mx-auto">Don't just view luxury from afar. Reserve your premium suite now and enjoy true premium services in Kaduna.</p>
+            <a href="booking.html" class="inline-block liquid-gold-bg text-black px-12 py-4 rounded-xl text-lg font-bold shadow-xl hover:scale-105 transition-all duration-300">
+                Secure Your Reservation
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-black text-gray-400 py-16 border-t border-white/5">  
+    <div class="max-w-7xl mx-auto px-6">  
+        <div class="grid md:grid-cols-4 gap-10">  
+            <div>  
+                <div class="flex items-center gap-x-3 mb-6">  
+                    <div class="w-10 h-10 liquid-gold-bg rounded-full flex items-center justify-center text-black font-bold text-2xl">B</div>  
+                    <div>  
+                        <span class="heading-font text-3xl font-bold text-white">Bafana</span>  
+                        <span class="text-xs block -mt-1 liquid-gold-text font-semibold tracking-wider">INTERNATIONAL</span>  
+                    </div>  
+                </div>  
+                <p class="text-sm">Luxury hospitality in the heart of Kaduna, Nigeria.</p>  
+            </div>  
+              
+            <div>  
+                <h4 class="font-semibold text-white mb-4">Quick Links</h4>  
+                <ul class="space-y-2 text-sm">  
+                    <li><a href="rooms.html" class="hover:text-amber-400 transition">Rooms & Suites</a></li>  
+                    <li><a href="facilities.html" class="hover:text-amber-400 transition">Facilities</a></li>  
+                    <li><a href="restaurant.html" class="hover:text-amber-400 transition">Dining</a></li>  
+                    <li><a href="gallery.html" class="hover:text-amber-400 transition">Gallery</a></li>  
+                </ul>  
+            </div>  
+              
+            <div>  
+                <h4 class="font-semibold text-white mb-4">Contact</h4>  
+                <ul class="space-y-2 text-sm">  
+                    <li>CCJ3+MVR, Abuja - Kaduna - Zaria Express Way</li>  
+                    <li>Goni Gora, Kaduna 800104</li>  
+                    <li class="mt-4">+234 XXX XXX XXXX</li>  
+                    <li>info@bafanahotel.com</li>  
+                </ul>  
+            </div>  
+              
+            <div>  
+                <h4 class="font-semibold text-white mb-4">Follow Us</h4>  
+                <div class="flex gap-4 text-xl">  
+                    <a href="#" class="hover:text-amber-400 transition"><i class="fab fa-instagram"></i></a>  
+                    <a href="#" class="hover:text-amber-400 transition"><i class="fab fa-facebook"></i></a>  
+                    <a href="#" class="hover:text-amber-400 transition"><i class="fab fa-twitter"></i></a>  
+                </div>  
+            </div>  
+        </div>  
+          
+        <div class="border-t border-white/5 mt-12 pt-8 text-center text-gray-600 text-sm">  
+            © 2026 Bafana Hotel International. All Rights Reserved.  
+        </div>  
+    </div>  
+</footer>  
+
+<script>  
+    window.addEventListener('scroll', () => {  
+        const navbar = document.getElementById('navbar');  
+        if (window.scrollY > 50) {  
+            navbar.classList.add('bg-[#0b0b0b]/95', 'shadow-2xl');  
+        } else {  
+            navbar.classList.remove('bg-[#0b0b0b]/95', 'shadow-2xl');  
+        }  
+    });  
+
+    const openMenuBtn = document.getElementById('openMenu');
+    const closeMenuBtn = document.getElementById('closeMenu');
+    const sideMenu = document.getElementById('sideMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+
+    function openMenu() {
+        sideMenu.classList.remove('translate-x-full');
+        menuOverlay.classList.remove('hidden');
+    }
+
+    function closeMenu() {
+        
