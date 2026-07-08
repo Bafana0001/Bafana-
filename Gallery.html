@@ -7,13 +7,12 @@
     <style>
         body {
             margin: 0;
-            padding: 120px 40px 40px 40px; /* Added top padding to clear the fixed navbar */
+            padding: 120px 40px 40px 40px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             font-family: sans-serif;
         }
 
-        /* Glassmorphism Navigation Bar */
         .navbar {
             position: fixed;
             top: 0;
@@ -44,7 +43,6 @@
             text-decoration: none;
         }
 
-        /* Hamburger Button Styles */
         .hamburger-btn {
             background: none;
             border: none;
@@ -65,7 +63,6 @@
             transition: all 0.3s ease;
         }
 
-        /* Smooth Menu Overlay */
         .menu-overlay {
             position: fixed;
             inset: 0;
@@ -83,7 +80,6 @@
             pointer-events: auto;
         }
 
-        /* Glass Slide Menu */
         .side-menu {
             position: fixed;
             top: 0;
@@ -95,7 +91,6 @@
             -webkit-backdrop-filter: blur(20px);
             border-left: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: -10px 0 32px rgba(31, 38, 135, 0.15);
-            transform: translate3x(100%);
             transform: translateX(100%);
             z-index: 50;
             transition: transform 0.3s ease-in-out;
@@ -134,7 +129,6 @@
             cursor: pointer;
         }
 
-        /* Gallery Layout Styles */
         .gallery-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -181,7 +175,6 @@
             margin-bottom: 30px;
         }
 
-        /* Disable scrolling while menu is open */
         .overflow-hidden {
             overflow: hidden;
         }
@@ -190,7 +183,7 @@
 <body>
 
     <nav id="navbar" class="navbar">
-        <a href="#" class="nav-logo">GlassGallery</a>
+        <a href="index.html" class="nav-logo">GlassGallery</a>
         <button id="openMenu" class="hamburger-btn">
             <span></span>
             <span></span>
@@ -202,11 +195,12 @@
 
     <div id="sideMenu" class="side-menu">
         <button id="closeMenu" class="close-btn">&times;</button>
-        <a href="#">Home</a>
-        <a href="#">Exhibitions</a>
-        <a href="#">Artists</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="gallery.html" style="font-weight: bold;">Gallery</a>
+        <a href="booking.html">Booking</a>
+        <a href="contact.html">Contact</a>
     </div>
 
     <h2>Liquid Glass Gallery</h2>
@@ -221,11 +215,6 @@
     </div>
 
     <script>
-        // ===============================
-        // UI Interaction Logic
-        // ===============================
-        
-        // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
             if (navbar) {
@@ -237,7 +226,6 @@
             }
         });
 
-        // Mobile Menu Toggle Logic
         const openMenuBtn = document.getElementById('openMenu');
         const closeMenuBtn = document.getElementById('closeMenu');
         const sideMenu = document.getElementById('sideMenu');
@@ -255,15 +243,11 @@
             document.body.classList.remove('overflow-hidden');
         }
 
-        // ===============================
-        // Initialization
-        // ===============================
         window.onload = function () {
             if (openMenuBtn) openMenuBtn.addEventListener('click', openMenu);
             if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMenu);
             if (menuOverlay) menuOverlay.addEventListener('click', closeMenu);
 
-            // Auto-close menu when a side link is clicked
             const sideMenuLinks = document.querySelectorAll('#sideMenu a');
             sideMenuLinks.forEach(link => {
                 link.addEventListener('click', closeMenu);
