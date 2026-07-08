@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bafana Hotel - Experience luxury, comfort, and warm African hospitality in the heart of South Africa. Book your stay today.">
+    <meta name="keywords" content="Bafana Hotel, hotel South Africa, luxury accommodation, hotel rooms, Johannesburg hotel">
+    <meta name="author" content="Bafana Hotel">
+    <title>Bafana Hotel | Luxury Stays in South Africa</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="tail-container text-gray-800">
+    <!-- NAVBAR -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-white">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-x-3">
+                <div class="w-10 h-10 bg-rose-700 rounded-full flex items-center justify-center text-white font-bold text-2xl">B</div>
+                <div>
+                    <span class="heading-font text-3xl font-bold tracking-tight">Bafana</span>
+                    <span class="text-sm block -mt-1 text-rose-600">HOTEL</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                <a href="#home" class="hover:text-rose-700 transition-colors nav-link">Home</a>
+                <a href="#rooms" class="hover:text-rose-700 transition-colors nav-link">Rooms</a>
+                <a href="#facilities" class="hover:text-rose-700 transition-colors nav-link">Facilities</a>
+                <a href="#gallery" class="hover:text-rose-700 transition-colors nav-link">Gallery</a>
+                <a href="#contact" class="hover:text-rose-700 transition-colors nav-link">Contact</a>
+            </div>
+            
+            <div class="flex items-center gap-x-4">
+                <a href="https://wa.me/27821234567" target="_blank" 
+                   class="flex items-center gap-x-2 bg-green-600 text-white px-5 py-3 rounded-xl hover:bg-green-700 transition-all text-sm font-semibold">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <button onclick="showBookingModal()" 
+                        class="bg-rose-700 text-white px-8 py-3 rounded-2xl hover:bg-rose-800 transition-all font-semibold text-sm">
+                    BOOK NOW
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- All other sections remain exactly the same (Hero, About, Rooms, Facilities, Gallery, Testimonials, Contact, Footer, Modal) -->
+    <!-- (Content omitted here for brevity — copy everything from your original code between <body> and </body>, except the <style> and <script> tags) -->
+
+    <!-- BOOKING MODAL -->
+    <div id="bookingModal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-[100]">
+        <div class="bg-white text-gray-900 max-w-lg w-full mx-4 rounded-3xl p-10">
+            <div class="flex justify-between items-center mb-8">
+                <h3 class="text-3xl font-semibold">Quick Booking</h3>
+                <button onclick="hideBookingModal()" class="text-4xl text-gray-300 hover:text-gray-700">×</button>
+            </div>
+            <p class="text-gray-600">Our team will get back to you within minutes during business hours.</p>
+            <button onclick="hideBookingModal()" 
+                    class="mt-12 w-full py-6 bg-rose-700 text-white rounded-3xl font-semibold">
+                I'll use the form below instead
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
