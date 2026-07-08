@@ -7,12 +7,134 @@
     <style>
         body {
             margin: 0;
-            padding: 40px;
+            padding: 120px 40px 40px 40px; /* Added top padding to clear the fixed navbar */
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             font-family: sans-serif;
         }
 
+        /* Glassmorphism Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+        }
+
+        .nav-logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* Hamburger Button Styles */
+        .hamburger-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            padding: 10px;
+            z-index: 110;
+        }
+
+        .hamburger-btn span {
+            display: block;
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* Smooth Menu Overlay */
+        .menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            opacity: 0;
+            pointer-events: none;
+            z-index: 40;
+            transition: opacity 0.3s ease;
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Glass Slide Menu */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 300px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-left: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: -10px 0 32px rgba(31, 38, 135, 0.15);
+            transform: translate3x(100%);
+            transform: translateX(100%);
+            z-index: 50;
+            transition: transform 0.3s ease-in-out;
+            padding: 100px 30px 30px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .side-menu.active {
+            transform: translateX(0);
+        }
+
+        .side-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 500;
+            padding: 10px;
+            border-radius: 10px;
+            transition: background 0.2s ease;
+        }
+
+        .side-menu a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 30px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+        }
+
+        /* Gallery Layout Styles */
         .gallery-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -22,7 +144,6 @@
         }
 
         .glass-card {
-            /* Liquid Glass Effect */
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
@@ -30,8 +151,6 @@
             border-radius: 20px;
             padding: 15px;
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            
-            /* Content Layout */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -59,10 +178,36 @@
             text-align: center;
             color: white;
             text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+
+        /* Disable scrolling while menu is open */
+        .overflow-hidden {
+            overflow: hidden;
         }
     </style>
 </head>
 <body>
+
+    <nav id="navbar" class="navbar">
+        <a href="#" class="nav-logo">GlassGallery</a>
+        <button id="openMenu" class="hamburger-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <div id="menuOverlay" class="menu-overlay"></div>
+
+    <div id="sideMenu" class="side-menu">
+        <button id="closeMenu" class="close-btn">&times;</button>
+        <a href="#">Home</a>
+        <a href="#">Exhibitions</a>
+        <a href="#">Artists</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
 
     <h2>Liquid Glass Gallery</h2>
 
@@ -75,5 +220,55 @@
         <div class="glass-card"><div class="image-placeholder">IMAGE 6</div></div>
     </div>
 
+    <script>
+        // ===============================
+        // UI Interaction Logic
+        // ===============================
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (navbar) {
+                if (window.scrollY > 40) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            }
+        });
+
+        // Mobile Menu Toggle Logic
+        const openMenuBtn = document.getElementById('openMenu');
+        const closeMenuBtn = document.getElementById('closeMenu');
+        const sideMenu = document.getElementById('sideMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+
+        function openMenu() {
+            if (sideMenu) sideMenu.classList.add('active');
+            if (menuOverlay) menuOverlay.classList.add('active');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeMenu() {
+            if (sideMenu) sideMenu.classList.remove('active');
+            if (menuOverlay) menuOverlay.classList.remove('active');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        // ===============================
+        // Initialization
+        // ===============================
+        window.onload = function () {
+            if (openMenuBtn) openMenuBtn.addEventListener('click', openMenu);
+            if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMenu);
+            if (menuOverlay) menuOverlay.addEventListener('click', closeMenu);
+
+            // Auto-close menu when a side link is clicked
+            const sideMenuLinks = document.querySelectorAll('#sideMenu a');
+            sideMenuLinks.forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+        };
+    </script>
 </body>
 </html>
