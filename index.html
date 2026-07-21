@@ -8,9 +8,7 @@
     
     <script src="https://cdn.tailwindcss.com"></script>  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">  
-    
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">  
-    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>  
@@ -23,148 +21,176 @@
             font-family: 'Playfair Display', serif;  
         }
 
-        /* Glassmorphism Styles */
+        /* Glassmorphism Styles for Light Theme */
         .glass-card {
-            background: rgba(255, 255, 255, 0.07);
+            background: rgba(15, 23, 42, 0.03);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(15, 23, 42, 0.1);
         }
 
-        /* Custom Neon Badge Accent */
-        .neon-glow {
-            box-shadow: 0 0 20px rgba(0, 191, 255, 0.4);
+        /* 4-Image Auto Slider Animation */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
         }
 
-        /* Amenities Background */
-        .amenities-bg {  
-            background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('IMG_20260721_115346_979.jpg');  
-            background-size: cover;  
-            background-position: center;  
-        }  
+        .slider-wrapper {
+            display: flex;
+            width: 400%;
+            height: 100%;
+            animation: slide 16s infinite;
+        }
+
+        .slider-wrapper img {
+            width: 25%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0%); }
+            20% { transform: translateX(0%); }
+            25% { transform: translateX(-25%); }
+            45% { transform: translateX(-25%); }
+            50% { transform: translateX(-50%); }
+            70% { transform: translateX(-50%); }
+            75% { transform: translateX(-75%); }
+            95% { transform: translateX(-75%); }
+            100% { transform: translateX(0%); }
+        }
     </style>
 </head>  
-<body class="bg-slate-900 text-gray-100 overflow-x-hidden">  
+<body class="bg-white text-slate-900 overflow-x-hidden">  
 
-<nav id="navbar" class="fixed top-0 w-full z-40 bg-slate-900/80 backdrop-blur-md border-b border-white/10 transition-all duration-300">  
+<nav id="navbar" class="fixed top-0 w-full z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 transition-all duration-300">  
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">  
         <div class="flex items-center gap-x-3">  
-            <div class="w-10 h-10 bg-rose-700 rounded-full flex items-center justify-center text-white font-bold text-2xl shadow-lg shadow-rose-700/50">B</div>  
+            <div class="w-10 h-10 bg-slate-900 rounded-full flex items-center justify-center text-amber-500 font-bold text-2xl shadow-lg">B</div>  
             <div>  
-                <span class="heading-font text-2xl font-bold tracking-wide text-white">Bafana</span>  
-                <span class="text-[10px] block -mt-1 text-rose-500 font-semibold tracking-widest">Hotel</span>  
+                <span class="heading-font text-2xl font-bold tracking-wide text-slate-900">Bafana</span>  
+                <span class="text-[10px] block -mt-1 text-amber-600 font-semibold tracking-widest">Hotel</span>  
             </div>  
         </div>  
 
-        <div class="hidden md:flex items-center gap-x-8 text-sm font-medium text-gray-300">  
-            <a href="index.html" class="hover:text-rose-500 transition">Home</a>  
-            <a href="about.html" class="hover:text-rose-500 transition">About</a>  
-            <a href="rooms.html" class="hover:text-rose-500 transition">Rooms</a>  
-            <a href="facilities.html" class="hover:text-rose-500 transition">Facilities</a>  
-            <a href="restaurant.html" class="hover:text-rose-500 transition">Restaurant</a>  
-            <a href="gallery.html" class="hover:text-rose-500 transition">Gallery</a>  
-            <a href="booking.html" class="hover:text-rose-500 transition">Booking</a>  
-            <a href="contact.html" class="hover:text-rose-500 transition">Contact</a>  
+        <div class="hidden md:flex items-center gap-x-8 text-sm font-medium text-slate-700">  
+            <a href="index.html" class="hover:text-amber-600 transition">Home</a>  
+            <a href="about.html" class="hover:text-amber-600 transition">About</a>  
+            <a href="rooms.html" class="hover:text-amber-600 transition">Rooms</a>  
+            <a href="facilities.html" class="hover:text-amber-600 transition">Facilities</a>  
+            <a href="restaurant.html" class="hover:text-amber-600 transition">Restaurant</a>  
+            <a href="gallery.html" class="hover:text-amber-600 transition">Gallery</a>  
+            <a href="booking.html" class="hover:text-amber-600 transition">Booking</a>  
+            <a href="contact.html" class="hover:text-amber-600 transition">Contact</a>  
         </div>  
 
         <div class="flex items-center gap-4">
             <button onclick="window.location.href='booking.html'"   
-                    class="hidden md:block bg-rose-700 text-white px-6 py-2.5 rounded-full hover:bg-rose-600 font-semibold transition shadow-lg shadow-rose-700/30 hover:scale-105 active:scale-95">  
+                    class="hidden md:block bg-slate-900 text-amber-500 hover:text-white px-6 py-2.5 rounded-full hover:bg-slate-800 font-semibold transition shadow-md hover:scale-105 active:scale-95">  
                 Book Now  
             </button> 
-            <button id="openMenu" class="md:hidden text-2xl text-white focus:outline-none">
+            <button id="openMenu" class="md:hidden text-2xl text-slate-900 focus:outline-none">
                 <i class="fas fa-bars"></i>
             </button>
         </div> 
     </div>  
 </nav>  
 
-<div id="menuOverlay" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden z-40 transition-opacity"></div>  
+<div id="menuOverlay" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm hidden z-40 transition-opacity"></div>  
 
-<div id="sideMenu" class="fixed top-0 right-0 h-full w-4/5 md:w-1/2 bg-slate-900 border-l border-white/10 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50">  
+<div id="sideMenu" class="fixed top-0 right-0 h-full w-4/5 md:w-1/2 bg-white border-l border-slate-200 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50">  
     <div class="flex justify-end p-6">  
-        <button id="closeMenu" class="text-3xl text-gray-300 hover:text-rose-500">  
+        <button id="closeMenu" class="text-3xl text-slate-600 hover:text-amber-600">  
             &times;  
         </button>  
     </div>  
 
     <nav class="px-8">  
-        <ul id="dynamicMenuLinks" class="space-y-5 text-lg font-medium text-gray-200">  
-            <li><a href="index.html" class="hover:text-rose-500 transition">Home</a></li>  
-            <li><a href="about.html" class="hover:text-rose-500 transition">About</a></li>  
-            <li><a href="rooms.html" class="hover:text-rose-500 transition">Rooms</a></li>  
-            <li><a href="facilities.html" class="hover:text-rose-500 transition">Facilities</a></li>  
-            <li><a href="restaurant.html" class="hover:text-rose-500 transition">Restaurant</a></li>  
-            <li><a href="gallery.html" class="hover:text-rose-500 transition">Gallery</a></li>  
-            <li><a href="booking.html" class="hover:text-rose-500 transition">Booking</a></li>  
-            <li><a href="contact.html" class="hover:text-rose-500 transition">Contact</a></li>  
-            <li><a href="faq.html" class="hover:text-rose-500 transition">FAQ</a></li>  
+        <ul id="dynamicMenuLinks" class="space-y-5 text-lg font-medium text-slate-800">  
+            <li><a href="index.html" class="hover:text-amber-600 transition">Home</a></li>  
+            <li><a href="about.html" class="hover:text-amber-600 transition">About</a></li>  
+            <li><a href="rooms.html" class="hover:text-amber-600 transition">Rooms</a></li>  
+            <li><a href="facilities.html" class="hover:text-amber-600 transition">Facilities</a></li>  
+            <li><a href="restaurant.html" class="hover:text-amber-600 transition">Restaurant</a></li>  
+            <li><a href="gallery.html" class="hover:text-amber-600 transition">Gallery</a></li>  
+            <li><a href="booking.html" class="hover:text-amber-600 transition">Booking</a></li>  
+            <li><a href="contact.html" class="hover:text-amber-600 transition">Contact</a></li>  
+            <li><a href="faq.html" class="hover:text-amber-600 transition">FAQ</a></li>  
         </ul>  
 
         <div class="mt-10">  
-            <a href="https://wa.me/xxxxxx" target="_blank" class="block text-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-full transition shadow-lg shadow-emerald-600/30">  
+            <a href="https://wa.me/xxxxxx" target="_blank" class="block text-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-full transition shadow-lg shadow-emerald-600/20">  
                 <i class="fab fa-whatsapp mr-2"></i> WhatsApp  
             </a>  
         </div>  
     </nav>
 </div>
 
-<section class="relative min-h-screen flex items-center justify-start overflow-hidden pt-20">  
-    <div class="absolute inset-0 z-0">
-        <img src="IMG_20260721_120016_547.jpg 
-           
-   
+<section class="relative min-h-screen flex items-center justify-start overflow-hidden pt-20 bg-white">  
+    
+    <div class="absolute inset-0 z-0 opacity-20">
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <img src="YOUR_IMAGE_1.jpg" alt="Slide 1">
+                <img src="YOUR_IMAGE_2.jpg" alt="Slide 2">
+                <img src="YOUR_IMAGE_3.jpg" alt="Slide 3">
+                <img src="YOUR_IMAGE_4.jpg" alt="Slide 4">
+            </div>
+        </div>
+    </div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-6 py-12 w-full">  
         <div class="max-w-4xl">  
             
-            <div data-aos="fade-down" data-aos-duration="1000" class="inline-flex items-center gap-3 bg-stone-800/90 hover:bg-amber-800/90 transition-all cursor-pointer px-4 py-2 rounded-full border border-amber-600/30 mb-8 backdrop-blur-md shadow-xl group">
-                <div class="w-8 h-8 rounded-full bg-amber-700/80 group-hover:bg-amber-600 flex items-center justify-center text-white text-sm transition-transform group-hover:translate-x-1">
+            <div data-aos="fade-down" data-aos-duration="1000" class="inline-flex items-center gap-3 bg-slate-100 hover:bg-slate-200 transition-all cursor-pointer px-4 py-2 rounded-full border border-amber-500/30 mb-8 shadow-sm group">
+                <div class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center text-amber-500 text-sm transition-transform group-hover:translate-x-1">
                     <i class="fas fa-arrow-right"></i>
                 </div>
-                <span class="text-gray-100 font-medium text-sm md:text-base pr-2">Welcome to Hotel Three Star</span>
+                <span class="text-slate-800 font-medium text-sm md:text-base pr-2">Welcome to Hotel Three Star</span>
             </div>
 
-            <h1 data-aos="fade-right" data-aos-duration="1200" class="heading-font text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.1] mb-6">
+            <h1 data-aos="fade-right" data-aos-duration="1200" class="heading-font text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-6">
                 Enjoy Your Stay <br>
-                <span class="italic font-normal text-amber-200/90 hover:text-white transition duration-500">With Hotel Luxury</span>
+                <span class="italic font-normal text-amber-600 transition duration-500">With Hotel Luxury</span>
             </h1>
 
-            <p data-aos="fade-up" data-aos-delay="200" class="text-xl md:text-2xl text-gray-300 font-light max-w-2xl mb-10 leading-relaxed">
+            <p data-aos="fade-up" data-aos-delay="200" class="text-xl md:text-2xl text-slate-600 font-light max-w-2xl mb-10 leading-relaxed">
                 Experience luxury, comfort, and warm Nigerian hospitality in the heart of Kaduna.
             </p>
 
             <div data-aos="fade-up" data-aos-delay="400" class="flex flex-wrap gap-5">  
                 <a href="booking.html"   
-                   class="bg-amber-600 hover:bg-amber-500 text-white px-9 py-4 rounded-full font-semibold text-lg hover:shadow-lg hover:shadow-amber-600/30 transition-all duration-300 hover:-translate-y-1">  
+                   class="bg-amber-500 hover:bg-amber-600 text-slate-950 px-9 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-1">  
                     Book Your Stay
                 </a>  
                 <a href="rooms.html"   
-                   class="glass-card hover:bg-white/20 text-white border border-white/30 px-9 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:-translate-y-1">  
+                   class="bg-slate-900 hover:bg-slate-800 text-white border border-slate-900 px-9 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-1">  
                     Explore Rooms  
                 </a>  
             </div>  
         </div>  
     </div>  
-
-  
 </section>  
-<section class="amenities-bg py-24 text-white relative">  
+
+<section class="py-24 bg-slate-50 text-slate-900 relative">  
     <div class="max-w-7xl mx-auto px-6">  
-        <div data-aos="zoom-in" class="glass-card rounded-3xl p-8 mb-16 text-center border border-white/10 shadow-2xl">  
+        <div data-aos="zoom-in" class="glass-card rounded-3xl p-8 mb-16 text-center border border-slate-200 shadow-lg">  
             <div class="flex justify-center mb-6">  
                 <div class="inline-flex items-center gap-3 bg-amber-500/10 border border-amber-500/20 px-8 py-3 rounded-full">  
                     <span class="text-2xl">🏨</span>  
-                    <span class="heading-font text-xl md:text-3xl font-bold tracking-wider text-amber-200">HOTEL BAFANA INTERNATIONAL</span>  
+                    <span class="heading-font text-xl md:text-3xl font-bold tracking-wider text-slate-900">Bafana Hotel Embassy</span>  
                 </div>  
             </div>  
-            <div class="max-w-lg mx-auto overflow-hidden rounded-2xl group shadow-2xl">  
-                <img src="IMG_20260721_115346_979.jpg"   
+            <div class="max-w-lg mx-auto overflow-hidden rounded-2xl group shadow-md border border-slate-200">  
+                <img src="YOUR_IMAGE_1.jpg"   
                      alt="Bafana Hotel - The Place To Be"  
                      class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110">  
-                <p class="italic text-center mt-4 text-amber-300/80 text-lg font-serif">"The Place To Be"</p>  
+                <p class="italic text-center mt-4 text-amber-600 text-lg font-serif">"The Place To Be"</p>  
             </div>  
         </div>  
+    </div>
 
         <div class="max-w-3xl mx-auto text-center">  
             <h2 data-aos="fade-up" class="heading-font text-4xl sm:text-5xl font-bold mb-8 text-amber-100">A Warm Welcome Awaits You</h2>  
