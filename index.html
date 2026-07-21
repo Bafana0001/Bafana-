@@ -21,12 +21,11 @@
             font-family: 'Playfair Display', serif;  
         }
 
-        /* Glassmorphism Styles for Light Theme */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(15, 23, 42, 0.1);
+        /* Gold Gradient Text Accent */
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         /* 4-Image Auto Slider Animation */
@@ -63,19 +62,19 @@
         }
     </style>
 </head>  
-<body class="bg-white text-slate-900 overflow-x-hidden">  
+<body class="bg-white text-slate-800 overflow-x-hidden">  
 
-<nav id="navbar" class="fixed top-0 w-full z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 transition-all duration-300">  
+<nav id="navbar" class="fixed top-0 w-full z-40 bg-white/95 backdrop-blur-md border-b border-amber-500/20 shadow-sm transition-all duration-300">  
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">  
         <div class="flex items-center gap-x-3">  
-            <div class="w-10 h-10 bg-slate-900 rounded-full flex items-center justify-center text-amber-500 font-bold text-2xl shadow-lg">B</div>  
+            <div class="w-10 h-10 bg-slate-900 border border-amber-500/50 rounded-lg flex items-center justify-center text-amber-400 font-bold text-2xl shadow-md">B</div>  
             <div>  
                 <span class="heading-font text-2xl font-bold tracking-wide text-slate-900">Bafana</span>  
-                <span class="text-[10px] block -mt-1 text-amber-600 font-semibold tracking-widest">Hotel</span>  
+                <span class="text-[10px] block -mt-1 text-amber-600 font-bold uppercase tracking-widest">Hotel</span>  
             </div>  
         </div>  
 
-        <div class="hidden md:flex items-center gap-x-8 text-sm font-medium text-slate-700">  
+        <div class="hidden md:flex items-center gap-x-8 text-sm font-semibold text-slate-700">  
             <a href="index.html" class="hover:text-amber-600 transition">Home</a>  
             <a href="about.html" class="hover:text-amber-600 transition">About</a>  
             <a href="rooms.html" class="hover:text-amber-600 transition">Rooms</a>  
@@ -88,7 +87,7 @@
 
         <div class="flex items-center gap-4">
             <button onclick="window.location.href='booking.html'"   
-                    class="hidden md:block bg-slate-900 text-amber-500 hover:text-white px-6 py-2.5 rounded-full hover:bg-slate-800 font-semibold transition shadow-md hover:scale-105 active:scale-95">  
+                    class="hidden md:block bg-amber-500 hover:bg-amber-600 text-slate-950 px-6 py-2.5 rounded-lg font-bold transition shadow-md hover:scale-105 active:scale-95">  
                 Book Now  
             </button> 
             <button id="openMenu" class="md:hidden text-2xl text-slate-900 focus:outline-none">
@@ -98,30 +97,30 @@
     </div>  
 </nav>  
 
-<div id="menuOverlay" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm hidden z-40 transition-opacity"></div>  
+<div id="menuOverlay" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm hidden z-40 transition-opacity"></div>  
 
-<div id="sideMenu" class="fixed top-0 right-0 h-full w-4/5 md:w-1/2 bg-white border-l border-slate-200 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50">  
+<div id="sideMenu" class="fixed top-0 right-0 h-full w-4/5 md:w-1/2 bg-slate-900 text-white border-l border-amber-500/30 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50">  
     <div class="flex justify-end p-6">  
-        <button id="closeMenu" class="text-3xl text-slate-600 hover:text-amber-600">  
+        <button id="closeMenu" class="text-3xl text-amber-400 hover:text-amber-300">  
             &times;  
         </button>  
     </div>  
 
     <nav class="px-8">  
-        <ul id="dynamicMenuLinks" class="space-y-5 text-lg font-medium text-slate-800">  
-            <li><a href="index.html" class="hover:text-amber-600 transition">Home</a></li>  
-            <li><a href="about.html" class="hover:text-amber-600 transition">About</a></li>  
-            <li><a href="rooms.html" class="hover:text-amber-600 transition">Rooms</a></li>  
-            <li><a href="facilities.html" class="hover:text-amber-600 transition">Facilities</a></li>  
-            <li><a href="restaurant.html" class="hover:text-amber-600 transition">Restaurant</a></li>  
-            <li><a href="gallery.html" class="hover:text-amber-600 transition">Gallery</a></li>  
-            <li><a href="booking.html" class="hover:text-amber-600 transition">Booking</a></li>  
-            <li><a href="contact.html" class="hover:text-amber-600 transition">Contact</a></li>  
-            <li><a href="faq.html" class="hover:text-amber-600 transition">FAQ</a></li>  
+        <ul id="dynamicMenuLinks" class="space-y-5 text-lg font-medium text-slate-200">  
+            <li><a href="index.html" class="hover:text-amber-400 transition">Home</a></li>  
+            <li><a href="about.html" class="hover:text-amber-400 transition">About</a></li>  
+            <li><a href="rooms.html" class="hover:text-amber-400 transition">Rooms</a></li>  
+            <li><a href="facilities.html" class="hover:text-amber-400 transition">Facilities</a></li>  
+            <li><a href="restaurant.html" class="hover:text-amber-400 transition">Restaurant</a></li>  
+            <li><a href="gallery.html" class="hover:text-amber-400 transition">Gallery</a></li>  
+            <li><a href="booking.html" class="hover:text-amber-400 transition">Booking</a></li>  
+            <li><a href="contact.html" class="hover:text-amber-400 transition">Contact</a></li>  
+            <li><a href="faq.html" class="hover:text-amber-400 transition">FAQ</a></li>  
         </ul>  
 
         <div class="mt-10">  
-            <a href="https://wa.me/xxxxxx" target="_blank" class="block text-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-full transition shadow-lg shadow-emerald-600/20">  
+            <a href="https://wa.me/xxxxxx" target="_blank" class="block text-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-lg transition shadow-lg">  
                 <i class="fab fa-whatsapp mr-2"></i> WhatsApp  
             </a>  
         </div>  
@@ -130,7 +129,7 @@
 
 <section class="relative min-h-screen flex items-center justify-start overflow-hidden pt-20 bg-white">  
     
-    <div class="absolute inset-0 z-0 opacity-20">
+    <div class="absolute inset-0 z-0 opacity-15">
         <div class="slider-container">
             <div class="slider-wrapper">
                 <img src="IMG_20260721_115436_891.jpg" alt="Slide 1">
@@ -144,16 +143,14 @@
     <div class="relative z-10 max-w-7xl mx-auto px-6 py-12 w-full">  
         <div class="max-w-4xl">  
             
-            <div data-aos="fade-down" data-aos-duration="1000" class="inline-flex items-center gap-3 bg-slate-100 hover:bg-slate-200 transition-all cursor-pointer px-4 py-2 rounded-full border border-amber-500/30 mb-8 shadow-sm group">
-                <div class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center text-amber-500 text-sm transition-transform group-hover:translate-x-1">
-                    <i class="fas fa-arrow-right"></i>
-                </div>
-                <span class="text-slate-800 font-medium text-sm md:text-base pr-2">Welcome to Hotel Three Star</span>
+            <div data-aos="fade-down" data-aos-duration="1000" class="inline-flex items-center gap-3 bg-amber-50 border border-amber-500/30 px-5 py-2 rounded-full mb-8 shadow-sm">
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
+                <span class="text-slate-900 font-semibold text-xs md:text-sm tracking-wide uppercase">Welcome to Hotel Three Star</span>
             </div>
 
             <h1 data-aos="fade-right" data-aos-duration="1200" class="heading-font text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-6">
                 Enjoy Your Stay <br>
-                <span class="italic font-normal text-amber-600 transition duration-500">With Hotel Luxury</span>
+                <span class="italic font-normal gold-gradient-text">With Hotel Luxury</span>
             </h1>
 
             <p data-aos="fade-up" data-aos-delay="200" class="text-xl md:text-2xl text-slate-600 font-light max-w-2xl mb-10 leading-relaxed">
@@ -162,11 +159,11 @@
 
             <div data-aos="fade-up" data-aos-delay="400" class="flex flex-wrap gap-5">  
                 <a href="booking.html"   
-                   class="bg-amber-500 hover:bg-amber-600 text-slate-950 px-9 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-1">  
+                   class="bg-slate-900 hover:bg-slate-800 text-amber-400 border border-amber-500/30 px-9 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">  
                     Book Your Stay
                 </a>  
                 <a href="rooms.html"   
-                   class="bg-slate-900 hover:bg-slate-800 text-white border border-slate-900 px-9 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-1">  
+                   class="bg-amber-500 hover:bg-amber-600 text-slate-950 px-9 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">  
                     Explore Rooms  
                 </a>  
             </div>  
@@ -174,20 +171,20 @@
     </div>  
 </section>  
 
-<section class="py-24 bg-slate-50 text-slate-900 relative">  
+<section class="py-24 bg-slate-50 border-t border-slate-200 relative">  
     <div class="max-w-7xl mx-auto px-6">  
-        <div data-aos="zoom-in" class="glass-card rounded-3xl p-8 mb-16 text-center border border-slate-200 shadow-lg">  
+        <div data-aos="zoom-in" class="bg-white rounded-2xl p-8 mb-16 text-center border border-amber-500/20 shadow-xl">  
             <div class="flex justify-center mb-6">  
-                <div class="inline-flex items-center gap-3 bg-amber-500/10 border border-amber-500/20 px-8 py-3 rounded-full">  
+                <div class="inline-flex items-center gap-3 bg-slate-900 border border-amber-500/40 px-8 py-3 rounded-full shadow-md">  
                     <span class="text-2xl">🏨</span>  
-                    <span class="heading-font text-xl md:text-3xl font-bold tracking-wider text-slate-900">Bafana Hotel Embassy</span>  
+                    <span class="heading-font text-xl md:text-3xl font-bold tracking-wider text-amber-400">Bafana Hotel Embassy</span>  
                 </div>  
             </div>  
-            <div class="max-w-lg mx-auto overflow-hidden rounded-2xl group shadow-md border border-slate-200">  
+            <div class="max-w-lg mx-auto overflow-hidden rounded-xl group shadow-md border border-slate-200">  
                 <img src="IMG_20260721_115346_979.jpg"   
                      alt="Bafana Hotel - The Place To Be"  
-                     class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110">  
-                <p class="italic text-center mt-4 text-amber-600 text-lg font-serif">"The Place To Be"</p>  
+                     class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-105">  
+                <p class="italic text-center mt-4 text-amber-600 font-bold text-lg font-serif">"The Place To Be"</p>  
             </div>  
         </div>  
 
@@ -195,38 +192,38 @@
             <h2 data-aos="fade-up" class="heading-font text-4xl sm:text-5xl font-bold mb-8 text-slate-900">A Warm Welcome Awaits You</h2>  
               
             <div class="text-left space-y-6">  
-                <p data-aos="fade-up" class="leading-relaxed text-lg text-slate-600">  
+                <p data-aos="fade-up" class="leading-relaxed text-lg text-slate-600 text-center">  
                     Our hotel offers a range of luxury amenities and services to ensure our guests have the most comfortable and enjoyable stay possible:  
                 </p>  
                   
-                <ul class="grid sm:grid-cols-2 gap-4 my-8">  
-                    <li data-aos="fade-up" data-aos-delay="100" class="glass-card p-4 rounded-2xl flex items-center gap-4 border border-slate-200 shadow-sm hover:border-amber-500/40 transition">  
+                <ul class="grid sm:grid-cols-2 gap-5 my-10">  
+                    <li data-aos="fade-up" data-aos-delay="100" class="bg-white p-5 rounded-xl flex items-center gap-4 border-l-4 border-l-amber-500 border border-slate-200 shadow-sm hover:shadow-md transition">  
                         <span class="text-3xl">✨</span>  
                         <span class="text-sm text-slate-900"><strong>High Quality Facilities</strong><br><span class="text-slate-500">In all rooms & public areas</span></span>  
                     </li>  
-                    <li data-aos="fade-up" data-aos-delay="150" class="glass-card p-4 rounded-2xl flex items-center gap-4 border border-slate-200 shadow-sm hover:border-amber-500/40 transition">  
+                    <li data-aos="fade-up" data-aos-delay="150" class="bg-white p-5 rounded-xl flex items-center gap-4 border-l-4 border-l-amber-500 border border-slate-200 shadow-sm hover:shadow-md transition">  
                         <span class="text-3xl">🛎️</span>  
                         <span class="text-sm text-slate-900"><strong>24-Hour Room Service</strong><br><span class="text-slate-500">Always at your service</span></span>  
                     </li>  
-                    <li data-aos="fade-up" data-aos-delay="200" class="glass-card p-4 rounded-2xl flex items-center gap-4 border border-slate-200 shadow-sm hover:border-amber-500/40 transition">  
+                    <li data-aos="fade-up" data-aos-delay="200" class="bg-white p-5 rounded-xl flex items-center gap-4 border-l-4 border-l-amber-500 border border-slate-200 shadow-sm hover:shadow-md transition">  
                         <span class="text-3xl">🧳</span>  
                         <span class="text-sm text-slate-900"><strong>Concierge Services</strong><br><span class="text-slate-500">Local tours & transit aid</span></span>  
                     </li>  
-                    <li data-aos="fade-up" data-aos-delay="250" class="glass-card p-4 rounded-2xl flex items-center gap-4 border border-slate-200 shadow-sm hover:border-amber-500/40 transition">  
+                    <li data-aos="fade-up" data-aos-delay="250" class="bg-white p-5 rounded-xl flex items-center gap-4 border-l-4 border-l-amber-500 border border-slate-200 shadow-sm hover:shadow-md transition">  
                         <span class="text-3xl">👕</span>  
                         <span class="text-sm text-slate-900"><strong>Laundry & Dry Cleaning</strong><br><span class="text-slate-500">Same-day service</span></span>  
                     </li>  
-                    <li data-aos="fade-up" data-aos-delay="300" class="glass-card p-4 rounded-2xl flex items-center gap-4 border border-slate-200 shadow-sm hover:border-amber-500/40 transition">  
+                    <li data-aos="fade-up" data-aos-delay="300" class="bg-white p-5 rounded-xl flex items-center gap-4 border-l-4 border-l-amber-500 border border-slate-200 shadow-sm hover:shadow-md transition">  
                         <span class="text-3xl">💼</span>  
                         <span class="text-sm text-slate-900"><strong>Business Center</strong><br><span class="text-slate-500">Modern event & meeting rooms</span></span>  
                     </li>  
-                    <li data-aos="fade-up" data-aos-delay="350" class="glass-card p-4 rounded-2xl flex items-center gap-4 border border-slate-200 shadow-sm hover:border-amber-500/40 transition">  
+                    <li data-aos="fade-up" data-aos-delay="350" class="bg-white p-5 rounded-xl flex items-center gap-4 border-l-4 border-l-amber-500 border border-slate-200 shadow-sm hover:shadow-md transition">  
                         <span class="text-3xl">💒</span>  
                         <span class="text-sm text-slate-900"><strong>Event Planning</strong><br><span class="text-slate-500">Weddings & celebrations</span></span>  
                     </li>  
                 </ul>  
 
-                <p data-aos="fade-up" class="leading-relaxed text-lg text-slate-600">  
+                <p data-aos="fade-up" class="leading-relaxed text-lg text-slate-600 text-center">  
                     Whether you want to explore local sights or simply relax in premium luxury, our hotel is designed to exceed your expectations.  
                 </p>  
             </div>  
@@ -234,6 +231,28 @@
     </div>  
 </section>  
 
+<section class="py-20 bg-white border-t border-slate-200">  
+    <div class="max-w-7xl mx-auto px-6">  
+        <h2 data-aos="fade-up" class="heading-font text-4xl sm:text-5xl font-bold text-center mb-16 text-slate-900">Why Choose Us</h2>  
+        <div class="grid md:grid-cols-3 gap-8">  
+            <div data-aos="fade-up" data-aos-delay="100" class="bg-slate-900 text-white p-8 rounded-2xl text-center border border-amber-500/30 shadow-xl hover:-translate-y-2 transition duration-300">  
+                <div class="text-5xl mb-6 text-amber-400"><i class="fas fa-bed"></i></div>  
+                <h3 class="font-bold text-2xl mb-3 text-white">Luxury Rooms</h3>  
+                <p class="text-slate-300 leading-relaxed">Elegantly designed rooms with modern amenities and scenic city views.</p>  
+            </div>  
+            <div data-aos="fade-up" data-aos-delay="200" class="bg-slate-900 text-white p-8 rounded-2xl text-center border border-amber-500/30 shadow-xl hover:-translate-y-2 transition duration-300">  
+                <div class="text-5xl mb-6 text-amber-400"><i class="fas fa-wifi"></i></div>  
+                <h3 class="font-bold text-2xl mb-3 text-white">Free High-Speed Wi-Fi</h3>  
+                <p class="text-slate-300 leading-relaxed">Uninterrupted high-speed internet connectivity across all suites.</p>  
+            </div>  
+            <div data-aos="fade-up" data-aos-delay="300" class="bg-slate-900 text-white p-8 rounded-2xl text-center border border-amber-500/30 shadow-xl hover:-translate-y-2 transition duration-300">  
+                <div class="text-5xl mb-6 text-amber-400"><i class="fas fa-swimming-pool"></i></div>  
+                <h3 class="font-bold text-2xl mb-3 text-white">Swimming Pool</h3>  
+                <p class="text-slate-300 leading-relaxed">Relax and unwind in our temperature-controlled outdoor pool.</p>  
+            </div>  
+        </div>  
+    </div>  
+</section>  
 <section class="py-20 bg-white text-slate-900 border-t border-slate-200">  
     <div class="max-w-7xl mx-auto px-6">  
         <h2 data-aos="fade-up" class="heading-font text-4xl sm:text-5xl font-bold text-center mb-16 text-slate-900">Why Choose Us</h2>  
