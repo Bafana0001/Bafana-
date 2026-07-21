@@ -5,294 +5,333 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <meta name="description" content="Bafana Hotel Kaduna - Luxury accommodation in Kaduna, Nigeria.">  
     <title>Bafana Hotel Kaduna | Luxury Stays</title>  
+    
     <script src="https://cdn.tailwindcss.com"></script>  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">  
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">  
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">  
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <style>  
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap');  
-          
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
         .heading-font {  
             font-family: 'Playfair Display', serif;  
-        }  
-          
-        .hero-bg {  
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/id/1015/2000/1200');  
-            background-size: cover;  
-            background-position: center;  
-        }  
-          
+        }
+
+        /* Glassmorphism Styles */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* Custom Neon Badge Accent */
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(0, 191, 255, 0.4);
+        }
+
+        /* Amenities Background */
         .amenities-bg {  
-            background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://picsum.photos/id/1015/2000/800');  
+            background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('https://picsum.photos/id/1015/2000/800');  
             background-size: cover;  
             background-position: center;  
         }  
     </style>
 </head>  
-<body class="tail-container text-gray-800">  
+<body class="bg-slate-900 text-gray-100 overflow-x-hidden">  
 
-<nav id="navbar" class="fixed top-0 w-full z-30 bg-white shadow-sm transition-all duration-300">  
-    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">  
+<nav id="navbar" class="fixed top-0 w-full z-40 bg-slate-900/80 backdrop-blur-md border-b border-white/10 transition-all duration-300">  
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">  
         <div class="flex items-center gap-x-3">  
-            <div class="w-10 h-10 bg-rose-700 rounded-full flex items-center justify-center text-white font-bold text-2xl">B</div>  
+            <div class="w-10 h-10 bg-rose-700 rounded-full flex items-center justify-center text-white font-bold text-2xl shadow-lg shadow-rose-700/50">B</div>  
             <div>  
-                <span class="heading-font text-3xl font-bold">Bafana</span>  
-                <span class="text-sm block -mt-1 text-rose-600">INTERNATIONAL</span>  
+                <span class="heading-font text-2xl font-bold tracking-wide text-white">Bafana</span>  
+                <span class="text-[10px] block -mt-1 text-rose-500 font-semibold tracking-widest">INTERNATIONAL</span>  
             </div>  
         </div>  
 
-        <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">  
-            <a href="index.html" class="hover:text-rose-700">Home</a>  
-            <a href="about.html" class="hover:text-rose-700">About</a>  
-            <a href="rooms.html" class="hover:text-rose-700">Rooms</a>  
-            <a href="facilities.html" class="hover:text-rose-700">Facilities</a>  
-            <a href="restaurant.html" class="hover:text-rose-700">Restaurant</a>  
-            <a href="gallery.html" class="hover:text-rose-700">Gallery</a>  
-            <a href="booking.html" class="hover:text-rose-700">Booking</a>  
-            <a href="contact.html" class="hover:text-rose-700">Contact</a>  
+        <div class="hidden md:flex items-center gap-x-8 text-sm font-medium text-gray-300">  
+            <a href="index.html" class="hover:text-rose-500 transition">Home</a>  
+            <a href="about.html" class="hover:text-rose-500 transition">About</a>  
+            <a href="rooms.html" class="hover:text-rose-500 transition">Rooms</a>  
+            <a href="facilities.html" class="hover:text-rose-500 transition">Facilities</a>  
+            <a href="restaurant.html" class="hover:text-rose-500 transition">Restaurant</a>  
+            <a href="gallery.html" class="hover:text-rose-500 transition">Gallery</a>  
+            <a href="booking.html" class="hover:text-rose-500 transition">Booking</a>  
+            <a href="contact.html" class="hover:text-rose-500 transition">Contact</a>  
         </div>  
 
         <div class="flex items-center gap-4">
             <button onclick="window.location.href='booking.html'"   
-                    class="hidden md:block bg-rose-700 text-white px-6 py-3 rounded-2xl hover:bg-rose-800 font-semibold">  
+                    class="hidden md:block bg-rose-700 text-white px-6 py-2.5 rounded-full hover:bg-rose-600 font-semibold transition shadow-lg shadow-rose-700/30 hover:scale-105 active:scale-95">  
                 Book Now  
             </button> 
-            <button id="openMenu" class="md:hidden text-2xl text-gray-800 focus:outline-none">
+            <button id="openMenu" class="md:hidden text-2xl text-white focus:outline-none">
                 <i class="fas fa-bars"></i>
             </button>
         </div> 
     </div>  
 </nav>  
 
-<div id="menuOverlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden z-40 transition-opacity"></div>  
+<div id="menuOverlay" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden z-40 transition-opacity"></div>  
 
-<div id="sideMenu" class="fixed top-0 right-0 h-full w-4/5 md:w-1/2 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50">  
+<div id="sideMenu" class="fixed top-0 right-0 h-full w-4/5 md:w-1/2 bg-slate-900 border-l border-white/10 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50">  
     <div class="flex justify-end p-6">  
-        <button id="closeMenu" class="text-4xl text-gray-700 hover:text-red-500">  
+        <button id="closeMenu" class="text-3xl text-gray-300 hover:text-rose-500">  
             &times;  
         </button>  
     </div>  
 
     <nav class="px-8">  
-        <ul id="dynamicMenuLinks" class="space-y-6 text-xl font-semibold">  
-            <li><a href="index.html" class="hover:text-rose-700 transition">Home</a></li>  
-            <li><a href="about.html" class="hover:text-rose-700 transition">About</a></li>  
-            <li><a href="rooms.html" class="hover:text-rose-700 transition">Rooms</a></li>  
-            <li><a href="facilities.html" class="hover:text-rose-700 transition">Facilities</a></li>  
-            <li><a href="restaurant.html" class="hover:text-rose-700 transition">Restaurant</a></li>  
-            <li><a href="gallery.html" class="hover:text-rose-700 transition">Gallery</a></li>  
-            <li><a href="booking.html" class="hover:text-rose-700 transition">Booking</a></li>  
-            <li><a href="contact.html" class="hover:text-rose-700 transition">Contact</a></li>  
-            <li><a href="faq.html" class="hover:text-rose-700 transition">FAQ</a></li>  
+        <ul id="dynamicMenuLinks" class="space-y-5 text-lg font-medium text-gray-200">  
+            <li><a href="index.html" class="hover:text-rose-500 transition">Home</a></li>  
+            <li><a href="about.html" class="hover:text-rose-500 transition">About</a></li>  
+            <li><a href="rooms.html" class="hover:text-rose-500 transition">Rooms</a></li>  
+            <li><a href="facilities.html" class="hover:text-rose-500 transition">Facilities</a></li>  
+            <li><a href="restaurant.html" class="hover:text-rose-500 transition">Restaurant</a></li>  
+            <li><a href="gallery.html" class="hover:text-rose-500 transition">Gallery</a></li>  
+            <li><a href="booking.html" class="hover:text-rose-500 transition">Booking</a></li>  
+            <li><a href="contact.html" class="hover:text-rose-500 transition">Contact</a></li>  
+            <li><a href="faq.html" class="hover:text-rose-500 transition">FAQ</a></li>  
         </ul>  
 
         <div class="mt-10">  
-            <a href="https://wa.me/xxxxxx" target="_blank" class="block text-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-full transition">  
-                🟢 WhatsApp  
+            <a href="https://wa.me/xxxxxx" target="_blank" class="block text-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-full transition shadow-lg shadow-emerald-600/30">  
+                <i class="fab fa-whatsapp mr-2"></i> WhatsApp  
             </a>  
         </div>  
     </nav>
 </div>
 
-<section class="hero-bg h-screen flex items-center text-white relative">  
-    <div class="max-w-7xl mx-auto px-6 pt-20">  
-        <div class="max-w-2xl">  
-            <h1 class="heading-font text-6xl md:text-7xl font-bold leading-tight mb-6">  
-                Welcome to Bafana Hotel Kaduna  
-            </h1>  
-            <p class="text-2xl text-white/90 mb-10">  
-                Experience luxury, comfort, and warm Nigerian hospitality in the heart of Kaduna.  
-            </p>  
-            <div class="flex flex-wrap gap-4">  
+<section class="relative min-h-screen flex items-center justify-start overflow-hidden pt-20">  
+    <div class="absolute inset-0 z-0">
+        <img src="https://picsum.photos/id/1015/2000/1200" 
+             alt="Hotel Three Star Background" 
+             class="w-full h-full object-cover filter brightness-[0.45] contrast-125 transition-transform duration-1000 hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-black/40 to-black/60"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 py-12 w-full">  
+        <div class="max-w-4xl">  
+            
+            <div data-aos="fade-down" data-aos-duration="1000" class="inline-flex items-center gap-3 bg-stone-800/90 hover:bg-amber-800/90 transition-all cursor-pointer px-4 py-2 rounded-full border border-amber-600/30 mb-8 backdrop-blur-md shadow-xl group">
+                <div class="w-8 h-8 rounded-full bg-amber-700/80 group-hover:bg-amber-600 flex items-center justify-center text-white text-sm transition-transform group-hover:translate-x-1">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <span class="text-gray-100 font-medium text-sm md:text-base pr-2">Welcome to Hotel Three Star</span>
+            </div>
+
+            <h1 data-aos="fade-right" data-aos-duration="1200" class="heading-font text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.1] mb-6">
+                Enjoy Your Stay <br>
+                <span class="italic font-normal text-amber-200/90 hover:text-white transition duration-500">With Hotel Luxury</span>
+            </h1>
+
+            <p data-aos="fade-up" data-aos-delay="200" class="text-xl md:text-2xl text-gray-300 font-light max-w-2xl mb-10 leading-relaxed">
+                Experience luxury, comfort, and warm Nigerian hospitality in the heart of Kaduna.
+            </p>
+
+            <div data-aos="fade-up" data-aos-delay="400" class="flex flex-wrap gap-5">  
                 <a href="booking.html"   
-                   class="bg-white text-rose-800 px-10 py-5 rounded-3xl font-semibold text-lg hover:scale-105 transition-all">  
-                    Book Now  
+                   class="bg-amber-600 hover:bg-amber-500 text-white px-9 py-4 rounded-full font-semibold text-lg hover:shadow-lg hover:shadow-amber-600/30 transition-all duration-300 hover:-translate-y-1">  
+                    Book Your Stay
                 </a>  
                 <a href="rooms.html"   
-                   class="border border-white/70 hover:bg-white/10 px-10 py-5 rounded-3xl font-semibold text-lg transition-all">  
+                   class="glass-card hover:bg-white/20 text-white border border-white/30 px-9 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:-translate-y-1">  
                     Explore Rooms  
                 </a>  
             </div>  
         </div>  
     </div>  
-      
-    <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 w-max max-w-[90%] bg-white/90 text-gray-800 px-8 py-3 rounded-3xl text-sm font-medium shadow-md flex items-center gap-3">  
-        <i class="fas fa-map-marker-alt text-rose-600"></i>  
+
+    <div data-aos="fade-up" data-aos-offset="0" class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 w-max max-w-[90%] glass-card text-gray-200 px-6 py-3 rounded-full text-xs sm:text-sm font-medium shadow-2xl flex items-center gap-3">  
+        <i class="fas fa-map-marker-alt text-amber-400 text-base"></i>  
         <span class="truncate">CCJ3+MVR, Abuja - Kaduna - Zaria Express Way, Goni Gora, Kaduna 800104</span>  
     </div>  
 </section>  
-
-<section class="amenities-bg py-20 text-white">  
+<section class="amenities-bg py-24 text-white relative">  
     <div class="max-w-7xl mx-auto px-6">  
-        <div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 mb-12 text-center border border-white/20">  
+        <div data-aos="zoom-in" class="glass-card rounded-3xl p-8 mb-16 text-center border border-white/10 shadow-2xl">  
             <div class="flex justify-center mb-6">  
-                <div class="inline-flex items-center gap-3 bg-white/10 px-8 py-3 rounded-3xl">  
+                <div class="inline-flex items-center gap-3 bg-amber-500/10 border border-amber-500/20 px-8 py-3 rounded-full">  
                     <span class="text-2xl">🏨</span>  
-                    <span class="heading-font text-xl md:text-3xl font-bold tracking-wider">HOTEL Bafana INTERNATIONAL</span>  
+                    <span class="heading-font text-xl md:text-3xl font-bold tracking-wider text-amber-200">HOTEL BAFANA INTERNATIONAL</span>  
                 </div>  
             </div>  
-            <div class="max-w-md mx-auto">  
+            <div class="max-w-lg mx-auto overflow-hidden rounded-2xl group shadow-2xl">  
                 <img src="https://picsum.photos/id/1015/1200/400"   
                      alt="Bafana Hotel - The Place To Be"  
-                     class="w-full h-64 object-cover rounded-2xl shadow-2xl">  
-                <p class="italic text-center mt-4 text-lg">"The Place To Be"</p>  
+                     class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110">  
+                <p class="italic text-center mt-4 text-amber-300/80 text-lg font-serif">"The Place To Be"</p>  
             </div>  
         </div>  
 
         <div class="max-w-3xl mx-auto text-center">  
-            <h2 class="heading-font text-5xl font-bold mb-8">A Warm Welcome Awaits You</h2>  
+            <h2 data-aos="fade-up" class="heading-font text-4xl sm:text-5xl font-bold mb-8 text-amber-100">A Warm Welcome Awaits You</h2>  
               
-            <div class="prose prose-lg prose-invert mx-auto text-left">  
-                <p class="text-white/90 leading-relaxed text-lg">  
-                    Our hotel offers a range of additional amenities and services to ensure that our guests have the most comfortable and enjoyable stay possible. Some of these amenities include:  
+            <div class="text-left text-gray-300 space-y-6">  
+                <p data-aos="fade-up" class="leading-relaxed text-lg text-gray-300">  
+                    Our hotel offers a range of luxury amenities and services to ensure our guests have the most comfortable and enjoyable stay possible:  
                 </p>  
                   
-                <ul class="list-none space-y-4 my-10 text-white/90">  
-                    <li class="flex items-start gap-4">  
-                        <span class="text-2xl flex-shrink-0 mt-0.5">📶</span>  
-                        <span><strong>Complimentary high-speed Wi-Fi</strong> in all guest rooms and public areas</span>  
+                <ul class="grid sm:grid-cols-2 gap-4 my-8">  
+                    <li data-aos="fade-up" data-aos-delay="100" class="glass-card p-4 rounded-2xl flex items-center gap-4 hover:border-amber-500/40 transition">  
+                        <span class="text-3xl">📶</span>  
+                        <span class="text-sm"><strong>High-Speed Wi-Fi</strong><br><span class="text-gray-400">In all rooms & public areas</span></span>  
                     </li>  
-                    <li class="flex items-start gap-4">  
-                        <span class="text-2xl flex-shrink-0 mt-0.5">🛎️</span>  
-                        <span><strong>24-hour room service</strong></span>  
+                    <li data-aos="fade-up" data-aos-delay="150" class="glass-card p-4 rounded-2xl flex items-center gap-4 hover:border-amber-500/40 transition">  
+                        <span class="text-3xl">🛎️</span>  
+                        <span class="text-sm"><strong>24-Hour Room Service</strong><br><span class="text-gray-400">Always at your service</span></span>  
                     </li>  
-                    <li class="flex items-start gap-4">  
-                        <span class="text-2xl flex-shrink-0 mt-0.5">🧳</span>  
-                        <span><strong>Concierge services</strong> to assist with reservations, transportation, and local recommendations</span>  
+                    <li data-aos="fade-up" data-aos-delay="200" class="glass-card p-4 rounded-2xl flex items-center gap-4 hover:border-amber-500/40 transition">  
+                        <span class="text-3xl">🧳</span>  
+                        <span class="text-sm"><strong>Concierge Services</strong><br><span class="text-gray-400">Local tours & transit aid</span></span>  
                     </li>  
-                    <li class="flex items-start gap-4">  
-                        <span class="text-2xl flex-shrink-0 mt-0.5">👕</span>  
-                        <span><strong>Laundry and dry cleaning services</strong></span>  
+                    <li data-aos="fade-up" data-aos-delay="250" class="glass-card p-4 rounded-2xl flex items-center gap-4 hover:border-amber-500/40 transition">  
+                        <span class="text-3xl">👕</span>  
+                        <span class="text-sm"><strong>Laundry & Dry Cleaning</strong><br><span class="text-gray-400">Same-day service</span></span>  
                     </li>  
-                    <li class="flex items-start gap-4">  
-                        <span class="text-2xl flex-shrink-0 mt-0.5">💼</span>  
-                        <span><strong>Business center</strong> with state-of-the-art equipment and meeting rooms for corporate events</span>  
+                    <li data-aos="fade-up" data-aos-delay="300" class="glass-card p-4 rounded-2xl flex items-center gap-4 hover:border-amber-500/40 transition">  
+                        <span class="text-3xl">💼</span>  
+                        <span class="text-sm"><strong>Business Center</strong><br><span class="text-gray-400">Modern event & meeting rooms</span></span>  
                     </li>  
-                    <li class="flex items-start gap-4">  
-                        <span class="text-2xl flex-shrink-0 mt-0.5">💒</span>  
-                        <span><strong>Wedding and event planning services</strong> for social gatherings and celebrations</span>  
+                    <li data-aos="fade-up" data-aos-delay="350" class="glass-card p-4 rounded-2xl flex items-center gap-4 hover:border-amber-500/40 transition">  
+                        <span class="text-3xl">💒</span>  
+                        <span class="text-sm"><strong>Event Planning</strong><br><span class="text-gray-400">Weddings & celebrations</span></span>  
                     </li>  
                 </ul>  
 
-                <p class="text-white/90 leading-relaxed text-lg">  
-                    Whether you want to explore the local town and farming villages or simply relax in the comfort of your room, our hotel is the perfect place to do so.  
+                <p data-aos="fade-up" class="leading-relaxed text-lg text-gray-300">  
+                    Whether you want to explore local sights or simply relax in premium luxury, our hotel is designed to exceed your expectations.  
                 </p>  
-                  
-                <div class="mt-12 pt-10 border-t border-white/30">  
-                    <p class="text-white/90 leading-relaxed text-lg">  
-                        At our hotel, we pride ourselves on creating a warm and welcoming atmosphere for all of our guests. From our elegant decor to our personalized service, we strive to make every guest feel at home. We hope to have the opportunity to welcome you to our hotel soon.  
-                    </p>  
-                </div>  
             </div>  
         </div>  
     </div>  
 </section>  
 
-<section class="py-20 bg-white">  
+<section class="py-20 bg-slate-950 text-white">  
     <div class="max-w-7xl mx-auto px-6">  
-        <h2 class="heading-font text-5xl font-bold text-center mb-12">Why Choose Us</h2>  
+        <h2 data-aos="fade-up" class="heading-font text-4xl sm:text-5xl font-bold text-center mb-16 text-amber-100">Why Choose Us</h2>  
         <div class="grid md:grid-cols-3 gap-8">  
-            <div class="text-center p-8">  
-                <div class="text-5xl mb-4">🛏️</div>  
-                <h4 class="font-semibold text-xl mb-2">Luxury Rooms</h4>  
-                <p class="text-gray-600">Elegantly designed rooms with modern amenities.</p>  
+            <div data-aos="fade-up" data-aos-delay="100" class="glass-card p-8 rounded-3xl text-center hover:bg-white/10 transition border border-white/10">  
+                <div class="text-5xl mb-6 text-amber-400"><i class="fas fa-bed"></i></div>  
+                <h3 class="font-semibold text-2xl mb-3">Luxury Rooms</h3>  
+                <p class="text-gray-400 leading-relaxed">Elegantly designed rooms with modern amenities and scenic city views.</p>  
             </div>  
-            <div class="text-center p-8">  
-                <div class="text-5xl mb-4">📶</div>  
-                <h4 class="font-semibold text-xl mb-2">Free Wi-Fi</h4>  
-                <p class="text-gray-600">High-speed internet throughout the hotel.</p>  
+            <div data-aos="fade-up" data-aos-delay="200" class="glass-card p-8 rounded-3xl text-center hover:bg-white/10 transition border border-white/10">  
+                <div class="text-5xl mb-6 text-amber-400"><i class="fas fa-wifi"></i></div>  
+                <h3 class="font-semibold text-2xl mb-3">Free High-Speed Wi-Fi</h3>  
+                <p class="text-gray-400 leading-relaxed">Uninterrupted high-speed internet connectivity across all suites.</p>  
             </div>  
-            <div class="text-center p-8">  
-                <div class="text-5xl mb-4">🏊</div>  
-                <h4 class="font-semibold text-xl mb-2">Swimming Pool</h4>  
-                <p class="text-gray-600">Relax in our beautiful swimming pool.</p>  
+            <div data-aos="fade-up" data-aos-delay="300" class="glass-card p-8 rounded-3xl text-center hover:bg-white/10 transition border border-white/10">  
+                <div class="text-5xl mb-6 text-amber-400"><i class="fas fa-swimming-pool"></i></div>  
+                <h3 class="font-semibold text-2xl mb-3">Swimming Pool</h3>  
+                <p class="text-gray-400 leading-relaxed">Relax and unwind in our temperature-controlled outdoor pool.</p>  
             </div>  
         </div>  
     </div>  
 </section>  
 
-<section class="py-20 bg-gray-50">  
+<section class="py-24 bg-slate-900">  
     <div class="max-w-7xl mx-auto px-6">  
-        <h2 class="heading-font text-5xl font-bold text-center mb-4">Featured Rooms</h2>  
-        <p class="text-center text-gray-600 mb-12">Choose your perfect stay</p>  
-          
+        <div data-aos="fade-up" class="text-center mb-16">
+            <h2 class="heading-font text-4xl sm:text-5xl font-bold text-amber-100 mb-4">Featured Accommodations</h2>  
+            <p class="text-gray-400 text-lg">Choose your perfect stay with unparalleled comfort</p>  
+        </div>
+
         <div class="grid md:grid-cols-3 gap-8">  
-            <div class="bg-white rounded-3xl overflow-hidden shadow-lg">  
-                <img src="https://picsum.photos/id/201/800/500" class="w-full h-64 object-cover" alt="Deluxe Room">  
+            <div data-aos="fade-up" data-aos-delay="100" class="glass-card rounded-3xl overflow-hidden group hover:border-amber-500/50 transition duration-500 flex flex-col justify-between">  
+                <div class="relative overflow-hidden h-64">
+                    <img src="https://picsum.photos/id/201/800/500" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Deluxe Room">  
+                    <div class="absolute top-4 right-4 bg-rose-600 text-white text-xs font-bold px-3 py-1.5 rounded-full">Popular</div>
+                </div>
                 <div class="p-8">  
-                    <h3 class="text-2xl font-semibold mb-2">Deluxe Room</h3>  
-                    <p class="text-rose-700 font-bold mb-4">₦45,000 / night</p>  
-                    <a href="rooms.html#deluxe" class="block text-center py-4 border border-rose-700 text-rose-700 rounded-2xl hover:bg-rose-700 hover:text-white transition">View Details</a>  
+                    <h3 class="text-2xl font-bold mb-2 text-white">Deluxe Room</h3>  
+                    <p class="text-amber-400 text-xl font-semibold mb-6">₦45,000 <span class="text-sm font-normal text-gray-400">/ night</span></p>  
+                    <a href="rooms.html#deluxe" class="block text-center py-3.5 border border-amber-500/50 text-amber-400 rounded-2xl hover:bg-amber-600 hover:text-white transition font-medium">View Details</a>  
                 </div>  
             </div>  
 
-            <div class="bg-white rounded-3xl overflow-hidden shadow-lg">  
-                <img src="https://picsum.photos/id/251/800/500" class="w-full h-64 object-cover" alt="Executive Suite">  
+            <div data-aos="fade-up" data-aos-delay="200" class="glass-card rounded-3xl overflow-hidden group hover:border-amber-500/50 transition duration-500 flex flex-col justify-between">  
+                <div class="relative overflow-hidden h-64">
+                    <img src="https://picsum.photos/id/251/800/500" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Executive Suite">  
+                    <div class="absolute top-4 right-4 bg-amber-600 text-white text-xs font-bold px-3 py-1.5 rounded-full">Executive</div>
+                </div>
                 <div class="p-8">  
-                    <h3 class="text-2xl font-semibold mb-2">Executive Suite</h3>  
-                    <p class="text-rose-700 font-bold mb-4">₦85,000 / night</p>  
-                    <a href="rooms.html#executive" class="block text-center py-4 border border-rose-700 text-rose-700 rounded-2xl hover:bg-rose-700 hover:text-white transition">View Details</a>  
+                    <h3 class="text-2xl font-bold mb-2 text-white">Executive Suite</h3>  
+                    <p class="text-amber-400 text-xl font-semibold mb-6">₦85,000 <span class="text-sm font-normal text-gray-400">/ night</span></p>  
+                    <a href="rooms.html#executive" class="block text-center py-3.5 border border-amber-500/50 text-amber-400 rounded-2xl hover:bg-amber-600 hover:text-white transition font-medium">View Details</a>  
                 </div>  
             </div>  
 
-            <div class="bg-white rounded-3xl overflow-hidden shadow-lg">  
-                <img src="https://picsum.photos/id/316/800/500" class="w-full h-64 object-cover" alt="Family Suite">  
+            <div data-aos="fade-up" data-aos-delay="300" class="glass-card rounded-3xl overflow-hidden group hover:border-amber-500/50 transition duration-500 flex flex-col justify-between">  
+                <div class="relative overflow-hidden h-64">
+                    <img src="https://picsum.photos/id/316/800/500" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Family Suite">  
+                    <div class="absolute top-4 right-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-full">Spacious</div>
+                </div>
                 <div class="p-8">  
-                    <h3 class="text-2xl font-semibold mb-2">Family Suite</h3>  
-                    <p class="text-rose-700 font-bold mb-4">₦110,000 / night</p>  
-                    <a href="rooms.html#family" class="block text-center py-4 border border-rose-700 text-rose-700 rounded-2xl hover:bg-rose-700 hover:text-white transition">View Details</a>  
+                    <h3 class="text-2xl font-bold mb-2 text-white">Family Suite</h3>  
+                    <p class="text-amber-400 text-xl font-semibold mb-6">₦110,000 <span class="text-sm font-normal text-gray-400">/ night</span></p>  
+                    <a href="rooms.html#family" class="block text-center py-3.5 border border-amber-500/50 text-amber-400 rounded-2xl hover:bg-amber-600 hover:text-white transition font-medium">View Details</a>  
                 </div>  
             </div>  
         </div>  
     </div>  
 </section>  
 
-<section class="py-20 bg-white">  
+<section class="py-16 bg-slate-950 border-y border-white/10">  
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-6 gap-8 text-center">  
-        <div><div class="text-4xl font-bold text-rose-700">68</div><div class="text-sm">Rooms</div></div>  
-        <div><div class="text-4xl font-bold text-rose-700">6+</div><div class="text-sm">Years</div></div>  
-        <div><div class="text-4xl font-bold text-rose-700">4.9</div><div class="text-sm">Rating</div></div>  
-        <div><div class="text-4xl font-bold text-rose-700">Free</div><div class="text-sm">Parking</div></div>  
-        <div><div class="text-4xl font-bold text-rose-700">✓</div><div class="text-sm">Airport Pickup</div></div>  
-        <div><div class="text-4xl font-bold text-rose-700">24/7</div><div class="text-sm">Reception</div></div>  
+        <div data-aos="zoom-in"><div class="text-4xl font-bold text-amber-400">68</div><div class="text-sm text-gray-400 mt-1">Luxury Rooms</div></div>  
+        <div data-aos="zoom-in" data-aos-delay="100"><div class="text-4xl font-bold text-amber-400">6+</div><div class="text-sm text-gray-400 mt-1">Years Experience</div></div>  
+        <div data-aos="zoom-in" data-aos-delay="200"><div class="text-4xl font-bold text-amber-400">4.9★</div><div class="text-sm text-gray-400 mt-1">Guest Rating</div></div>  
+        <div data-aos="zoom-in" data-aos-delay="300"><div class="text-4xl font-bold text-amber-400">Free</div><div class="text-sm text-gray-400 mt-1">Secure Parking</div></div>  
+        <div data-aos="zoom-in" data-aos-delay="400"><div class="text-4xl font-bold text-amber-400">✓</div><div class="text-sm text-gray-400 mt-1">Airport Shuttle</div></div>  
+        <div data-aos="zoom-in" data-aos-delay="500"><div class="text-4xl font-bold text-amber-400">24/7</div><div class="text-sm text-gray-400 mt-1">Front Desk</div></div>  
     </div>  
 </section>  
 
-<section class="py-24 bg-rose-700 text-white text-center">  
-    <div class="max-w-2xl mx-auto px-6">  
-        <h2 class="heading-font text-5xl font-bold mb-6">Ready for a Comfortable Stay?</h2>  
-        <a href="booking.html" class="inline-block bg-white text-rose-700 px-12 py-5 rounded-3xl text-xl font-semibold hover:scale-105 transition-all">  
+<section class="py-24 bg-gradient-to-r from-amber-700 via-rose-800 to-amber-900 text-white text-center relative overflow-hidden">  
+    <div data-aos="zoom-in" class="max-w-3xl mx-auto px-6 relative z-10">  
+        <h2 class="heading-font text-5xl font-bold mb-6">Ready for an Unforgettable Experience?</h2>  
+        <p class="text-xl text-amber-100/90 mb-8 font-light">Book directly with us for exclusive rates and personalized service.</p>
+        <a href="booking.html" class="inline-block bg-white text-slate-900 px-12 py-5 rounded-full text-xl font-bold hover:bg-amber-100 transition-all duration-300 hover:scale-105 shadow-2xl">  
             Reserve Your Room Now  
         </a>  
     </div>  
 </section>  
 
-<footer class="bg-black text-white py-16">  
+<footer class="bg-black text-white py-16 border-t border-white/10">  
     <div class="max-w-7xl mx-auto px-6">  
         <div class="grid md:grid-cols-4 gap-10">  
             <div>  
                 <div class="flex items-center gap-x-3 mb-6">  
-                    <div class="w-10 h-10 bg-rose-700 rounded-full flex items-center justify-center text-white font-bold text-2xl">B</div>  
+                    <div class="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center text-white font-bold text-2xl">B</div>  
                     <div>  
-                        <span class="heading-font text-3xl font-bold">Bafana</span>  
-                        <span class="text-sm block -mt-1 text-rose-600">INTERNATIONAL</span>  
+                        <span class="heading-font text-2xl font-bold">Bafana</span>  
+                        <span class="text-[10px] block -mt-1 text-amber-500 font-semibold tracking-widest">INTERNATIONAL</span>  
                     </div>  
                 </div>  
-                <p class="text-gray-400">Luxury hospitality in the heart of Kaduna.</p>  
+                <p class="text-gray-400 text-sm leading-relaxed">Unmatched hospitality, elegance, and comfort in Kaduna.</p>  
             </div>  
               
             <div>  
-                <h4 class="font-semibold mb-4">Quick Links</h4>  
-                <ul class="space-y-2 text-gray-400">  
-                    <li><a href="rooms.html" class="hover:text-white">Rooms & Suites</a></li>  
-                    <li><a href="facilities.html" class="hover:text-white">Facilities</a></li>  
-                    <li><a href="restaurant.html" class="hover:text-white">Dining</a></li>  
-                    <li><a href="gallery.html" class="hover:text-white">Gallery</a></li>  
+                <h4 class="font-semibold mb-4 text-amber-200">Quick Links</h4>  
+                <ul class="space-y-2 text-gray-400 text-sm">  
+                    <li><a href="rooms.html" class="hover:text-amber-400 transition">Rooms & Suites</a></li>  
+                    <li><a href="facilities.html" class="hover:text-amber-400 transition">Facilities</a></li>  
+                    <li><a href="restaurant.html" class="hover:text-amber-400 transition">Dining</a></li>  
+                    <li><a href="gallery.html" class="hover:text-amber-400 transition">Gallery</a></li>  
                 </ul>  
             </div>  
               
             <div>  
-                <h4 class="font-semibold mb-4">Contact</h4>  
-                <ul class="space-y-2 text-gray-400">  
+                <h4 class="font-semibold mb-4 text-amber-200">Contact</h4>  
+                <ul class="space-y-2 text-gray-400 text-sm">  
                     <li>CCJ3+MVR, Abuja - Kaduna - Zaria Express Way</li>  
                     <li>Goni Gora, Kaduna 800104</li>  
                     <li class="mt-4">+234 XXX XXX XXXX</li>  
@@ -301,29 +340,38 @@
             </div>  
               
             <div>  
-                <h4 class="font-semibold mb-4">Follow Us</h4>  
-                <div class="flex gap-4 text-2xl">  
-                    <a href="#" class="hover:text-rose-500"><i class="fab fa-instagram"></i></a>  
-                    <a href="#" class="hover:text-rose-500"><i class="fab fa-facebook"></i></a>  
-                    <a href="#" class="hover:text-rose-500"><i class="fab fa-twitter"></i></a>  
+                <h4 class="font-semibold mb-4 text-amber-200">Follow Us</h4>  
+                <div class="flex gap-4 text-2xl text-gray-400">  
+                    <a href="#" class="hover:text-amber-400 transition"><i class="fab fa-instagram"></i></a>  
+                    <a href="#" class="hover:text-amber-400 transition"><i class="fab fa-facebook"></i></a>  
+                    <a href="#" class="hover:text-amber-400 transition"><i class="fab fa-twitter"></i></a>  
                 </div>  
             </div>  
         </div>  
           
-        <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">  
+        <div class="border-t border-white/10 mt-12 pt-8 text-center text-gray-500 text-xs">  
             © 2026 Bafana Hotel International. All Rights Reserved.  
         </div>  
     </div>  
 </footer>  
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 <script>  
-    // Navbar scroll effect  
+    // Initialize AOS Animations
+    AOS.init({
+        duration: 900,
+        once: true,
+        easing: 'ease-in-out',
+    });
+
+    // Navbar Scroll Background Effect  
     window.addEventListener('scroll', () => {  
         const navbar = document.getElementById('navbar');  
         if (window.scrollY > 50) {  
-            navbar.classList.add('bg-white/95', 'backdrop-blur-md');  
+            navbar.classList.add('bg-slate-950', 'shadow-2xl');  
         } else {  
-            navbar.classList.remove('bg-white/95', 'backdrop-blur-md');  
+            navbar.classList.remove('bg-slate-950', 'shadow-2xl');  
         }  
     });  
 
