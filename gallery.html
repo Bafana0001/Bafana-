@@ -3,11 +3,11 @@
 <head>  
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <meta name="description" content="Bafana Hotel Kaduna - Photo gallery showcasing luxury rooms, fine dining, and facilities.">  
+    <meta name="description" content="Bafana Hotel Kaduna - Photo gallery showcasing luxury rooms, fine dining, and world-class facilities.">  
     <title>Gallery | Bafana Hotel Kaduna</title>  
     <script src="https://cdn.tailwindcss.com"></script>  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">  
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">  
     <style>  
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap');  
           
@@ -15,23 +15,14 @@
             font-family: 'Playfair Display', serif;  
         }
 
-        /* Carousel Scroll Container Setup */
         .carousel-track {
             display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none; /* Hide scrollbar for Firefox */
-        }
-
-        .carousel-track::-webkit-scrollbar {
-            display: none; /* Hide scrollbar for Chrome/Safari */
+            transition: transform 0.6s ease-in-out;
         }
 
         .carousel-slide {
-            flex: 0 0 100%;
-            scroll-snap-align: start;
+            min-width: 100%;
+            box-sizing: border-box;
         }
     </style>
 </head>  
@@ -102,632 +93,289 @@
 
 <section class="pt-40 pb-12 text-center bg-white border-b border-gray-100">
     <div class="max-w-7xl mx-auto px-6">
-        <span class="text-rose-600 font-semibold tracking-widest uppercase text-sm block mb-2">Visual Splendor</span>
+        <span class="text-rose-600 font-semibold tracking-widest uppercase text-sm block mb-2">Visual Showcase</span>
         <h1 class="heading-font text-5xl font-bold text-gray-900 mb-6">
-            Our Photo Gallery
+            Explore Bafana International
         </h1>
-        <p class="text-gray-600 max-w-2xl mx-auto text-lg mb-8 leading-relaxed">
-            Take an immersive tour through our premium accommodations, world-class amenities, and elegant spaces. Swipe or let the slides auto-play to explore all that Bafana Hotel International has to offer.
+        <p class="text-gray-600 max-w-2xl mx-auto text-lg mb-8">
+            Immerse yourself in our elegant surroundings. Swipe through our interactive galleries to preview our luxury accommodations, fine dining, recreation, and amenities.
         </p>
         <a href="index.html" class="inline-flex items-center gap-2 border border-gray-300 hover:border-rose-700 hover:text-rose-700 px-6 py-3 rounded-2xl font-medium transition duration-300 bg-white shadow-sm">
             <i class="fas fa-arrow-left text-sm"></i> Back to Home Page
         </a>
     </div>
 </section>
+<section class="py-16">
+    <div class="max-w-7xl mx-auto px-6 space-y-20">
 
-<section class="py-16 max-w-7xl mx-auto px-6 space-y-16">
-    <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 transition hover:shadow-md">
-        <div class="flex flex-col lg:flex-row gap-8 items-center">
-            <div class="w-full lg:w-1/2 space-y-4">
-                <span class="text-rose-600 text-xs font-semibold uppercase tracking-wider bg-rose-50 px-3 py-1 rounded-full">Gastronomy</span>
-                <h2 class="heading-font text-3xl font-bold text-gray-900">Fine Dining Restaurant</h2>
+        <div class="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 md:p-10 grid lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-5 space-y-4">
+                <span class="text-xs text-rose-600 font-bold uppercase tracking-wider bg-rose-50 px-3 py-1 rounded-full">Architecture</span>
+                <h2 class="heading-font text-3xl font-bold text-gray-900">Bafana Hotel Exterior</h2>
                 <p class="text-gray-600 leading-relaxed">
-                    Indulge your palate in an exquisite culinary journey at the Bafana Hotel Restaurant. Our master chefs combine authentic Nigerian flavors with international cuisine, serving freshly prepared dishes in an elegant, climate-controlled atmosphere designed for family dinners and business lunches.
+                    Designed with modern architectural elegance, Bafana Hotel International stands as a beacon of hospitality in Kaduna. Enjoy secure parking, beautiful facades, and a warm welcome from the moment you arrive.
                 </p>
-                <div class="flex items-center gap-4 text-sm text-gray-500 font-medium pt-2">
-                    <span><i class="fas fa-utensils text-rose-600 mr-2"></i>Buffet & A la Carte</span>
-                    <span><i class="fas fa-clock text-rose-600 mr-2"></i>6:00 AM - 11:00 PM</span>
-                </div>
             </div>
-            
-            <div class="w-full lg:w-1/2 relative group">
-                <div id="carousel-restaurant" class="carousel-track rounded-2xl overflow-hidden shadow-inner">
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/292/900/600" alt="Restaurant Main Dining" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Main Dining Hall</div>
+            <div class="lg:col-span-7">
+                <div class="relative overflow-hidden rounded-2xl shadow-lg group carousel-container" data-carousel="1">
+                    <div class="carousel-track">
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/1015/800/500" alt="Hotel Exterior 1" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/1040/800/500" alt="Hotel Exterior 2" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/1029/800/500" alt="Hotel Exterior 3" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/1042/800/500" alt="Hotel Exterior 4" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/1048/800/500" alt="Hotel Exterior 5" class="w-full h-[320px] md:h-[400px] object-cover"></div>
                     </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/429/900/600" alt="VIP Dining Table" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">VIP Private Table</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/1080/900/600" alt="Gourmet Platter" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Signature Chef Specials</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/625/900/600" alt="Buffet Setup" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Breakfast Buffet Station</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/1060/900/600" alt="Restaurant Interior" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Evening Ambiance</div>
-                    </div>
+                    <button class="prev-btn absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-rose-700 text-white w-10 h-10 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-btn absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-rose-700 text-white w-10 h-10 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100"><i class="fas fa-chevron-right"></i></button>
+                    <div class="dots-container absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2"></div>
                 </div>
-                <button onclick="scrollCarousel('carousel-restaurant', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition opacity-0 group-hover:opacity-100">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button onclick="scrollCarousel('carousel-restaurant', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition opacity-0 group-hover:opacity-100">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
             </div>
         </div>
-    </div>
 
-    <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 transition hover:shadow-md">
-        <div class="flex flex-col lg:flex-row-reverse gap-8 items-center">
-            <div class="w-full lg:w-1/2 space-y-4">
-                <span class="text-rose-600 text-xs font-semibold uppercase tracking-wider bg-rose-50 px-3 py-1 rounded-full">Grooming & Style</span>
-                <h2 class="heading-font text-3xl font-bold text-gray-900">Executive Barbing Salon</h2>
+        <div class="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 md:p-10 grid lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-5 space-y-4">
+                <span class="text-xs text-rose-600 font-bold uppercase tracking-wider bg-rose-50 px-3 py-1 rounded-full">Welcome</span>
+                <h2 class="heading-font text-3xl font-bold text-gray-900">Reception & Lounge</h2>
                 <p class="text-gray-600 leading-relaxed">
-                    Look and feel your sharpest throughout your stay. Our modern executive salon offers professional haircuts, precision beard trims, soothing scalp massages, and facial treatments delivered by experienced stylists in a clean, sanitized environment.
+                    Our grand lobby and reception area offer 24/7 guest service with express check-in. Relax in our luxurious lobby waiting area designed with comfort and elegance in mind.
                 </p>
-                <div class="flex items-center gap-4 text-sm text-gray-500 font-medium pt-2">
-                    <span><i class="fas fa-scissors text-rose-600 mr-2"></i>Professional Stylists</span>
-                    <span><i class="fas fa-spa text-rose-600 mr-2"></i>Grooming Packages</span>
-                </div>
             </div>
-            
-            <div class="w-full lg:w-1/2 relative group">
-                <div id="carousel-salon" class="carousel-track rounded-2xl overflow-hidden shadow-inner">
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/1025/900/600" alt="Salon Interior" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Modern Styling Chairs</div>
+            <div class="lg:col-span-7">
+                <div class="relative overflow-hidden rounded-2xl shadow-lg group carousel-container" data-carousel="2">
+                    <div class="carousel-track">
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/433/800/500" alt="Reception 1" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/368/800/500" alt="Reception 2" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/370/800/500" alt="Reception 3" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/445/800/500" alt="Reception 4" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/526/800/500" alt="Reception 5" class="w-full h-[320px] md:h-[400px] object-cover"></div>
                     </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/338/900/600" alt="Grooming Tools" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Sterilized Equipment</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/64/900/600" alt="Barber at Work" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Precision Haircuts</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/331/900/600" alt="Facial Care" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Facial & Spa Treatment Area</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/823/900/600" alt="Waiting Area" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">VIP Waiting Lounge</div>
-                    </div>
+                    <button class="prev-btn absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-rose-700 text-white w-10 h-10 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-btn absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-rose-700 text-white w-10 h-10 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100"><i class="fas fa-chevron-right"></i></button>
+                    <div class="dots-container absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2"></div>
                 </div>
-                <button onclick="scrollCarousel('carousel-salon', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition opacity-0 group-hover:opacity-100">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button onclick="scrollCarousel('carousel-salon', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition opacity-0 group-hover:opacity-100">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
             </div>
         </div>
-    </div>
-    <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 transition hover:shadow-md">
-        <div class="flex flex-col lg:flex-row gap-8 items-center">
-            <div class="w-full lg:w-1/2 space-y-4">
-                <span class="text-rose-600 text-xs font-semibold uppercase tracking-wider bg-rose-50 px-3 py-1 rounded-full">Warm Welcome</span>
-                <h2 class="heading-font text-3xl font-bold text-gray-900">Reception & Front Desk Lounge</h2>
-                <p class="text-gray-600 leading-relaxed">
-                    From the moment you step into Bafana Hotel, our hospitable reception team ensures a seamless check-in experience. Our grand lobby provides a luxurious, comfortable waiting area equipped with high-speed Wi-Fi, ambient lighting, and dedicated concierge assistance available around the clock.
-                </p>
-                <div class="flex items-center gap-4 text-sm text-gray-500 font-medium pt-2">
-                    <span><i class="fas fa-concierge-bell text-rose-600 mr-2"></i>24/7 Desk Service</span>
-                    <span><i class="fas fa-wifi text-rose-600 mr-2"></i>High-Speed Wi-Fi</span>
-                </div>
-            </div>
-            
-            <div class="w-full lg:w-1/2 relative group">
-                <div id="carousel-reception" class="carousel-track rounded-2xl overflow-hidden shadow-inner">
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/433/900/600" alt="Main Reception Desk" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Main Reception Counter</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/364/900/600" alt="Lobby Seating" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Luxury Lobby Seating</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/370/900/600" alt="Concierge Desk" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Concierge & Guest Relations</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/445/900/600" alt="Lobby Entrance" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Main Entrance Foyer</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/1031/900/600" alt="VIP Lounge Area" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Executive Waiting Lounge</div>
-                    </div>
-                </div>
-                <button onclick="scrollCarousel('carousel-reception', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition opacity-0 group-hover:opacity-100">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button onclick="scrollCarousel('carousel-reception', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition opacity-0 group-hover:opacity-100">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </div>
-    </div>
 
-    <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 transition hover:shadow-md">
-        <div class="flex flex-col lg:flex-row-reverse gap-8 items-center">
-            <div class="w-full lg:w-1/2 space-y-4">
-                <span class="text-rose-600 text-xs font-semibold uppercase tracking-wider bg-rose-50 px-3 py-1 rounded-full">Accommodation</span>
+        <div class="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 md:p-10 grid lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-5 space-y-4">
+                <span class="text-xs text-rose-600 font-bold uppercase tracking-wider bg-rose-50 px-3 py-1 rounded-full">Accommodations</span>
                 <h2 class="heading-font text-3xl font-bold text-gray-900">Luxury Rooms & Suites</h2>
                 <p class="text-gray-600 leading-relaxed">
-                    Designed for supreme relaxation, our guest rooms feature plush king-sized beds, smart entertainment systems, elegant en-suite bathrooms, and peaceful surroundings. Whether you choose our Deluxe Rooms or Master Suites, comfort is guaranteed.
+                    Unwind in style with our thoughtfully decorated rooms and master suites. Outfitted with premium bedding, climate control, high-speed Wi-Fi, and plush interior finishes.
                 </p>
-                <div class="flex items-center gap-4 text-sm text-gray-500 font-medium pt-2">
-                    <span><i class="fas fa-bed text-rose-600 mr-2"></i>King & Queen Beds</span>
-                    <span><i class="fas fa-tv text-rose-600 mr-2"></i>Smart IPTV</span>
-                </div>
             </div>
-            
-            <div class="w-full lg:w-1/2 relative group">
-                <div id="carousel-rooms" class="carousel-track rounded-2xl overflow-hidden shadow-inner">
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/1040/900/600" alt="Executive Master Suite" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Executive Master Suite</div>
+            <div class="lg:col-span-7">
+                <div class="relative overflow-hidden rounded-2xl shadow-lg group carousel-container" data-carousel="3">
+                    <div class="carousel-track">
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/429/800/500" alt="Room 1" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/1031/800/500" alt="Room 2" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/1050/800/500" alt="Room 3" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/652/800/500" alt="Room 4" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/838/800/500" alt="Room 5" class="w-full h-[320px] md:h-[400px] object-cover"></div>
                     </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/652/900/600" alt="Deluxe Room Interior" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Deluxe King Room</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/824/900/600" alt="Luxury Bathroom" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">En-suite Bathroom & Amenities</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/674/900/600" alt="Suite Living Area" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Suite Sitting Lounge Area</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/1050/900/600" alt="Standard Bedroom" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Cozy Standard Bedroom</div>
-                    </div>
+                    <button class="prev-btn absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-rose-700 text-white w-10 h-10 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-btn absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-rose-700 text-white w-10 h-10 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100"><i class="fas fa-chevron-right"></i></button>
+                    <div class="dots-container absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2"></div>
                 </div>
-                <button onclick="scrollCarousel('carousel-rooms', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition opacity-0 group-hover:opacity-100">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button onclick="scrollCarousel('carousel-rooms', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition opacity-0 group-hover:opacity-100">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
             </div>
         </div>
-    </div>
-    <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 transition hover:shadow-md">
-        <div class="flex flex-col lg:flex-row gap-8 items-center">
-            <div class="w-full lg:w-1/2 space-y-4">
-                <span class="text-rose-600 text-xs font-semibold uppercase tracking-wider bg-rose-50 px-3 py-1 rounded-full">Warm Welcome</span>
-                <h2 class="heading-font text-3xl font-bold text-gray-900">Reception & Front Desk Lounge</h2>
-                <p class="text-gray-600 leading-relaxed">
-                    From the moment you step into Bafana Hotel, our hospitable reception team ensures a seamless check-in experience. Our grand lobby provides a luxurious, comfortable waiting area equipped with high-speed Wi-Fi, ambient lighting, and dedicated concierge assistance available around the clock.
-                </p>
-                <div class="flex items-center gap-4 text-sm text-gray-500 font-medium pt-2">
-                    <span><i class="fas fa-concierge-bell text-rose-600 mr-2"></i>24/7 Desk Service</span>
-                    <span><i class="fas fa-wifi text-rose-600 mr-2"></i>High-Speed Wi-Fi</span>
-                </div>
-            </div>
-            
-            <div class="w-full lg:w-1/2 relative group">
-                <div id="carousel-reception" class="carousel-track rounded-2xl overflow-hidden shadow-inner">
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/433/900/600" alt="Main Reception Desk" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Main Reception Counter</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/364/900/600" alt="Lobby Seating" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Luxury Lobby Seating</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/370/900/600" alt="Concierge Desk" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Concierge & Guest Relations</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/445/900/600" alt="Lobby Entrance" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Main Entrance Foyer</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/1031/900/600" alt="VIP Lounge Area" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Executive Waiting Lounge</div>
-                    </div>
-                </div>
-                <button onclick="scrollCarousel('carousel-reception', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition opacity-0 group-hover:opacity-100">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button onclick="scrollCarousel('carousel-reception', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition opacity-0 group-hover:opacity-100">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </div>
-    </div>
 
-    <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 transition hover:shadow-md">
-        <div class="flex flex-col lg:flex-row-reverse gap-8 items-center">
-            <div class="w-full lg:w-1/2 space-y-4">
-                <span class="text-rose-600 text-xs font-semibold uppercase tracking-wider bg-rose-50 px-3 py-1 rounded-full">Accommodation</span>
-                <h2 class="heading-font text-3xl font-bold text-gray-900">Luxury Rooms & Suites</h2>
+        <div class="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 md:p-10 grid lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-5 space-y-4">
+                <span class="text-xs text-rose-600 font-bold uppercase tracking-wider bg-rose-50 px-3 py-1 rounded-full">Fine Dining</span>
+                <h2 class="heading-font text-3xl font-bold text-gray-900">Main Restaurant</h2>
                 <p class="text-gray-600 leading-relaxed">
-                    Designed for supreme relaxation, our guest rooms feature plush king-sized beds, smart entertainment systems, elegant en-suite bathrooms, and peaceful surroundings. Whether you choose our Deluxe Rooms or Master Suites, comfort is guaranteed.
+                    Savor a fusion of local Nigerian delicacies and international cuisine, prepared fresh by expert chefs in an ambiance designed for memorable meal gatherings.
                 </p>
-                <div class="flex items-center gap-4 text-sm text-gray-500 font-medium pt-2">
-                    <span><i class="fas fa-bed text-rose-600 mr-2"></i>King & Queen Beds</span>
-                    <span><i class="fas fa-tv text-rose-600 mr-2"></i>Smart IPTV</span>
-                </div>
             </div>
-            
-            <div class="w-full lg:w-1/2 relative group">
-                <div id="carousel-rooms" class="carousel-track rounded-2xl overflow-hidden shadow-inner">
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/1040/900/600" alt="Executive Master Suite" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Executive Master Suite</div>
+            <div class="lg:col-span-7">
+                <div class="relative overflow-hidden rounded-2xl shadow-lg group carousel-container" data-carousel="4">
+                    <div class="carousel-track">
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/292/800/500" alt="Restaurant 1" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/425/800/500" alt="Restaurant 2" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/1080/800/500" alt="Restaurant 3" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/63/800/500" alt="Restaurant 4" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/225/800/500" alt="Restaurant 5" class="w-full h-[320px] md:h-[400px] object-cover"></div>
                     </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/652/900/600" alt="Deluxe Room Interior" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Deluxe King Room</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/824/900/600" alt="Luxury Bathroom" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">En-suite Bathroom & Amenities</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/674/900/600" alt="Suite Living Area" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Suite Sitting Lounge Area</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/1050/900/600" alt="Standard Bedroom" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Cozy Standard Bedroom</div>
-                    </div>
+                    <button class="prev-btn absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-rose-700 text-white w-10 h-10 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-btn absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-rose-700 text-white w-10 h-10 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100"><i class="fas fa-chevron-right"></i></button>
+                    <div class="dots-container absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2"></div>
                 </div>
-                <button onclick="scrollCarousel('carousel-rooms', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition opacity-0 group-hover:opacity-100">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button onclick="scrollCarousel('carousel-rooms', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition opacity-0 group-hover:opacity-100">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
             </div>
         </div>
-    </div>
-    <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 transition hover:shadow-md">
-        <div class="flex flex-col lg:flex-row gap-8 items-center">
-            <div class="w-full lg:w-1/2 space-y-4">
-                <span class="text-rose-600 text-xs font-semibold uppercase tracking-wider bg-rose-50 px-3 py-1 rounded-full">Leisure & Wellness</span>
-                <h2 class="heading-font text-3xl font-bold text-gray-900">Relaxing Swimming Pool</h2>
+        <div class="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 md:p-10 grid lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-5 space-y-4">
+                <span class="text-xs text-rose-600 font-bold uppercase tracking-wider bg-rose-50 px-3 py-1 rounded-full">Nightlife & Drinks</span>
+                <h2 class="heading-font text-3xl font-bold text-gray-900">Executive Bar</h2>
                 <p class="text-gray-600 leading-relaxed">
-                    Unwind and refresh in our crystal-clear outdoor swimming pool. Complete with comfortable poolside loungers, sun umbrellas, and a dedicated poolside bar serving chilled beverages, it’s the ultimate spot to soak up the Kaduna sunshine or relax after a busy day.
+                    Kick back and enjoy crafted cocktails, ice-cold beverages, and soft ambient lighting at our fully stocked bar. A perfect venue to socialize or unwind after a busy day.
                 </p>
-                <div class="flex items-center gap-4 text-sm text-gray-500 font-medium pt-2">
-                    <span><i class="fas fa-swimmer text-rose-600 mr-2"></i>Clean & Filtered</span>
-                    <span><i class="fas fa-glass-martini-alt text-rose-600 mr-2"></i>Poolside Bar Service</span>
-                </div>
             </div>
-            
-            <div class="w-full lg:w-1/2 relative group">
-                <div id="carousel-pool" class="carousel-track rounded-2xl overflow-hidden shadow-inner">
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/164/900/600" alt="Main Swimming Pool" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Main Pool Area</div>
+            <div class="lg:col-span-7">
+                <div class="relative overflow-hidden rounded-2xl shadow-lg group carousel-container" data-carousel="5">
+                    <div class="carousel-track">
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/431/800/500" alt="Bar 1" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/102/800/500" alt="Bar 2" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/354/800/500" alt="Bar 3" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/439/800/500" alt="Bar 4" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/249/800/500" alt="Bar 5" class="w-full h-[320px] md:h-[400px] object-cover"></div>
                     </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/1043/900/600" alt="Pool Lounge Chairs" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Sun Loungers & Deck</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/1039/900/600" alt="Evening Pool View" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Night Pool Illumination</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/326/900/600" alt="Shallow Kids Area" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Shallow Swim Section</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/405/900/600" alt="Poolside Cabana" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Relaxation Cabanas</div>
-                    </div>
+                    <button class="prev-btn absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-rose-700 text-white w-10 h-10 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-btn absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-rose-700 text-white w-10 h-10 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100"><i class="fas fa-chevron-right"></i></button>
+                    <div class="dots-container absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2"></div>
                 </div>
-                <button onclick="scrollCarousel('carousel-pool', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition opacity-0 group-hover:opacity-100">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button onclick="scrollCarousel('carousel-pool', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition opacity-0 group-hover:opacity-100">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
             </div>
         </div>
-    </div>
 
-    <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 transition hover:shadow-md">
-        <div class="flex flex-col lg:flex-row-reverse gap-8 items-center">
-            <div class="w-full lg:w-1/2 space-y-4">
-                <span class="text-rose-600 text-xs font-semibold uppercase tracking-wider bg-rose-50 px-3 py-1 rounded-full">Corporate & Events</span>
-                <h2 class="heading-font text-3xl font-bold text-gray-900">Conference & Event Hall</h2>
+        <div class="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 md:p-10 grid lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-5 space-y-4">
+                <span class="text-xs text-rose-600 font-bold uppercase tracking-wider bg-rose-50 px-3 py-1 rounded-full">Recreation</span>
+                <h2 class="heading-font text-3xl font-bold text-gray-900">Outdoor Swimming Pool</h2>
                 <p class="text-gray-600 leading-relaxed">
-                    Host productive corporate meetings, seminars, banquets, and weddings in our fully equipped multipurpose halls. Outfitted with state-of-the-art audiovisual systems, climate control, and flexible seating layouts to host groups of various sizes.
+                    Take a refreshing dip in our crystal-clear pool or soak up the sun on comfortable poolside loungers. Ideal for morning swims or relaxing evening poolside drinks.
                 </p>
-                <div class="flex items-center gap-4 text-sm text-gray-500 font-medium pt-2">
-                    <span><i class="fas fa-microphone text-rose-600 mr-2"></i>AV & Projectors</span>
-                    <span><i class="fas fa-users text-rose-600 mr-2"></i>Flexible Capacity</span>
-                </div>
             </div>
-            
-            <div class="w-full lg:w-1/2 relative group">
-                <div id="carousel-hall" class="carousel-track rounded-2xl overflow-hidden shadow-inner">
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/221/900/600" alt="Main Conference Room" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Grand Conference Hall Setup</div>
+            <div class="lg:col-span-7">
+                <div class="relative overflow-hidden rounded-2xl shadow-lg group carousel-container" data-carousel="6">
+                    <div class="carousel-track">
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/164/800/500" alt="Pool 1" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/328/800/500" alt="Pool 2" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/212/800/500" alt="Pool 3" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/128/800/500" alt="Pool 4" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/415/800/500" alt="Pool 5" class="w-full h-[320px] md:h-[400px] object-cover"></div>
                     </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/367/900/600" alt="Banquet Setup" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Banquet & Event Arrangement</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/445/900/600" alt="Executive Boardroom" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Executive Boardroom Meeting</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/1072/900/600" alt="Stage & Podium" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Presentation Stage & Podium</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/201/900/600" alt="Meeting Breakout Lounge" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Event Reception Foyer</div>
-                    </div>
+                    <button class="prev-btn absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-rose-700 text-white w-10 h-10 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-btn absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-rose-700 text-white w-10 h-10 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100"><i class="fas fa-chevron-right"></i></button>
+                    <div class="dots-container absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2"></div>
                 </div>
-                <button onclick="scrollCarousel('carousel-hall', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition opacity-0 group-hover:opacity-100">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button onclick="scrollCarousel('carousel-hall', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition opacity-0 group-hover:opacity-100">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
             </div>
         </div>
-    </div>
-    <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 transition hover:shadow-md">
-        <div class="flex flex-col lg:flex-row gap-8 items-center">
-            <div class="w-full lg:w-1/2 space-y-4">
-                <span class="text-rose-600 text-xs font-semibold uppercase tracking-wider bg-rose-50 px-3 py-1 rounded-full">Outdoors</span>
-                <h2 class="heading-font text-3xl font-bold text-gray-900">Open Space Grounds</h2>
-                <p class="text-gray-600 leading-relaxed">
-                    Surrounded by lush greenery and manicured lawns, our spacious outdoor grounds provide a serene setting for garden weddings, evening receptions, outdoor cocktail parties, or a quiet stroll under the Kaduna sky.
-                </p>
-                <div class="flex items-center gap-4 text-sm text-gray-500 font-medium pt-2">
-                    <span><i class="fas fa-tree text-rose-600 mr-2"></i>Garden Banquets</span>
-                    <span><i class="fas fa-sun text-rose-600 mr-2"></i>Fresh Air Ambiance</span>
-                </div>
-            </div>
-            
-            <div class="w-full lg:w-1/2 relative group">
-                <div id="carousel-openspace" class="carousel-track rounded-2xl overflow-hidden shadow-inner">
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/1015/900/600" alt="Garden Courtyard" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Lush Garden Grounds</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/237/900/600" alt="Outdoor Seating Area" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Outdoor Relaxation Patio</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/1040/900/600" alt="Evening Outdoor Event Setup" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Night Garden Lighting</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/1016/900/600" alt="Landscape Walkway" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Scenic Paved Walkways</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/1051/900/600" alt="Outdoor Lawn View" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Spacious Lawn Area</div>
-                    </div>
-                </div>
-                <button onclick="scrollCarousel('carousel-openspace', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition opacity-0 group-hover:opacity-100">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button onclick="scrollCarousel('carousel-openspace', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition opacity-0 group-hover:opacity-100">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </div>
-    </div>
 
-    <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 transition hover:shadow-md">
-        <div class="flex flex-col lg:flex-row-reverse gap-8 items-center">
-            <div class="w-full lg:w-1/2 space-y-4">
-                <span class="text-rose-600 text-xs font-semibold uppercase tracking-wider bg-rose-50 px-3 py-1 rounded-full">Family Friendly</span>
+        <div class="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 md:p-10 grid lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-5 space-y-4">
+                <span class="text-xs text-rose-600 font-bold uppercase tracking-wider bg-rose-50 px-3 py-1 rounded-full">Events & Corporate</span>
+                <h2 class="heading-font text-3xl font-bold text-gray-900">Event & Conference Hall</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    Host your weddings, corporate meetings, and celebrations in our fully equipped, spacious event hall featuring modern lighting, sound systems, and air conditioning.
+                </p>
+            </div>
+            <div class="lg:col-span-7">
+                <div class="relative overflow-hidden rounded-2xl shadow-lg group carousel-container" data-carousel="7">
+                    <div class="carousel-track">
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/221/800/500" alt="Hall 1" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/367/800/500" alt="Hall 2" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/449/800/500" alt="Hall 3" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/158/800/500" alt="Hall 4" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/376/800/500" alt="Hall 5" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                    </div>
+                    <button class="prev-btn absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-rose-700 text-white w-10 h-10 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-btn absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-rose-700 text-white w-10 h-10 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100"><i class="fas fa-chevron-right"></i></button>
+                    <div class="dots-container absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 md:p-10 grid lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-5 space-y-4">
+                <span class="text-xs text-rose-600 font-bold uppercase tracking-wider bg-rose-50 px-3 py-1 rounded-full">Outdoors</span>
+                <h2 class="heading-font text-3xl font-bold text-gray-900">Open-Air Courtyard</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    Enjoy outdoor dining, evening banter, or breezy night gatherings in our spacious, well-lit outdoor grounds designed for fresh air relaxation.
+                </p>
+            </div>
+            <div class="lg:col-span-7">
+                <div class="relative overflow-hidden rounded-2xl shadow-lg group carousel-container" data-carousel="8">
+                    <div class="carousel-track">
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/1039/800/500" alt="Open Space 1" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/1043/800/500" alt="Open Space 2" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/1044/800/500" alt="Open Space 3" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/1053/800/500" alt="Open Space 4" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/1054/800/500" alt="Open Space 5" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                    </div>
+                    <button class="prev-btn absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-rose-700 text-white w-10 h-10 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-btn absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-rose-700 text-white w-10 h-10 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100"><i class="fas fa-chevron-right"></i></button>
+                    <div class="dots-container absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 md:p-10 grid lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-5 space-y-4">
+                <span class="text-xs text-rose-600 font-bold uppercase tracking-wider bg-rose-50 px-3 py-1 rounded-full">Family Friendly</span>
                 <h2 class="heading-font text-3xl font-bold text-gray-900">Children's Playground</h2>
                 <p class="text-gray-600 leading-relaxed">
-                    We ensure our youngest guests have a memorable stay too! Our secure and dedicated play zone features swings, slides, and fun recreational equipment set within a child-safe outdoor environment.
+                    Keep your young ones entertained in our safe, fun-filled playground. Complete with slides, rides, and supervised play spaces for maximum family convenience.
                 </p>
-                <div class="flex items-center gap-4 text-sm text-gray-500 font-medium pt-2">
-                    <span><i class="fas fa-child text-rose-600 mr-2"></i>Safe Play Equipment</span>
-                    <span><i class="fas fa-shield-alt text-rose-600 mr-2"></i>Secure Area</span>
-                </div>
             </div>
-            
-            <div class="w-full lg:w-1/2 relative group">
-                <div id="carousel-playground" class="carousel-track rounded-2xl overflow-hidden shadow-inner">
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/1025/900/600" alt="Playground Slides" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Outdoor Play Structures</div>
+            <div class="lg:col-span-7">
+                <div class="relative overflow-hidden rounded-2xl shadow-lg group carousel-container" data-carousel="9">
+                    <div class="carousel-track">
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/1005/800/500" alt="Playground 1" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/1011/800/500" alt="Playground 2" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/1066/800/500" alt="Playground 3" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/1074/800/500" alt="Playground 4" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/1084/800/500" alt="Playground 5" class="w-full h-[320px] md:h-[400px] object-cover"></div>
                     </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/1069/900/600" alt="Swing Set" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Swing Sets & Turf Zone</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/1084/900/600" alt="Kids Fun Area" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Interactive Game Corner</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/292/900/600" alt="Shaded Seating for Parents" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Parent Observation Bench Area</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/1062/900/600" alt="Recreational Grass Park" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Open Recreation Lawn</div>
-                    </div>
+                    <button class="prev-btn absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-rose-700 text-white w-10 h-10 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-btn absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-rose-700 text-white w-10 h-10 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100"><i class="fas fa-chevron-right"></i></button>
+                    <div class="dots-container absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2"></div>
                 </div>
-                <button onclick="scrollCarousel('carousel-playground', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition opacity-0 group-hover:opacity-100">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button onclick="scrollCarousel('carousel-playground', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition opacity-0 group-hover:opacity-100">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
             </div>
         </div>
-    </div>
-    <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 transition hover:shadow-md">
-        <div class="flex flex-col lg:flex-row gap-8 items-center">
-            <div class="w-full lg:w-1/2 space-y-4">
-                <span class="text-rose-600 text-xs font-semibold uppercase tracking-wider bg-rose-50 px-3 py-1 rounded-full">Hotel Exterior</span>
-                <h2 class="heading-font text-3xl font-bold text-gray-900">Bafana Hotel Complex</h2>
-                <p class="text-gray-600 leading-relaxed">
-                    Featuring modern architectural design blended with warm Nigerian hospitality, Bafana Hotel International offers a commanding presence along the express way. Explore our exterior facades, secure premises, and night lighting setups.
-                </p>
-                <div class="flex items-center gap-4 text-sm text-gray-500 font-medium pt-2">
-                    <span><i class="fas fa-building text-rose-600 mr-2"></i>Modern Facade</span>
-                    <span><i class="fas fa-parking text-rose-600 mr-2"></i>Ample Secure Parking</span>
-                </div>
-            </div>
-            
-            <div class="w-full lg:w-1/2 relative group">
-                <div id="carousel-bafana" class="carousel-track rounded-2xl overflow-hidden shadow-inner">
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/1015/900/600" alt="Main Building Exterior" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Main Front Elevation</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/1031/900/600" alt="Hotel Night Entrance" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Evening Exterior Lights</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/1040/900/600" alt="Driveway and Entrance" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Paved VIP Driveway</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/1076/900/600" alt="Aerial Complex View" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Overview of Hotel Grounds</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/1048/900/600" alt="Secure Gate Entrance" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Secure Entry Archway</div>
-                    </div>
-                </div>
-                <button onclick="scrollCarousel('carousel-bafana', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition opacity-0 group-hover:opacity-100">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button onclick="scrollCarousel('carousel-bafana', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition opacity-0 group-hover:opacity-100">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </div>
-    </div>
 
-    <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 transition hover:shadow-md">
-        <div class="flex flex-col lg:flex-row-reverse gap-8 items-center">
-            <div class="w-full lg:w-1/2 space-y-4">
-                <span class="text-rose-600 text-xs font-semibold uppercase tracking-wider bg-rose-50 px-3 py-1 rounded-full">Convenience</span>
-                <h2 class="heading-font text-3xl font-bold text-gray-900">Provision & Gift Store</h2>
+        <div class="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 md:p-10 grid lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-5 space-y-4">
+                <span class="text-xs text-rose-600 font-bold uppercase tracking-wider bg-rose-50 px-3 py-1 rounded-full">Grooming</span>
+                <h2 class="heading-font text-3xl font-bold text-gray-900">Barbing Salon</h2>
                 <p class="text-gray-600 leading-relaxed">
-                    For your everyday essentials and emergency shopping needs, our in-house provision store is fully stocked with toiletries, snacks, cold drinks, travel accessories, and local souvenirs without leaving the hotel premises.
+                    Look and feel your best without leaving the hotel premises. Our professional barbing salon offers expert haircuts, styling, and grooming services.
                 </p>
-                <div class="flex items-center gap-4 text-sm text-gray-500 font-medium pt-2">
-                    <span><i class="fas fa-shopping-basket text-rose-600 mr-2"></i>Daily Essentials</span>
-                    <span><i class="fas fa-gift text-rose-600 mr-2"></i>Souvenirs & Drinks</span>
-                </div>
             </div>
-            
-            <div class="w-full lg:w-1/2 relative group">
-                <div id="carousel-store" class="carousel-track rounded-2xl overflow-hidden shadow-inner">
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/1060/900/600" alt="Provision Store Front" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Store Main Shelf Display</div>
+            <div class="lg:col-span-7">
+                <div class="relative overflow-hidden rounded-2xl shadow-lg group carousel-container" data-carousel="10">
+                    <div class="carousel-track">
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/64/800/500" alt="Barbing Salon 1" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/338/800/500" alt="Barbing Salon 2" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/331/800/500" alt="Barbing Salon 3" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/342/800/500" alt="Barbing Salon 4" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/1025/800/500" alt="Barbing Salon 5" class="w-full h-[320px] md:h-[400px] object-cover"></div>
                     </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/429/900/600" alt="Beverages and Snacks" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Cold Drinks & Snacks Section</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/338/900/600" alt="Toiletries Shelf" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Travel Toiletries & Essentials</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/823/900/600" alt="Gift & Souvenir Stand" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Souvenirs & Gifts Corner</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/625/900/600" alt="Checkout Counter" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Quick Checkout Counter</div>
-                    </div>
+                    <button class="prev-btn absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-rose-700 text-white w-10 h-10 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-btn absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-rose-700 text-white w-10 h-10 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100"><i class="fas fa-chevron-right"></i></button>
+                    <div class="dots-container absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2"></div>
                 </div>
-                <button onclick="scrollCarousel('carousel-store', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition opacity-0 group-hover:opacity-100">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button onclick="scrollCarousel('carousel-store', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition opacity-0 group-hover:opacity-100">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
             </div>
         </div>
-    </div>
 
-    <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 transition hover:shadow-md">
-        <div class="flex flex-col lg:flex-row gap-8 items-center">
-            <div class="w-full lg:w-1/2 space-y-4">
-                <span class="text-rose-600 text-xs font-semibold uppercase tracking-wider bg-rose-50 px-3 py-1 rounded-full">Nightlife & Drinks</span>
-                <h2 class="heading-font text-3xl font-bold text-gray-900">Executive Bar & Lounge</h2>
+        <div class="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 md:p-10 grid lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-5 space-y-4">
+                <span class="text-xs text-rose-600 font-bold uppercase tracking-wider bg-rose-50 px-3 py-1 rounded-full">Convenience</span>
+                <h2 class="heading-font text-3xl font-bold text-gray-900">Provision Store & POS</h2>
                 <p class="text-gray-600 leading-relaxed">
-                    Unwind in an atmosphere of warmth and sophistication. Our executive bar serves premium spirits, signature cocktails, mocktails, and ice-cold beers, complemented by soft background music and cozy seating arrangements.
+                    Grab essential snacks, toiletries, travel necessities, and cash services conveniently right inside our complex at the onsite provision store and POS station.
                 </p>
-                <div class="flex items-center gap-4 text-sm text-gray-500 font-medium pt-2">
-                    <span><i class="fas fa-cocktail text-rose-600 mr-2"></i>Signature Cocktails</span>
-                    <span><i class="fas fa-music text-rose-600 mr-2"></i>Ambient Atmosphere</span>
-                </div>
             </div>
-            
-            <div class="w-full lg:w-1/2 relative group">
-                <div id="carousel-bar" class="carousel-track rounded-2xl overflow-hidden shadow-inner">
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/1060/900/600" alt="Main Bar Counter" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Main Bar Counter</div>
+            <div class="lg:col-span-7">
+                <div class="relative overflow-hidden rounded-2xl shadow-lg group carousel-container" data-carousel="11">
+                    <div class="carousel-track">
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/532/800/500" alt="Provision Store 1" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/365/800/500" alt="Provision Store 2" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/488/800/500" alt="Provision Store 3" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/529/800/500" alt="Provision Store 4" class="w-full h-[320px] md:h-[400px] object-cover"></div>
+                        <div class="carousel-slide"><img src="https://picsum.photos/id/517/800/500" alt="Provision Store 5" class="w-full h-[320px] md:h-[400px] object-cover"></div>
                     </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/433/900/600" alt="Lounge Seating" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">VIP Lounge Seating</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/1080/900/600" alt="Cocktails" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Crafted Drinks & Cocktails</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/364/900/600" alt="Evening Ambiance" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Evening Lounge Mood</div>
-                    </div>
-                    <div class="carousel-slide relative h-72 sm:h-80 w-full flex-shrink-0">
-                        <img src="https://picsum.photos/id/292/900/600" alt="High Bar Stools" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm">Bar Seating Area</div>
-                    </div>
+                    <button class="prev-btn absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-rose-700 text-white w-10 h-10 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-btn absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-rose-700 text-white w-10 h-10 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100"><i class="fas fa-chevron-right"></i></button>
+                    <div class="dots-container absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2"></div>
                 </div>
-                <button onclick="scrollCarousel('carousel-bar', -1)" class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition opacity-0 group-hover:opacity-100">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button onclick="scrollCarousel('carousel-bar', 1)" class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-md transition opacity-0 group-hover:opacity-100">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
             </div>
         </div>
+
     </div>
 </section>
 <section class="py-24 bg-rose-700 text-white text-center">  
     <div class="max-w-2xl mx-auto px-6">  
         <h2 class="heading-font text-5xl font-bold mb-6">Ready for a Comfortable Stay?</h2>  
-        <p class="text-rose-100 text-lg mb-8 leading-relaxed">
-            Experience our premium hospitality firsthand. Book your luxury suite or reserve our facilities for your next event today.
-        </p>
         <a href="booking.html" class="inline-block bg-white text-rose-700 px-12 py-5 rounded-3xl text-xl font-semibold hover:scale-105 transition-all shadow-lg">  
             Reserve Your Room Now  
         </a>  
@@ -745,16 +393,16 @@
                         <span class="text-sm block -mt-1 text-rose-600">INTERNATIONAL</span>  
                     </div>  
                 </div>  
-                <p class="text-gray-400 leading-relaxed">Luxury hospitality in the heart of Kaduna.</p>  
+                <p class="text-gray-400">Luxury hospitality in the heart of Kaduna.</p>  
             </div>  
               
             <div>  
                 <h4 class="font-semibold mb-4">Quick Links</h4>  
                 <ul class="space-y-2 text-gray-400">  
-                    <li><a href="rooms.html" class="hover:text-white transition">Rooms & Suites</a></li>  
-                    <li><a href="facilities.html" class="hover:text-white transition">Facilities</a></li>  
-                    <li><a href="restaurant.html" class="hover:text-white transition">Dining</a></li>  
-                    <li><a href="gallery.html" class="hover:text-white transition">Gallery</a></li>  
+                    <li><a href="rooms.html" class="hover:text-white">Rooms & Suites</a></li>  
+                    <li><a href="facilities.html" class="hover:text-white">Facilities</a></li>  
+                    <li><a href="restaurant.html" class="hover:text-white">Dining</a></li>  
+                    <li><a href="gallery.html" class="hover:text-white">Gallery</a></li>  
                 </ul>  
             </div>  
               
@@ -771,9 +419,9 @@
             <div>  
                 <h4 class="font-semibold mb-4">Follow Us</h4>  
                 <div class="flex gap-4 text-2xl">  
-                    <a href="#" class="hover:text-rose-500 transition"><i class="fab fa-instagram"></i></a>  
-                    <a href="#" class="hover:text-rose-500 transition"><i class="fab fa-facebook"></i></a>  
-                    <a href="#" class="hover:text-rose-500 transition"><i class="fab fa-twitter"></i></a>  
+                    <a href="#" class="hover:text-rose-500"><i class="fab fa-instagram"></i></a>  
+                    <a href="#" class="hover:text-rose-500"><i class="fab fa-facebook"></i></a>  
+                    <a href="#" class="hover:text-rose-500"><i class="fab fa-twitter"></i></a>  
                 </div>  
             </div>  
         </div>  
@@ -785,7 +433,7 @@
 </footer>  
 
 <script>  
-    // Navbar Blur Effect on Scroll
+    // Navbar scroll effect
     window.addEventListener('scroll', () => {  
         const navbar = document.getElementById('navbar');  
         if (window.scrollY > 50) {  
@@ -795,7 +443,7 @@
         }  
     });  
 
-    // Mobile Navigation Drawer Toggle
+    // Mobile Menu Toggle
     const openMenuBtn = document.getElementById('openMenu');
     const closeMenuBtn = document.getElementById('closeMenu');
     const sideMenu = document.getElementById('sideMenu');
@@ -815,61 +463,63 @@
     closeMenuBtn.addEventListener('click', closeMenu);
     menuOverlay.addEventListener('click', closeMenu);
 
-    // Carousel Navigation Function (Manual Arrow Click)
-    function scrollCarousel(carouselId, direction) {
-        const carousel = document.getElementById(carouselId);
-        if (!carousel) return;
-        
-        const slideWidth = carousel.clientWidth;
-        const maxScrollLeft = carousel.scrollWidth - slideWidth;
-        
-        if (direction === 1) {
-            // Next Slide
-            if (carousel.scrollLeft >= maxScrollLeft - 10) {
-                carousel.scrollTo({ left: 0, behavior: 'smooth' });
-            } else {
-                carousel.scrollBy({ left: slideWidth, behavior: 'smooth' });
-            }
-        } else {
-            // Previous Slide
-            if (carousel.scrollLeft <= 10) {
-                carousel.scrollTo({ left: maxScrollLeft, behavior: 'smooth' });
-            } else {
-                carousel.scrollBy({ left: -slideWidth, behavior: 'smooth' });
-            }
-        }
-    }
+    // Carousel Controller (Auto-swiping every 4 seconds)
+    document.querySelectorAll('.carousel-container').forEach((container) => {
+        const track = container.querySelector('.carousel-track');
+        const slides = container.querySelectorAll('.carousel-slide');
+        const prevBtn = container.querySelector('.prev-btn');
+        const nextBtn = container.querySelector('.next-btn');
+        const dotsContainer = container.querySelector('.dots-container');
 
-    // Auto-swiping Carousel Controller (Swipes every 4 seconds)
-    const carouselIds = [
-        'carousel-restaurant',
-        'carousel-salon',
-        'carousel-reception',
-        'carousel-rooms',
-        'carousel-pool',
-        'carousel-hall',
-        'carousel-openspace',
-        'carousel-playground',
-        'carousel-bafana',
-        'carousel-store',
-        'carousel-bar'
-    ];
+        let currentIndex = 0;
+        const totalSlides = slides.length;
 
-    setInterval(() => {
-        carouselIds.forEach(id => {
-            const carousel = document.getElementById(id);
-            if (carousel) {
-                const slideWidth = carousel.clientWidth;
-                const maxScrollLeft = carousel.scrollWidth - slideWidth;
-
-                if (carousel.scrollLeft >= maxScrollLeft - 10) {
-                    carousel.scrollTo({ left: 0, behavior: 'smooth' });
-                } else {
-                    carousel.scrollBy({ left: slideWidth, behavior: 'smooth' });
-                }
-            }
+        // Build Navigation Dots
+        slides.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.className = `w-2.5 h-2.5 rounded-full transition-all ${i === 0 ? 'bg-white w-6' : 'bg-white/50'}`;
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
         });
-    }, 4000); // 4 Seconds Interval
+
+        const dots = dotsContainer.querySelectorAll('button');
+
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach((dot, i) => {
+                if (i === currentIndex) {
+                    dot.className = 'w-6 h-2.5 bg-white rounded-full transition-all';
+                } else {
+                    dot.className = 'w-2.5 h-2.5 bg-white/50 rounded-full transition-all';
+                }
+            });
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            updateCarousel();
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Auto Swiping every 4 seconds
+        let autoPlayInterval = setInterval(nextSlide, 4000);
+
+        // Pause timer on user hover
+        container.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+        container.addEventListener('mouseleave', () => autoPlayInterval = setInterval(nextSlide, 4000));
+    });
 </script>
 
 </body>  
