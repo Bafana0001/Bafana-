@@ -3,84 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Bafana Hotel Kaduna</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>About Us | Professional Hotel & Resort</title>
     <style>
-        .heading-font { font-family: 'Playfair Display', serif; }
+        /* Base Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        /* Hero / About Section */
+        .about-header {
+            text-align: center;
+            padding: 40px 0;
+            background: #1a252f;
+            color: #ffffff;
+            border-bottom: 4px solid #c99700;
+        }
+
+        .about-header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .about-header p {
+            font-size: 1.1rem;
+            color: #d1d5db;
+        }
+
+        /* 2x2 Facilities Grid */
+        .section-title {
+            text-align: center;
+            margin: 40px 0 20px;
+            font-size: 2rem;
+            color: #1a252f;
+        }
+
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .facility-card {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e5e7eb;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .facility-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .facility-card h3 {
+            margin-top: 0;
+            color: #1a252f;
+            font-size: 1.3rem;
+        }
+
+        .facility-card p {
+            color: #4b5563;
+            flex-grow: 1;
+        }
+
+        .btn-learn-more {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #c99700;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.2s;
+        }
+
+        .btn-learn-more:hover {
+            background-color: #a37a00;
+        }
+
+        /* Responsive Grid for Smaller Screens */
+        @media (max-width: 768px) {
+            .facilities-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Location & Google Maps Integration */
+        .location-section {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 50px;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 350px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+
+        /* Review Submission Form */
+        .review-section {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 50px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .btn-submit {
+            background: #1a252f;
+            color: #fff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-submit:hover {
+            background: #2c3e50;
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-<!-- NAVBAR -->
-<nav class="bg-white shadow-sm p-6 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <a href="index.html" class="text-2xl font-bold text-rose-700">Bafana Hotel</a>
-        <div class="flex gap-6 font-medium">
-            <a href="index.html" class="hover:text-rose-700">Home</a>
-            <a href="about.html" class="text-rose-700 border-b-2 border-rose-700">About</a>
+    <header class="about-header">
+        <div class="container">
+            <h1>Welcome to Our Hotel & Suites</h1>
+            <p>Providing exceptional hospitality, luxury, and comfort along the Abuja-Kaduna corridor.</p>
         </div>
-    </div>
-</nav>
+    </header>
 
-<!-- ABOUT SECTION -->
-<section class="py-16 px-6 max-w-4xl mx-auto text-center">
-    <h1 class="heading-font text-5xl font-bold mb-6">About Bafana Hotel</h1>
-    <p class="text-lg text-gray-600 leading-relaxed">
-        Located in the vibrant heart of Kaduna, Bafana Hotel International offers a blend of modern luxury and traditional Nigerian hospitality. Since our inception, we have been dedicated to providing a home away from home for travelers and local guests alike.
-    </p>
-</section>
+    <div class="container">
 
-<!-- REVIEWS GRID -->
-<section class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-        <h2 class="heading-font text-4xl font-bold text-center mb-12">What Our Guests Say</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-            <!-- Review 1-20 Content -->
-            <script>
-                const reviews = [
-                    "An absolute gem in Kaduna! World-class hospitality.", "Stunning decor and the most comfortable beds.",
-                    "The wedding planning team made our big day effortless.", "The 24/7 room service is a life-saver.",
-                    "A peaceful oasis! The staff feels like family.", "Exquisite dining and professional atmosphere.",
-                    "High-speed Wi-Fi made working remotely easy.", "Concierge service is so helpful and polite.",
-                    "Everything about the Bafana Hotel screams luxury.", "Impeccable cleanliness and friendly staff.",
-                    "An unforgettable stay. Service is prompt.", "The best hotel in Kaduna by far.",
-                    "My family and I loved our stay.", "Meeting rooms were perfect for my presentation.",
-                    "Fantastic location and even better service.", "Luxury at its finest. Highly recommend.",
-                    "The laundry service was quick and professional.", "Safe, secure, and incredibly comfortable.",
-                    "A true five-star experience.", "They make every guest feel special."
-                ];
-                reviews.forEach(text => {
-                    document.write(`
-                        <div class="bg-gray-50 p-8 rounded-3xl shadow-sm border border-gray-100">
-                            <div class="text-yellow-500 mb-2">★★★★★</div>
-                            <p class="text-gray-600 mb-4 italic">"${text}"</p>
-                            <div class="font-bold text-rose-800">— Valued Guest</div>
-                        </div>
-                    `);
-                });
-            </script>
+        <section>
+            <h2>Our Story & Vision</h2>
+            <p>Strategically situated in Goni Gora, Kaduna, our hotel offers a peaceful retreat for both business travelers and leisure guests. We pride ourselves on offering modern amenities, world-class service, and a welcoming environment that feels like a home away from home.</p>
+        </section>
+
+        <hr style="border: 0; height: 1px; background: #e5e7eb; margin: 40px 0;">
+
+        <h2 class="section-title">Explore Our Premium Facilities</h2>
+        <div class="facilities-grid">
+            
+            <div class="facility-card">
+                <div>
+                    <h3>Barbershop & Salon</h3>
+                    <p>Book a premium haircut or styling session with our professional grooming experts.</p>
+                </div>
+                <a href="facilities.html" class="btn-learn-more">Learn More</a>
+            </div>
+
+            <div class="facility-card">
+                <div>
+                    <h3>Provision Store</h3>
+                    <p>Shop for everyday essentials, travel accessories, snacks, and personal items convenience on-site.</p>
+                </div>
+                <a href="facilities.html" class="btn-learn-more">Learn More</a>
+            </div>
+
+            <div class="facility-card">
+                <div>
+                    <h3>Restaurant & Dining</h3>
+                    <p>Savor delicious local cuisines and international delicacies prepared by our expert chefs.</p>
+                </div>
+                <a href="facilities.html" class="btn-learn-more">Learn More</a>
+            </div>
+
+            <div class="facility-card">
+                <div>
+                    <h3>Swimming Pool & Event Hall</h3>
+                    <p>Relax in our outdoor swimming pool or book our spacious event hall for modern conferences and celebrations.</p>
+                </div>
+                <a href="facilities.html" class="btn-learn-more">Learn More</a>
+            </div>
+
         </div>
+
+        <section class="location-section">
+            <h2>Find Us</h2>
+            <p><strong>Address:</strong> CCJ3+MVR, Abuja - Kaduna - Zaria Express Way, Goni Gora, Kaduna 800104, Kaduna State, Nigeria</p>
+            
+            <div class="map-container">
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0" 
+                    scrolling="no" 
+                    marginheight="0" 
+                    marginwidth="0" 
+                    src="https://maps.google.com/maps?q=CCJ3%2BMVR%2C%20Goni%20Gora%2C%20Kaduna&t=&z=15&ie=UTF8&iwloc=&output=embed">
+                </iframe>
+            </div>
+        </section>
+
+        <section class="review-section">
+            <h2>Leave a Guest Review</h2>
+            <p>We value your feedback! Please let us know about your experience with us.</p>
+            
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="guest-name">Full Name</label>
+                    <input type="text" id="guest-name" name="guest_name" placeholder="Your Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="rating">Rating</label>
+                    <select id="rating" name="rating" required>
+                        <option value="">Select Rating</option>
+                        <option value="5">⭐⭐⭐⭐⭐ (Excellent)</option>
+                        <option value="4">⭐⭐⭐⭐ (Very Good)</option>
+                        <option value="3">⭐⭐⭐ (Average)</option>
+                        <option value="2">⭐⭐ (Poor)</option>
+                        <option value="1">⭐ (Terrible)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="review-message">Your Feedback</label>
+                    <textarea id="review-message" name="review_message" rows="5" placeholder="Tell us about your stay or visit..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Submit Review</button>
+            </form>
+        </section>
+
     </div>
-</section>
-
-<!-- REVIEW FORM -->
-<section class="py-16 px-6 max-w-2xl mx-auto">
-    <h2 class="text-3xl font-bold text-center mb-8">Share Your Experience</h2>
-    <form id="reviewForm" class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 space-y-5">
-        <input type="text" placeholder="Your Name" class="w-full p-3 border rounded-xl" required>
-        <textarea placeholder="Your Review" rows="4" class="w-full p-3 border rounded-xl" required></textarea>
-        <button type="submit" class="w-full bg-rose-700 text-white py-4 rounded-xl font-bold hover:bg-rose-800 transition">Submit Review</button>
-    </form>
-</section>
-
-<script>
-    document.getElementById('reviewForm').addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('Thank you! Your review has been submitted for moderation.');
-        e.target.reset();
-    });
-</script>
 
 </body>
 </html>
