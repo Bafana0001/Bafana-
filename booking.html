@@ -82,7 +82,7 @@
             </section>
 
             <section class="lg:col-span-5 lg:sticky lg:top-28">
-                <form id="booking-form" onsubmit="proceedToPayment(event)" class="bg-white rounded-3xl border border-slate-200/80 shadow-xl shadow-slate-200/50 p-6 sm:p-8">
+                <form id="booking-form" action="payment.html" onsubmit="proceedToPayment(event)" class="bg-white rounded-3xl border border-slate-200/80 shadow-xl shadow-slate-200/50 p-6 sm:p-8">
                     <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-4 mb-6 flex items-center justify-between">
                         <span>Booking Details</span>
                         <i class="fa-solid fa-receipt text-slate-400 text-sm"></i>
@@ -91,12 +91,12 @@
                     <div class="space-y-4 mb-6">
                         <div>
                             <label for="guest-name" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Full Name *</label>
-                            <input type="text" id="guest-name" required placeholder="e.g. John Doe"
+                            <input type="text" id="guest-name" name="guestName" required placeholder="e.g. John Doe"
                                    class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-600 focus:bg-white transition-all">
                         </div>
                         <div>
                             <label for="guest-email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Email Address *</label>
-                            <input type="email" id="guest-email" required placeholder="e.g. john@example.com"
+                            <input type="email" id="guest-email" name="guestEmail" required placeholder="e.g. john@example.com"
                                    class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-600 focus:bg-white transition-all">
                         </div>
                     </div>
@@ -109,12 +109,12 @@
                     <div class="grid grid-cols-2 gap-4 mb-6">
                         <div>
                             <label for="checkin" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Check-in</label>
-                            <input type="date" id="checkin" onchange="handleDateChange()"
+                            <input type="date" id="checkin" required onchange="handleDateChange()"
                                    class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-600 focus:bg-white transition-all">
                         </div>
                         <div>
                             <label for="checkout" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Check-out</label>
-                            <input type="date" id="checkout" onchange="handleDateChange()"
+                            <input type="date" id="checkout" required onchange="handleDateChange()"
                                    class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-600 focus:bg-white transition-all">
                         </div>
                     </div>
@@ -152,7 +152,7 @@
                     </div>
 
                     <button type="submit" 
-                            class="w-full bg-brand-700 hover:bg-brand-800 active:scale-[0.99] text-white py-4 rounded-2xl font-bold shadow-lg shadow-brand-700/25 transition-all flex items-center justify-center gap-2">
+                            class="w-full bg-brand-700 hover:bg-brand-800 active:scale-[0.99] text-white py-4 rounded-2xl font-bold shadow-lg shadow-brand-700/25 transition-all flex items-center justify-center gap-2 cursor-pointer">
                         <span>Proceed to Payment</span>
                         <i class="fa-solid fa-arrow-right text-sm"></i>
                     </button>
@@ -276,10 +276,10 @@
                 totalAmount: total
             };
 
-            // Save data to sessionStorage for payment.html
+            // Save reservation data to sessionStorage
             sessionStorage.setItem('bookingDetails', JSON.stringify(bookingData));
 
-            // Redirect to payment.html
+            // Navigate to payment page
             window.location.href = "payment.html";
         }
 
