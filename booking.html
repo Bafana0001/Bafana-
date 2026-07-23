@@ -15,6 +15,13 @@
         .room-option.selected {
             border-color: #e11d48;
             background-color: #fff1f2;
+            box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.2);
+        }
+        .counter-btn {
+            transition: all 0.2s ease;
+        }
+        .counter-btn:hover {
+            background-color: #f3f4f6;
         }
     </style>
 </head>
@@ -31,7 +38,6 @@
                 </div>
             </div>
             
-            <!-- Changed to Back to Home -->
             <a href="index.html" class="flex items-center gap-2 text-gray-700 hover:text-rose-700 font-medium">
                 <i class="fa-solid fa-arrow-left"></i>
                 <span>Back to Home</span>
@@ -42,74 +48,85 @@
     <div class="pt-24"></div>
 
     <div class="max-w-7xl mx-auto px-6 py-12">
-        <h1 class="heading-font text-5xl font-bold text-center mb-4">Book Your Stay</h1>
-        <p class="text-center text-gray-600 mb-12">Select your room and preferences</p>
+        <div class="text-center mb-12">
+            <h1 class="heading-font text-5xl font-bold text-gray-900">Book Your Stay</h1>
+            <p class="text-gray-600 mt-3 text-lg">Choose your room and complete your reservation</p>
+        </div>
 
         <div class="grid lg:grid-cols-12 gap-10">
             <!-- ROOM SELECTION -->
             <div class="lg:col-span-7">
-                <h2 class="text-2xl font-semibold mb-6">Select Room Type</h2>
+                <h2 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+                    <i class="fa-solid fa-bed"></i> Select Room Type
+                </h2>
                 <div id="room-list" class="space-y-4"></div>
             </div>
 
             <!-- BOOKING SUMMARY -->
             <div class="lg:col-span-5">
-                <div class="bg-white rounded-3xl shadow-xl p-8 sticky top-8">
-                    <h2 class="text-2xl font-semibold mb-6">Booking Summary</h2>
+                <div class="bg-white rounded-3xl shadow-2xl p-8 sticky top-8">
+                    <h2 class="text-2xl font-semibold mb-8">Booking Summary</h2>
                     
-                    <div id="selected-room" class="mb-8">
-                        <p class="text-gray-500 text-sm">Selected Room</p>
-                        <p id="selected-name" class="font-medium text-xl">— No room selected —</p>
+                    <div class="mb-8">
+                        <p class="text-gray-500 text-sm mb-1">Selected Room</p>
+                        <p id="selected-name" class="font-semibold text-2xl text-gray-800">— Please select a room —</p>
                     </div>
 
                     <!-- Number of Rooms -->
                     <div class="mb-8">
-                        <label class="block text-sm text-gray-600 mb-3">Number of Rooms</label>
-                        <div class="flex items-center gap-4">
+                        <label class="block text-sm font-medium text-gray-600 mb-3">Number of Rooms</label>
+                        <div class="flex items-center gap-6">
                             <button onclick="changeRoomCount(-1)" 
-                                    class="w-12 h-12 rounded-2xl border hover:bg-gray-100 flex items-center justify-center text-2xl font-light">-</button>
-                            <span id="room-count" class="w-12 text-center text-3xl font-semibold">1</span>
+                                    class="counter-btn w-14 h-14 rounded-2xl border-2 border-gray-300 flex items-center justify-center text-3xl font-light hover:border-rose-300">-</button>
+                            <span id="room-count" class="text-4xl font-semibold w-12 text-center">1</span>
                             <button onclick="changeRoomCount(1)" 
-                                    class="w-12 h-12 rounded-2xl border hover:bg-gray-100 flex items-center justify-center text-2xl font-light">+</button>
+                                    class="counter-btn w-14 h-14 rounded-2xl border-2 border-gray-300 flex items-center justify-center text-3xl font-light hover:border-rose-300">+</button>
                         </div>
                     </div>
 
                     <!-- Adults -->
                     <div class="mb-8">
-                        <label class="block text-sm text-gray-600 mb-3">Number of Adults</label>
-                        <div class="flex items-center gap-4">
+                        <label class="block text-sm font-medium text-gray-600 mb-3">Number of Adults</label>
+                        <div class="flex items-center gap-6">
                             <button onclick="changeAdults(-1)" 
-                                    class="w-12 h-12 rounded-2xl border hover:bg-gray-100 flex items-center justify-center text-2xl font-light">-</button>
-                            <span id="adults-count" class="w-12 text-center text-3xl font-semibold">2</span>
+                                    class="counter-btn w-14 h-14 rounded-2xl border-2 border-gray-300 flex items-center justify-center text-3xl font-light hover:border-rose-300">-</button>
+                            <span id="adults-count" class="text-4xl font-semibold w-12 text-center">2</span>
                             <button onclick="changeAdults(1)" 
-                                    class="w-12 h-12 rounded-2xl border hover:bg-gray-100 flex items-center justify-center text-2xl font-light">+</button>
+                                    class="counter-btn w-14 h-14 rounded-2xl border-2 border-gray-300 flex items-center justify-center text-3xl font-light hover:border-rose-300">+</button>
                         </div>
                     </div>
 
                     <!-- Dates -->
-                    <div class="grid grid-cols-2 gap-6 mb-8">
+                    <div class="grid grid-cols-2 gap-6 mb-10">
                         <div>
-                            <label class="block text-sm text-gray-600 mb-2">Check-in Date</label>
-                            <input type="date" id="checkin" class="w-full border rounded-2xl px-4 py-3 focus:outline-none focus:border-rose-500">
+                            <label class="block text-sm font-medium text-gray-600 mb-2">Check-in</label>
+                            <input type="date" id="checkin" 
+                                   class="w-full border border-gray-300 rounded-2xl px-5 py-4 focus:outline-none focus:border-rose-500">
                         </div>
                         <div>
-                            <label class="block text-sm text-gray-600 mb-2">Check-out Date</label>
-                            <input type="date" id="checkout" class="w-full border rounded-2xl px-4 py-3 focus:outline-none focus:border-rose-500">
+                            <label class="block text-sm font-medium text-gray-600 mb-2">Check-out</label>
+                            <input type="date" id="checkout" 
+                                   class="w-full border border-gray-300 rounded-2xl px-5 py-4 focus:outline-none focus:border-rose-500">
                         </div>
                     </div>
 
                     <!-- Total -->
-                    <div class="border-t pt-8">
-                        <div class="flex justify-between text-lg mb-2">
-                            <span id="total-label">Total (1 room × 1 night)</span>
-                            <span id="total-price" class="font-bold text-3xl text-rose-700">₦0</span>
+                    <div class="border-t border-gray-200 pt-8">
+                        <div class="flex justify-between items-end">
+                            <div>
+                                <span id="total-label" class="text-gray-600">Total (1 room × 1 night)</span>
+                            </div>
+                            <div class="text-right">
+                                <span id="total-price" class="block text-4xl font-bold text-rose-700">₦0</span>
+                                <span class="text-xs text-gray-500">incl. taxes &amp; fees</span>
+                            </div>
                         </div>
-                        <p class="text-xs text-gray-500">Taxes &amp; service fees included</p>
                     </div>
 
                     <button onclick="proceedToPayment()" 
-                            class="mt-10 w-full bg-rose-700 hover:bg-rose-800 text-white py-5 rounded-3xl text-lg font-semibold transition">
-                        Proceed to Payment
+                            class="mt-10 w-full bg-rose-700 hover:bg-rose-800 py-6 rounded-3xl text-white text-xl font-semibold transition-all duration-300 flex items-center justify-center gap-3">
+                        <span>Proceed to Payment</span>
+                        <i class="fa-solid fa-arrow-right"></i>
                     </button>
                 </div>
             </div>
@@ -138,7 +155,9 @@
                      class="room-option border-2 border-transparent p-6 rounded-3xl cursor-pointer hover:border-rose-200 flex justify-between items-center">
                     <div>
                         <h3 class="text-2xl font-semibold">${room.name}</h3>
-                        <p class="text-rose-700 font-bold text-xl mt-1">₦${room.price.toLocaleString()} <span class="text-sm font-normal text-gray-500">/ night</span></p>
+                        <p class="text-rose-700 font-bold text-xl mt-1">₦${room.price.toLocaleString()} 
+                            <span class="text-sm font-normal text-gray-500">/ night</span>
+                        </p>
                     </div>
                     <i class="fa-solid fa-chevron-right text-gray-400"></i>
                 </div>
@@ -153,7 +172,7 @@
         }
 
         function changeRoomCount(change) {
-            roomCount = Math.max(1, Math.min(10, roomCount + change));
+            roomCount = Math.max(1, Math.min(8, roomCount + change));
             document.getElementById('room-count').textContent = roomCount;
             updateSummary();
         }
@@ -165,6 +184,7 @@
 
         function updateSummary() {
             if (selectedRoomIndex === null) return;
+            
             const room = roomsData[selectedRoomIndex];
             const total = room.price * roomCount;
             
@@ -175,20 +195,22 @@
 
         function proceedToPayment() {
             if (selectedRoomIndex === null) {
-                alert("Please select a room type");
+                alert("Please select a room type before proceeding.");
                 return;
             }
             const room = roomsData[selectedRoomIndex];
-            alert(`Booking Summary:\n\nRoom: ${room.name}\nRooms: ${roomCount}\nAdults: \( {adults}\nTotal Amount: ₦ \){(room.price * roomCount).toLocaleString()}\n\nThank you for choosing Bafana Hotel Kaduna!`);
+            const total = room.price * roomCount;
+            
+            alert(`✅ Booking Summary\n\nRoom: ${room.name}\nNumber of Rooms: ${roomCount}\nAdults: \( {adults}\nTotal Amount: ₦ \){total.toLocaleString()}\n\nThank you for choosing Bafana Hotel Kaduna!`);
         }
 
         // Initialize
         window.onload = () => {
             populateRooms();
             
-            // Default dates
             const today = new Date().toISOString().split('T')[0];
             document.getElementById('checkin').value = today;
+            
             const tomorrow = new Date();
             tomorrow.setDate(tomorrow.getDate() + 1);
             document.getElementById('checkout').value = tomorrow.toISOString().split('T')[0];
