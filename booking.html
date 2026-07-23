@@ -30,7 +30,12 @@
                     <span class="text-sm block -mt-1 text-rose-600">HOTEL</span>
                 </div>
             </div>
-            <a href="rooms.html" class="bg-rose-700 text-white px-6 py-3 rounded-2xl hover:bg-rose-800 font-semibold">Back to Rooms</a>
+            
+            <!-- Changed to Back to Home -->
+            <a href="index.html" class="flex items-center gap-2 text-gray-700 hover:text-rose-700 font-medium">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Back to Home</span>
+            </a>
         </div>
     </nav>
 
@@ -61,9 +66,11 @@
                     <div class="mb-8">
                         <label class="block text-sm text-gray-600 mb-3">Number of Rooms</label>
                         <div class="flex items-center gap-4">
-                            <button onclick="changeRoomCount(-1)" class="w-12 h-12 rounded-2xl border hover:bg-gray-100 flex items-center justify-center text-2xl font-light">-</button>
+                            <button onclick="changeRoomCount(-1)" 
+                                    class="w-12 h-12 rounded-2xl border hover:bg-gray-100 flex items-center justify-center text-2xl font-light">-</button>
                             <span id="room-count" class="w-12 text-center text-3xl font-semibold">1</span>
-                            <button onclick="changeRoomCount(1)" class="w-12 h-12 rounded-2xl border hover:bg-gray-100 flex items-center justify-center text-2xl font-light">+</button>
+                            <button onclick="changeRoomCount(1)" 
+                                    class="w-12 h-12 rounded-2xl border hover:bg-gray-100 flex items-center justify-center text-2xl font-light">+</button>
                         </div>
                     </div>
 
@@ -71,20 +78,22 @@
                     <div class="mb-8">
                         <label class="block text-sm text-gray-600 mb-3">Number of Adults</label>
                         <div class="flex items-center gap-4">
-                            <button onclick="changeAdults(-1)" class="w-12 h-12 rounded-2xl border hover:bg-gray-100 flex items-center justify-center text-2xl font-light">-</button>
+                            <button onclick="changeAdults(-1)" 
+                                    class="w-12 h-12 rounded-2xl border hover:bg-gray-100 flex items-center justify-center text-2xl font-light">-</button>
                             <span id="adults-count" class="w-12 text-center text-3xl font-semibold">2</span>
-                            <button onclick="changeAdults(1)" class="w-12 h-12 rounded-2xl border hover:bg-gray-100 flex items-center justify-center text-2xl font-light">+</button>
+                            <button onclick="changeAdults(1)" 
+                                    class="w-12 h-12 rounded-2xl border hover:bg-gray-100 flex items-center justify-center text-2xl font-light">+</button>
                         </div>
                     </div>
 
                     <!-- Dates -->
                     <div class="grid grid-cols-2 gap-6 mb-8">
                         <div>
-                            <label class="block text-sm text-gray-600 mb-2">Check-in</label>
+                            <label class="block text-sm text-gray-600 mb-2">Check-in Date</label>
                             <input type="date" id="checkin" class="w-full border rounded-2xl px-4 py-3 focus:outline-none focus:border-rose-500">
                         </div>
                         <div>
-                            <label class="block text-sm text-gray-600 mb-2">Check-out</label>
+                            <label class="block text-sm text-gray-600 mb-2">Check-out Date</label>
                             <input type="date" id="checkout" class="w-full border rounded-2xl px-4 py-3 focus:outline-none focus:border-rose-500">
                         </div>
                     </div>
@@ -95,7 +104,7 @@
                             <span id="total-label">Total (1 room × 1 night)</span>
                             <span id="total-price" class="font-bold text-3xl text-rose-700">₦0</span>
                         </div>
-                        <p class="text-xs text-gray-500">Taxes &amp; fees included</p>
+                        <p class="text-xs text-gray-500">Taxes &amp; service fees included</p>
                     </div>
 
                     <button onclick="proceedToPayment()" 
@@ -109,12 +118,12 @@
 
     <script>
         const roomsData = [
-            { id: 0, name: "Deluxe Room", price: 45000, nights: 1 },
-            { id: 1, name: "Executive Suite", price: 85000, nights: 1 },
-            { id: 2, name: "Family Suite", price: 110000, nights: 1 },
-            { id: 3, name: "Ocean View Twin", price: 55000, nights: 1 },
-            { id: 4, name: "Junior Suite", price: 75000, nights: 1 },
-            { id: 5, name: "Presidential Suite", price: 250000, nights: 1 }
+            { id: 0, name: "Deluxe Room", price: 45000 },
+            { id: 1, name: "Executive Suite", price: 85000 },
+            { id: 2, name: "Family Suite", price: 110000 },
+            { id: 3, name: "Ocean View Twin", price: 55000 },
+            { id: 4, name: "Junior Suite", price: 75000 },
+            { id: 5, name: "Presidential Suite", price: 250000 }
         ];
 
         let selectedRoomIndex = null;
@@ -137,13 +146,9 @@
         }
 
         function selectRoom(index) {
-            // Remove previous selection
             document.querySelectorAll('.room-option').forEach(el => el.classList.remove('selected'));
-            
-            // Add selection
             document.getElementById(`room-${index}`).classList.add('selected');
             selectedRoomIndex = index;
-            
             updateSummary();
         }
 
@@ -156,12 +161,10 @@
         function changeAdults(change) {
             adults = Math.max(1, Math.min(20, adults + change));
             document.getElementById('adults-count').textContent = adults;
-            // Adults don't affect price in this demo, but you can extend logic later
         }
 
         function updateSummary() {
             if (selectedRoomIndex === null) return;
-            
             const room = roomsData[selectedRoomIndex];
             const total = room.price * roomCount;
             
@@ -176,15 +179,14 @@
                 return;
             }
             const room = roomsData[selectedRoomIndex];
-            alert(`Booking confirmed!\n\nRoom: ${room.name}\nRooms: ${roomCount}\nAdults: \( {adults}\nTotal: ₦ \){(room.price * roomCount).toLocaleString()}\n\nThank you for choosing Bafana Hotel!`);
-            // In real app: redirect to payment gateway
+            alert(`Booking Summary:\n\nRoom: ${room.name}\nRooms: ${roomCount}\nAdults: \( {adults}\nTotal Amount: ₦ \){(room.price * roomCount).toLocaleString()}\n\nThank you for choosing Bafana Hotel Kaduna!`);
         }
 
         // Initialize
         window.onload = () => {
             populateRooms();
             
-            // Set default dates
+            // Default dates
             const today = new Date().toISOString().split('T')[0];
             document.getElementById('checkin').value = today;
             const tomorrow = new Date();
