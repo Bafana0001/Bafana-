@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Your Stay - Bafana Hotel Kaduna</title>
+    <title>Complete Payment - Bafana Hotel Kaduna</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
-    
+
     <script>
         tailwind.config = {
             theme: {
@@ -30,16 +30,6 @@
             }
         }
     </script>
-    <style>
-        .room-card {
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .room-card.selected {
-            border-color: #be123c;
-            background-color: #fff1f2;
-            box-shadow: 0 10px 25px -5px rgba(190, 18, 60, 0.1), 0 8px 10px -6px rgba(190, 18, 60, 0.1);
-        }
-    </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-600 selection:text-white">
 
@@ -55,258 +45,165 @@
                 </div>
             </a>
             
-            <a href="index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-brand-700 transition-colors py-2 px-4 rounded-xl hover:bg-slate-100">
+            <a href="booking.html" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-brand-700 transition-colors py-2 px-4 rounded-xl hover:bg-slate-100">
                 <i class="fa-solid fa-arrow-left text-xs"></i>
-                <span>Back to Home</span>
+                <span>Edit Booking</span>
             </a>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        
-        <div class="max-w-2xl mb-10">
-            <span class="text-xs font-bold tracking-wider text-brand-600 uppercase bg-brand-50 px-3 py-1.5 rounded-full border border-brand-100">Direct Reservation</span>
-            <h1 class="font-serif text-4xl sm:text-5xl font-bold text-slate-900 mt-3 tracking-tight">Reserve Your Stay</h1>
-            <p class="text-slate-600 mt-2 text-base sm:text-lg">Select your preferred room type and customize your accommodation details below.</p>
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="mb-8 text-center sm:text-left">
+            <span class="text-xs font-bold tracking-wider text-brand-600 uppercase bg-brand-50 px-3 py-1.5 rounded-full border border-brand-100">Final Step</span>
+            <h1 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mt-3">Confirm & Pay</h1>
+            <p class="text-slate-600 mt-1">Review your reservation details and complete your payment.</p>
         </div>
 
-        <div class="grid lg:grid-cols-12 gap-8 items-start">
+        <div class="grid md:grid-cols-12 gap-8 items-start">
             
-            <section class="lg:col-span-7 space-y-4">
-                <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2 mb-2">
-                    <i class="fa-solid fa-bed text-brand-600"></i>
-                    <span>1. Select Room Type</span>
+            <section class="md:col-span-5 bg-white p-6 rounded-3xl border border-slate-200/80 shadow-lg shadow-slate-200/50">
+                <h2 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-3 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-receipt text-brand-700"></i>
+                    <span>Reservation Summary</span>
                 </h2>
-                <div id="room-list" class="space-y-3">
+
+                <div class="space-y-4 text-sm">
+                    <div>
+                        <span class="text-xs text-slate-400 uppercase font-semibold block">Guest Name</span>
+                        <p id="summary-name" class="font-bold text-slate-800 text-base">-</p>
                     </div>
+
+                    <div>
+                        <span class="text-xs text-slate-400 uppercase font-semibold block">Email</span>
+                        <p id="summary-email" class="font-medium text-slate-700 break-all">-</p>
+                    </div>
+
+                    <hr class="border-slate-100">
+
+                    <div>
+                        <span class="text-xs text-slate-400 uppercase font-semibold block">Accommodation</span>
+                        <p id="summary-room" class="font-bold text-slate-800 text-base">-</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2">
+                        <div>
+                            <span class="text-xs text-slate-400 uppercase font-semibold block">Check-in</span>
+                            <p id="summary-checkin" class="font-semibold text-slate-700">-</p>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-400 uppercase font-semibold block">Check-out</span>
+                            <p id="summary-checkout" class="font-semibold text-slate-700">-</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2">
+                        <div>
+                            <span class="text-xs text-slate-400 uppercase font-semibold block">Duration</span>
+                            <p id="summary-nights" class="font-semibold text-slate-700">-</p>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-400 uppercase font-semibold block">Guests</span>
+                            <p id="summary-guests" class="font-semibold text-slate-700">-</p>
+                        </div>
+                    </div>
+
+                    <hr class="border-slate-100">
+
+                    <div class="flex justify-between items-baseline pt-2">
+                        <span class="text-slate-600 font-bold">Total Payable</span>
+                        <span id="summary-total" class="text-2xl font-extrabold text-brand-700">₦0</span>
+                    </div>
+                </div>
             </section>
 
-            <section class="lg:col-span-5 lg:sticky lg:top-28">
-                <form id="booking-form" onsubmit="proceedToPayment(event)" class="bg-white rounded-3xl border border-slate-200/80 shadow-xl shadow-slate-200/50 p-6 sm:p-8">
-                    <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-4 mb-6 flex items-center justify-between">
-                        <span>Booking Details</span>
-                        <i class="fa-solid fa-receipt text-slate-400 text-sm"></i>
+            <section class="md:col-span-7 space-y-6">
+                
+                <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-lg shadow-slate-200/50">
+                    <h2 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-3 mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-building-columns text-brand-700"></i>
+                        <span>Direct Bank Transfer</span>
                     </h2>
 
-                    <div class="space-y-4 mb-6">
-                        <div>
-                            <label for="guest-name" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Full Name *</label>
-                            <input type="text" id="guest-name" required placeholder="e.g. John Doe"
-                                   class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-600 focus:bg-white transition-all">
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-3 mb-6">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-slate-500 font-semibold">Bank Name:</span>
+                            <span class="font-bold text-slate-800">Teeke Bank</span>
                         </div>
-                        <div>
-                            <label for="guest-email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Email Address *</label>
-                            <input type="email" id="guest-email" required placeholder="e.g. john@example.com"
-                                   class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-600 focus:bg-white transition-all">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-slate-500 font-semibold">Account Name:</span>
+                            <span class="font-bold text-slate-800">Bafana</span>
                         </div>
-                    </div>
-                    
-                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 mb-6">
-                        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-1">Accommodation</span>
-                        <p id="selected-name" class="font-bold text-lg text-slate-800">Deluxe Room</p>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4 mb-6">
-                        <div>
-                            <label for="checkin" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Check-in</label>
-                            <input type="date" id="checkin" onchange="handleDateChange()"
-                                   class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-600 focus:bg-white transition-all">
-                        </div>
-                        <div>
-                            <label for="checkout" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Check-out</label>
-                            <input type="date" id="checkout" onchange="handleDateChange()"
-                                   class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-600 focus:bg-white transition-all">
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4 mb-6">
-                        <div class="p-4 border border-slate-200 rounded-2xl">
-                            <span class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Rooms</span>
-                            <div class="flex items-center justify-between">
-                                <button type="button" onclick="changeRoomCount(-1)" aria-label="Decrease room count"
-                                        class="w-8 h-8 rounded-lg border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-100 hover:border-slate-300 transition-all font-bold">-</button>
-                                <span id="room-count" class="font-bold text-lg text-slate-800">1</span>
-                                <button type="button" onclick="changeRoomCount(1)" aria-label="Increase room count"
-                                        class="w-8 h-8 rounded-lg border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-100 hover:border-slate-300 transition-all font-bold">+</button>
-                            </div>
-                        </div>
-
-                        <div class="p-4 border border-slate-200 rounded-2xl">
-                            <span class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Guests</span>
-                            <div class="flex items-center justify-between">
-                                <button type="button" onclick="changeAdults(-1)" aria-label="Decrease guest count"
-                                        class="w-8 h-8 rounded-lg border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-100 hover:border-slate-300 transition-all font-bold">-</button>
-                                <span id="adults-count" class="font-bold text-lg text-slate-800">2</span>
-                                <button type="button" onclick="changeAdults(1)" aria-label="Increase guest count"
-                                        class="w-8 h-8 rounded-lg border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-100 hover:border-slate-300 transition-all font-bold">+</button>
+                        <div class="flex justify-between items-center text-sm pt-2 border-t border-slate-200/80">
+                            <span class="text-slate-500 font-semibold">Account Number:</span>
+                            <div class="flex items-center gap-2">
+                                <span id="acc-num" class="font-mono font-extrabold text-brand-700 text-base">8747483999909627</span>
+                                <button type="button" onclick="copyAccount()" title="Copy Account Number" class="text-slate-400 hover:text-brand-700 transition-colors">
+                                    <i class="fa-regular fa-copy text-xs"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
 
-                    <div class="border-t border-slate-100 pt-6 mb-6">
-                        <div class="flex justify-between items-baseline mb-1">
-                            <span id="total-label" class="text-sm font-medium text-slate-500">Total (1 room × 1 night)</span>
-                            <span id="total-price" class="text-3xl font-extrabold text-brand-700">₦45,000</span>
-                        </div>
-                        <p class="text-xs text-slate-400 text-right">Includes all taxes & fees</p>
-                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-6">
+                        Please make your transfer to the account above, then click the button below to send your payment receipt via WhatsApp for instant confirmation.
+                    </p>
 
-                    <button type="submit" 
-                            class="w-full bg-brand-700 hover:bg-brand-800 active:scale-[0.99] text-white py-4 rounded-2xl font-bold shadow-lg shadow-brand-700/25 transition-all flex items-center justify-center gap-2">
-                        <span>Proceed to Payment</span>
-                        <i class="fa-solid fa-arrow-right text-sm"></i>
+                    <button type="button" onclick="sendWhatsAppReceipt()" 
+                            class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-[0.99] text-white py-4 rounded-2xl font-bold shadow-lg shadow-emerald-600/25 transition-all flex items-center justify-center gap-3 cursor-pointer">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Confirm via WhatsApp (07068226081)</span>
                     </button>
-                </form>
+                </div>
+
             </section>
+
         </div>
     </main>
 
     <script>
-        const roomsData = [
-            { id: 0, name: "Deluxe Room", price: 45000, desc: "King bed, High-speed Wi-Fi, City view" },
-            { id: 1, name: "Executive Suite", price: 85000, desc: "Separate lounge, Work desk, Free breakfast" },
-            { id: 2, name: "Family Suite", price: 110000, desc: "2 Bedrooms, Living room, Kitchenette" },
-            { id: 3, name: "Ocean View Twin", price: 55000, desc: "2 Twin beds, Scenic view, Smart TV" },
-            { id: 4, name: "Junior Suite", price: 75000, desc: "King bed, Balcony, Express check-in" },
-            { id: 5, name: "Presidential Suite", price: 250000, desc: "VIP Service, Private lounge, Panoramic views" }
-        ];
+        let bookingDetails = null;
 
-        let state = {
-            selectedRoomIndex: 0,
-            roomCount: 1,
-            adults: 2,
-            nights: 1
-        };
-
-        function populateRooms() {
-            const container = document.getElementById('room-list');
-            container.innerHTML = roomsData.map(room => `
-                <div onclick="selectRoom(${room.id})" 
-                     id="room-${room.id}"
-                     class="room-card bg-white border border-slate-200/80 p-5 rounded-2xl cursor-pointer hover:border-brand-600 flex justify-between items-center group ${room.id === state.selectedRoomIndex ? 'selected' : ''}">
-                    <div>
-                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-700 transition-colors">${room.name}</h3>
-                        <p class="text-xs text-slate-500 mb-2">${room.desc}</p>
-                        <p class="text-brand-700 font-extrabold text-lg">₦${room.price.toLocaleString()} 
-                            <span class="text-xs font-normal text-slate-400">/ night</span>
-                        </p>
-                    </div>
-                    <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center group-hover:bg-brand-50 group-hover:text-brand-700 transition-colors">
-                        <i class="fa-solid fa-chevron-right text-xs"></i>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function selectRoom(index) {
-            document.querySelectorAll('.room-card').forEach(el => el.classList.remove('selected'));
-            document.getElementById(`room-${index}`).classList.add('selected');
-            state.selectedRoomIndex = index;
-            updateSummary();
-        }
-
-        function changeRoomCount(change) {
-            state.roomCount = Math.max(1, Math.min(10, state.roomCount + change));
-            document.getElementById('room-count').textContent = state.roomCount;
-            updateSummary();
-        }
-
-        function changeAdults(change) {
-            state.adults = Math.max(1, Math.min(20, state.adults + change));
-            document.getElementById('adults-count').textContent = state.adults;
-        }
-
-        function calculateNights() {
-            const checkinVal = document.getElementById('checkin').value;
-            const checkoutVal = document.getElementById('checkout').value;
-            
-            if (!checkinVal || !checkoutVal) return 1;
-
-            const date1 = new Date(checkinVal);
-            const date2 = new Date(checkoutVal);
-            
-            const diffTime = date2 - date1;
-            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-            
-            return diffDays > 0 ? diffDays : 1;
-        }
-
-        function handleDateChange() {
-            const checkin = document.getElementById('checkin');
-            const checkout = document.getElementById('checkout');
-            
-            if (new Date(checkout.value) <= new Date(checkin.value)) {
-                const nextDay = new Date(checkin.value);
-                nextDay.setDate(nextDay.getDate() + 1);
-                checkout.value = nextDay.toISOString().split('T')[0];
-            }
-            
-            checkout.min = checkin.value;
-            state.nights = calculateNights();
-            updateSummary();
-        }
-
-        function updateSummary() {
-            if (state.selectedRoomIndex === null) return;
-            
-            const room = roomsData[state.selectedRoomIndex];
-            const total = room.price * state.roomCount * state.nights;
-            
-            document.getElementById('selected-name').textContent = room.name;
-            document.getElementById('total-price').textContent = `₦${total.toLocaleString()}`;
-            document.getElementById('total-label').textContent = 
-                `Total (${state.roomCount} room${state.roomCount > 1 ? 's' : ''} × ${state.nights} night${state.nights > 1 ? 's' : ''})`;
-        }
-
-        function proceedToPayment(event) {
-            event.preventDefault();
-
-            const room = roomsData[state.selectedRoomIndex];
-            const total = room.price * state.roomCount * state.nights;
-
-            const bookingData = {
-                guestName: document.getElementById('guest-name').value,
-                guestEmail: document.getElementById('guest-email').value,
-                roomName: room.name,
-                checkin: document.getElementById('checkin').value,
-                checkout: document.getElementById('checkout').value,
-                nights: state.nights,
-                roomCount: state.roomCount,
-                adults: state.adults,
-                totalAmount: total
-            };
-
-            // Save data to sessionStorage for payment.html
-            sessionStorage.setItem('bookingDetails', JSON.stringify(bookingData));
-
-            // Redirect to payment.html
-            window.location.href = "payment.html";
-        }
-
-        // Initialize Page
         window.onload = () => {
-            populateRooms();
-            
-            const today = new Date();
-            const tomorrow = new Date();
-            tomorrow.setDate(today.getDate() + 1);
-            
-            const todayStr = today.toISOString().split('T')[0];
-            const tomorrowStr = tomorrow.toISOString().split('T')[0];
-            
-            const checkinInput = document.getElementById('checkin');
-            const checkoutInput = document.getElementById('checkout');
-            
-            checkinInput.value = todayStr;
-            checkinInput.min = todayStr;
-            
-            checkoutInput.value = tomorrowStr;
-            checkoutInput.min = tomorrowStr;
-            
-            state.nights = 1;
-            updateSummary();
+            const rawData = sessionStorage.getItem('bookingDetails');
+            if (!rawData) {
+                window.location.href = "booking.html";
+                return;
+            }
+
+            bookingDetails = JSON.parse(rawData);
+
+            document.getElementById('summary-name').textContent = bookingDetails.guestName;
+            document.getElementById('summary-email').textContent = bookingDetails.guestEmail;
+            document.getElementById('summary-room').textContent = `${bookingDetails.roomName} (${bookingDetails.roomCount} room${bookingDetails.roomCount > 1 ? 's' : ''})`;
+            document.getElementById('summary-checkin').textContent = bookingDetails.checkin;
+            document.getElementById('summary-checkout').textContent = bookingDetails.checkout;
+            document.getElementById('summary-nights').textContent = `${bookingDetails.nights} night${bookingDetails.nights > 1 ? 's' : ''}`;
+            document.getElementById('summary-guests').textContent = `${bookingDetails.adults} guest${bookingDetails.adults > 1 ? 's' : ''}`;
+            document.getElementById('summary-total').textContent = `₦${bookingDetails.totalAmount.toLocaleString()}`;
         };
+
+        function copyAccount() {
+            const accNum = document.getElementById('acc-num').textContent;
+            navigator.clipboard.writeText(accNum);
+            alert("Account number copied to clipboard!");
+        }
+
+        function sendWhatsAppReceipt() {
+            if (!bookingDetails) return;
+
+            const phone = "2347068226081";
+            const message = `Hello Bafana Hotel Kaduna,%0A%0AI have made a reservation payment with the following details:%0A%0A` +
+                `*Guest Name:* ${encodeURIComponent(bookingDetails.guestName)}%0A` +
+                `*Email:* ${encodeURIComponent(bookingDetails.guestEmail)}%0A` +
+                `*Room:* ${encodeURIComponent(bookingDetails.roomName)} (${bookingDetails.roomCount} room(s))%0A` +
+                `*Check-in:* ${bookingDetails.checkin}%0A` +
+                `*Check-out:* ${bookingDetails.checkout}%0A` +
+                `*Nights:* ${bookingDetails.nights}%0A` +
+                `*Total Paid:* ₦${bookingDetails.totalAmount.toLocaleString()}%0A%0A` +
+                `Attached is my payment proof. Please confirm my booking.`;
+
+            window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+        }
     </script>
 </body>
-  </html>
-  
+</html>
