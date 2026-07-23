@@ -82,15 +82,28 @@
             </section>
 
             <section class="lg:col-span-5 lg:sticky lg:top-28">
-                <div class="bg-white rounded-3xl border border-slate-200/80 shadow-xl shadow-slate-200/50 p-6 sm:p-8">
+                <form id="booking-form" onsubmit="proceedToPayment(event)" class="bg-white rounded-3xl border border-slate-200/80 shadow-xl shadow-slate-200/50 p-6 sm:p-8">
                     <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-4 mb-6 flex items-center justify-between">
                         <span>Booking Details</span>
                         <i class="fa-solid fa-receipt text-slate-400 text-sm"></i>
                     </h2>
+
+                    <div class="space-y-4 mb-6">
+                        <div>
+                            <label for="guest-name" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Full Name *</label>
+                            <input type="text" id="guest-name" required placeholder="e.g. John Doe"
+                                   class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-600 focus:bg-white transition-all">
+                        </div>
+                        <div>
+                            <label for="guest-email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Email Address *</label>
+                            <input type="email" id="guest-email" required placeholder="e.g. john@example.com"
+                                   class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-600 focus:bg-white transition-all">
+                        </div>
+                    </div>
                     
                     <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 mb-6">
                         <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-1">Accommodation</span>
-                        <p id="selected-name" class="font-bold text-lg text-slate-800">Please select a room</p>
+                        <p id="selected-name" class="font-bold text-lg text-slate-800">Deluxe Room</p>
                     </div>
 
                     <div class="grid grid-cols-2 gap-4 mb-6">
@@ -110,10 +123,10 @@
                         <div class="p-4 border border-slate-200 rounded-2xl">
                             <span class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Rooms</span>
                             <div class="flex items-center justify-between">
-                                <button onclick="changeRoomCount(-1)" aria-label="Decrease room count"
+                                <button type="button" onclick="changeRoomCount(-1)" aria-label="Decrease room count"
                                         class="w-8 h-8 rounded-lg border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-100 hover:border-slate-300 transition-all font-bold">-</button>
                                 <span id="room-count" class="font-bold text-lg text-slate-800">1</span>
-                                <button onclick="changeRoomCount(1)" aria-label="Increase room count"
+                                <button type="button" onclick="changeRoomCount(1)" aria-label="Increase room count"
                                         class="w-8 h-8 rounded-lg border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-100 hover:border-slate-300 transition-all font-bold">+</button>
                             </div>
                         </div>
@@ -121,10 +134,10 @@
                         <div class="p-4 border border-slate-200 rounded-2xl">
                             <span class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Guests</span>
                             <div class="flex items-center justify-between">
-                                <button onclick="changeAdults(-1)" aria-label="Decrease guest count"
+                                <button type="button" onclick="changeAdults(-1)" aria-label="Decrease guest count"
                                         class="w-8 h-8 rounded-lg border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-100 hover:border-slate-300 transition-all font-bold">-</button>
                                 <span id="adults-count" class="font-bold text-lg text-slate-800">2</span>
-                                <button onclick="changeAdults(1)" aria-label="Increase guest count"
+                                <button type="button" onclick="changeAdults(1)" aria-label="Increase guest count"
                                         class="w-8 h-8 rounded-lg border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-100 hover:border-slate-300 transition-all font-bold">+</button>
                             </div>
                         </div>
@@ -132,18 +145,18 @@
 
                     <div class="border-t border-slate-100 pt-6 mb-6">
                         <div class="flex justify-between items-baseline mb-1">
-                            <span id="total-label" class="text-sm font-medium text-slate-500">Total (0 rooms × 0 nights)</span>
-                            <span id="total-price" class="text-3xl font-extrabold text-brand-700">₦0</span>
+                            <span id="total-label" class="text-sm font-medium text-slate-500">Total (1 room × 1 night)</span>
+                            <span id="total-price" class="text-3xl font-extrabold text-brand-700">₦45,000</span>
                         </div>
                         <p class="text-xs text-slate-400 text-right">Includes all taxes & fees</p>
                     </div>
 
-                    <button onclick="proceedToPayment()" 
+                    <button type="submit" 
                             class="w-full bg-brand-700 hover:bg-brand-800 active:scale-[0.99] text-white py-4 rounded-2xl font-bold shadow-lg shadow-brand-700/25 transition-all flex items-center justify-center gap-2">
                         <span>Proceed to Payment</span>
                         <i class="fa-solid fa-arrow-right text-sm"></i>
                     </button>
-                </div>
+                </form>
             </section>
         </div>
     </main>
@@ -159,7 +172,7 @@
         ];
 
         let state = {
-            selectedRoomIndex: null,
+            selectedRoomIndex: 0, // Pre-selected main booking (Deluxe Room)
             roomCount: 1,
             adults: 2,
             nights: 1
@@ -170,7 +183,7 @@
             container.innerHTML = roomsData.map(room => `
                 <div onclick="selectRoom(${room.id})" 
                      id="room-${room.id}"
-                     class="room-card bg-white border border-slate-200/80 p-5 rounded-2xl cursor-pointer hover:border-brand-600 flex justify-between items-center group">
+                     class="room-card bg-white border border-slate-200/80 p-5 rounded-2xl cursor-pointer hover:border-brand-600 flex justify-between items-center group ${room.id === state.selectedRoomIndex ? 'selected' : ''}">
                     <div>
                         <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-700 transition-colors">${room.name}</h3>
                         <p class="text-xs text-slate-500 mb-2">${room.desc}</p>
@@ -245,29 +258,35 @@
                 `Total (${state.roomCount} room${state.roomCount > 1 ? 's' : ''} × ${state.nights} night${state.nights > 1 ? 's' : ''})`;
         }
 
-        function proceedToPayment() {
+        function proceedToPayment(event) {
+            event.preventDefault();
+
             if (state.selectedRoomIndex === null) {
                 alert("Please select a room type before proceeding.");
                 return;
             }
-            
+
+            const guestName = document.getElementById('guest-name').value;
+            const guestEmail = document.getElementById('guest-email').value;
             const room = roomsData[state.selectedRoomIndex];
             const total = room.price * state.roomCount * state.nights;
             const checkin = document.getElementById('checkin').value;
             const checkout = document.getElementById('checkout').value;
             
-            alert(`✅ Booking Details Confirmed\n\n` +
+            alert(`✅ Booking Confirmation\n\n` +
+                  `Guest Name: ${guestName}\n` +
+                  `Email: ${guestEmail}\n` +
                   `Room: ${room.name}\n` +
                   `Check-In: ${checkin}\n` +
                   `Check-Out: ${checkout}\n` +
                   `Duration: ${state.nights} Night(s)\n` +
                   `Rooms: ${state.roomCount}\n` +
                   `Guests: ${state.adults}\n` +
-                  `Total: ₦${total.toLocaleString()}\n\n` +
+                  `Total Amount: ₦${total.toLocaleString()}\n\n` +
                   `Proceeding to payment gateway...`);
         }
 
-        // Initialize Dates and Logic
+        // Initialize Page
         window.onload = () => {
             populateRooms();
             
@@ -288,6 +307,7 @@
             checkoutInput.min = tomorrowStr;
             
             state.nights = 1;
+            updateSummary();
         };
     </script>
 </body>
