@@ -172,7 +172,7 @@
         ];
 
         let state = {
-            selectedRoomIndex: 0, // Pre-selected main booking (Deluxe Room)
+            selectedRoomIndex: 0,
             roomCount: 1,
             adults: 2,
             nights: 1
@@ -261,29 +261,26 @@
         function proceedToPayment(event) {
             event.preventDefault();
 
-            if (state.selectedRoomIndex === null) {
-                alert("Please select a room type before proceeding.");
-                return;
-            }
-
-            const guestName = document.getElementById('guest-name').value;
-            const guestEmail = document.getElementById('guest-email').value;
             const room = roomsData[state.selectedRoomIndex];
             const total = room.price * state.roomCount * state.nights;
-            const checkin = document.getElementById('checkin').value;
-            const checkout = document.getElementById('checkout').value;
-            
-            alert(`✅ Booking Confirmation\n\n` +
-                  `Guest Name: ${guestName}\n` +
-                  `Email: ${guestEmail}\n` +
-                  `Room: ${room.name}\n` +
-                  `Check-In: ${checkin}\n` +
-                  `Check-Out: ${checkout}\n` +
-                  `Duration: ${state.nights} Night(s)\n` +
-                  `Rooms: ${state.roomCount}\n` +
-                  `Guests: ${state.adults}\n` +
-                  `Total Amount: ₦${total.toLocaleString()}\n\n` +
-                  `Proceeding to payment gateway...`);
+
+            const bookingData = {
+                guestName: document.getElementById('guest-name').value,
+                guestEmail: document.getElementById('guest-email').value,
+                roomName: room.name,
+                checkin: document.getElementById('checkin').value,
+                checkout: document.getElementById('checkout').value,
+                nights: state.nights,
+                roomCount: state.roomCount,
+                adults: state.adults,
+                totalAmount: total
+            };
+
+            // Save data to sessionStorage for payment.html
+            sessionStorage.setItem('bookingDetails', JSON.stringify(bookingData));
+
+            // Redirect to payment.html
+            window.location.href = "payment.html";
         }
 
         // Initialize Page
