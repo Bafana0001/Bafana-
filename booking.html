@@ -4,261 +4,193 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Your Stay - Bafana Hotel Kaduna</title>
-
     <script src="https://cdn.tailwindcss.com"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <style>
+        .heading-font { font-family: 'Playfair Display', serif; }
+        .room-option {
+            transition: all 0.3s ease;
+        }
+        .room-option.selected {
+            border-color: #e11d48;
+            background-color: #fff1f2;
+        }
+    </style>
 </head>
-
-<body class="tail-container text-gray-800">
+<body class="bg-gray-50">
 
     <!-- NAVBAR -->
-    <nav id="navbar" class="fixed top-0 w-full z-50 bg-white shadow-sm">
+    <nav class="fixed top-0 w-full z-50 bg-white shadow-sm">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-
             <div class="flex items-center gap-x-3">
-                <div class="w-10 h-10 bg-rose-700 rounded-full flex items-center justify-center text-white font-bold text-2xl">
-                    B
-                </div>
-
+                <div class="w-10 h-10 bg-rose-700 rounded-full flex items-center justify-center text-white font-bold text-2xl">B</div>
                 <div>
                     <span class="heading-font text-3xl font-bold">Bafana</span>
-                    <span class="block text-sm -mt-1 text-rose-600">HOTEL</span>
+                    <span class="text-sm block -mt-1 text-rose-600">HOTEL</span>
                 </div>
             </div>
-
-            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
-                <a href="index.html" class="hover:text-rose-700">Home</a>
-                <a href="rooms.html" class="hover:text-rose-700">Rooms</a>
-                <a href="booking.html" class="text-rose-700 font-semibold">Booking</a>
-                <a href="contact.html" class="hover:text-rose-700">Contact</a>
-            </div>
-
-            <a href="index.html" class="text-rose-700 font-medium">
-                ← Back to Home
-            </a>
-
+            <a href="rooms.html" class="bg-rose-700 text-white px-6 py-3 rounded-2xl hover:bg-rose-800 font-semibold">Back to Rooms</a>
         </div>
     </nav>
 
     <div class="pt-24"></div>
 
-    <!-- BOOKING SECTION -->
-    <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6 py-12">
+        <h1 class="heading-font text-5xl font-bold text-center mb-4">Book Your Stay</h1>
+        <p class="text-center text-gray-600 mb-12">Select your room and preferences</p>
 
-        <div class="max-w-4xl mx-auto px-6">
+        <div class="grid lg:grid-cols-12 gap-10">
+            <!-- ROOM SELECTION -->
+            <div class="lg:col-span-7">
+                <h2 class="text-2xl font-semibold mb-6">Select Room Type</h2>
+                <div id="room-list" class="space-y-4"></div>
+            </div>
 
-            <h1 class="heading-font text-5xl font-bold text-center mb-4">
-                Make a Reservation
-            </h1>
-
-            <p class="text-center text-gray-600 mb-12">
-                Fill the form below and we'll confirm your booking shortly
-            </p>
-
-            <form id="bookingForm" class="bg-white rounded-3xl shadow-2xl p-10">
-
-                <!-- Dates -->
-                <div class="grid md:grid-cols-2 gap-6">
-
-                    <div>
-                        <label class="block text-sm font-medium mb-2">
-                            Check-in Date
-                        </label>
-
-                        <input
-                            type="date"
-                            id="checkin"
-                            required
-                            class="w-full border border-gray-300 rounded-2xl px-5 py-4 focus:outline-none focus:border-rose-500">
+            <!-- BOOKING SUMMARY -->
+            <div class="lg:col-span-5">
+                <div class="bg-white rounded-3xl shadow-xl p-8 sticky top-8">
+                    <h2 class="text-2xl font-semibold mb-6">Booking Summary</h2>
+                    
+                    <div id="selected-room" class="mb-8">
+                        <p class="text-gray-500 text-sm">Selected Room</p>
+                        <p id="selected-name" class="font-medium text-xl">— No room selected —</p>
                     </div>
 
-                    <div>
-                        <label class="block text-sm font-medium mb-2">
-                            Check-out Date
-                        </label>
-
-                        <input
-                            type="date"
-                            id="checkout"
-                            required
-                            class="w-full border border-gray-300 rounded-2xl px-5 py-4 focus:outline-none focus:border-rose-500">
-                    </div>
-
-                </div>
-
-                <!-- Name -->
-                <div class="mt-6">
-
-                    <label class="block text-sm font-medium mb-2">
-                        Full Name
-                    </label>
-
-                    <input
-                        type="text"
-                        id="name"
-                        placeholder="John Doe"
-                        required
-                        class="w-full border border-gray-300 rounded-2xl px-5 py-4">
-
-                </div>
-
-                <!-- Email & Phone -->
-                <div class="mt-6 grid md:grid-cols-2 gap-6">
-
-                    <div>
-                        <label class="block text-sm font-medium mb-2">
-                            Email Address
-                        </label>
-
-                        <input
-                            type="email"
-                            id="email"
-                            placeholder="you@email.com"
-                            required
-                            class="w-full border border-gray-300 rounded-2xl px-5 py-4">
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-medium mb-2">
-                            Phone Number
-                        </label>
-
-                        <input
-                            type="tel"
-                            id="phone"
-                            placeholder="+234 801 234 5678"
-                            required
-                            class="w-full border border-gray-300 rounded-2xl px-5 py-4">
-                    </div>
-
-                </div>
-
-                <!-- Room Type -->
-                <div class="mt-6">
-
-                    <label class="block text-sm font-medium mb-2">
-                        Room Type
-                    </label>
-
-                    <select
-                        id="roomtype"
-                        required
-                        class="w-full border border-gray-300 rounded-2xl px-5 py-4">
-
-                        <option value="">Select Room Type</option>
-                        <option value="Deluxe Room">Deluxe Room - ₦45,000</option>
-                        <option value="Executive Suite">Executive Suite - ₦85,000</option>
-                        <option value="Family Suite">Family Suite - ₦110,000</option>
-
-                    </select>
-
-                </div>
-
-                <!-- Number of Rooms -->
-                <div class="mt-6">
-
-                    <label class="block text-sm font-medium mb-2">
-                        Number of Rooms
-                    </label>
-
-                    <div class="flex items-center gap-4">
-
-                        <button
-                            type="button"
-                            id="minusRoom"
-                            class="w-12 h-12 rounded-full bg-gray-200 hover:bg-gray-300 text-2xl font-bold transition">
-                            −
-                        </button>
-
-                        <input
-                            type="text"
-                            id="roomCount"
-                            value="1"
-                            readonly
-                            class="w-20 text-center border border-gray-300 rounded-2xl py-3 text-lg font-bold bg-white">
-
-                        <button
-                            type="button"
-                            id="plusRoom"
-                            class="w-12 h-12 rounded-full bg-rose-700 hover:bg-rose-800 text-white text-2xl font-bold transition">
-                            +
-                        </button>
-
-                    </div>
-
-                </div>
-
-                <!-- Special Requests -->
-                <div class="mt-6">
-
-                    <label class="block text-sm font-medium mb-2">
-                        Special Requests (Optional)
-                    </label>
-
-                    <textarea
-                        id="requests"
-                        rows="4"
-                        placeholder="Any special requests..."
-                        class="w-full border border-gray-300 rounded-3xl px-5 py-4"></textarea>
-
-                </div>
-
-                <!-- Booking Summary -->
-                <div class="mt-8 bg-gray-50 border border-gray-200 rounded-3xl p-6">
-
-                    <h2 class="text-2xl font-semibold mb-6">
-                        Booking Summary
-                    </h2>
-
-                    <div class="space-y-4">
-
-                        <div class="flex justify-between">
-                            <span>Price Per Night</span>
-                            <span id="pricePerNight">₦0</span>
+                    <!-- Number of Rooms -->
+                    <div class="mb-8">
+                        <label class="block text-sm text-gray-600 mb-3">Number of Rooms</label>
+                        <div class="flex items-center gap-4">
+                            <button onclick="changeRoomCount(-1)" class="w-12 h-12 rounded-2xl border hover:bg-gray-100 flex items-center justify-center text-2xl font-light">-</button>
+                            <span id="room-count" class="w-12 text-center text-3xl font-semibold">1</span>
+                            <button onclick="changeRoomCount(1)" class="w-12 h-12 rounded-2xl border hover:bg-gray-100 flex items-center justify-center text-2xl font-light">+</button>
                         </div>
-
-                        <div class="flex justify-between">
-                            <span>Number of Nights</span>
-                            <span id="nightCount">0</span>
-                        </div>
-
-                        <div class="flex justify-between">
-                            <span>Number of Rooms</span>
-                            <span id="roomDisplay">1</span>
-                        </div>
-
-                        <hr>
-
-                        <div class="flex justify-between text-2xl font-bold text-rose-700">
-                            <span>Total Amount</span>
-                            <span id="totalAmount">₦0</span>
-                        </div>
-
                     </div>
 
+                    <!-- Adults -->
+                    <div class="mb-8">
+                        <label class="block text-sm text-gray-600 mb-3">Number of Adults</label>
+                        <div class="flex items-center gap-4">
+                            <button onclick="changeAdults(-1)" class="w-12 h-12 rounded-2xl border hover:bg-gray-100 flex items-center justify-center text-2xl font-light">-</button>
+                            <span id="adults-count" class="w-12 text-center text-3xl font-semibold">2</span>
+                            <button onclick="changeAdults(1)" class="w-12 h-12 rounded-2xl border hover:bg-gray-100 flex items-center justify-center text-2xl font-light">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Dates -->
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <label class="block text-sm text-gray-600 mb-2">Check-in</label>
+                            <input type="date" id="checkin" class="w-full border rounded-2xl px-4 py-3 focus:outline-none focus:border-rose-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-600 mb-2">Check-out</label>
+                            <input type="date" id="checkout" class="w-full border rounded-2xl px-4 py-3 focus:outline-none focus:border-rose-500">
+                        </div>
+                    </div>
+
+                    <!-- Total -->
+                    <div class="border-t pt-8">
+                        <div class="flex justify-between text-lg mb-2">
+                            <span id="total-label">Total (1 room × 1 night)</span>
+                            <span id="total-price" class="font-bold text-3xl text-rose-700">₦0</span>
+                        </div>
+                        <p class="text-xs text-gray-500">Taxes &amp; fees included</p>
+                    </div>
+
+                    <button onclick="proceedToPayment()" 
+                            class="mt-10 w-full bg-rose-700 hover:bg-rose-800 text-white py-5 rounded-3xl text-lg font-semibold transition">
+                        Proceed to Payment
+                    </button>
                 </div>
-
-                <!-- Submit Button -->
-                <button
-                    type="submit"
-                    class="mt-10 w-full bg-rose-700 hover:bg-rose-800 text-white py-6 rounded-3xl text-xl font-semibold transition-all">
-
-                    CONFIRM RESERVATION
-
-                </button>
-
-            </form>
-
+            </div>
         </div>
+    </div>
 
-    </section>
+    <script>
+        const roomsData = [
+            { id: 0, name: "Deluxe Room", price: 45000, nights: 1 },
+            { id: 1, name: "Executive Suite", price: 85000, nights: 1 },
+            { id: 2, name: "Family Suite", price: 110000, nights: 1 },
+            { id: 3, name: "Ocean View Twin", price: 55000, nights: 1 },
+            { id: 4, name: "Junior Suite", price: 75000, nights: 1 },
+            { id: 5, name: "Presidential Suite", price: 250000, nights: 1 }
+        ];
 
-    <script src="script.js"></script>
+        let selectedRoomIndex = null;
+        let roomCount = 1;
+        let adults = 2;
 
+        function populateRooms() {
+            const container = document.getElementById('room-list');
+            container.innerHTML = roomsData.map(room => `
+                <div onclick="selectRoom(${room.id})" 
+                     id="room-${room.id}"
+                     class="room-option border-2 border-transparent p-6 rounded-3xl cursor-pointer hover:border-rose-200 flex justify-between items-center">
+                    <div>
+                        <h3 class="text-2xl font-semibold">${room.name}</h3>
+                        <p class="text-rose-700 font-bold text-xl mt-1">₦${room.price.toLocaleString()} <span class="text-sm font-normal text-gray-500">/ night</span></p>
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-gray-400"></i>
+                </div>
+            `).join('');
+        }
+
+        function selectRoom(index) {
+            // Remove previous selection
+            document.querySelectorAll('.room-option').forEach(el => el.classList.remove('selected'));
+            
+            // Add selection
+            document.getElementById(`room-${index}`).classList.add('selected');
+            selectedRoomIndex = index;
+            
+            updateSummary();
+        }
+
+        function changeRoomCount(change) {
+            roomCount = Math.max(1, Math.min(10, roomCount + change));
+            document.getElementById('room-count').textContent = roomCount;
+            updateSummary();
+        }
+
+        function changeAdults(change) {
+            adults = Math.max(1, Math.min(20, adults + change));
+            document.getElementById('adults-count').textContent = adults;
+            // Adults don't affect price in this demo, but you can extend logic later
+        }
+
+        function updateSummary() {
+            if (selectedRoomIndex === null) return;
+            
+            const room = roomsData[selectedRoomIndex];
+            const total = room.price * roomCount;
+            
+            document.getElementById('selected-name').textContent = room.name;
+            document.getElementById('total-price').textContent = `₦${total.toLocaleString()}`;
+            document.getElementById('total-label').textContent = `Total (\( {roomCount} room \){roomCount > 1 ? 's' : ''} × 1 night)`;
+        }
+
+        function proceedToPayment() {
+            if (selectedRoomIndex === null) {
+                alert("Please select a room type");
+                return;
+            }
+            const room = roomsData[selectedRoomIndex];
+            alert(`Booking confirmed!\n\nRoom: ${room.name}\nRooms: ${roomCount}\nAdults: \( {adults}\nTotal: ₦ \){(room.price * roomCount).toLocaleString()}\n\nThank you for choosing Bafana Hotel!`);
+            // In real app: redirect to payment gateway
+        }
+
+        // Initialize
+        window.onload = () => {
+            populateRooms();
+            
+            // Set default dates
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('checkin').value = today;
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            document.getElementById('checkout').value = tomorrow.toISOString().split('T')[0];
+        };
+    </script>
 </body>
 </html>
