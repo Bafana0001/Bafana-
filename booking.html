@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Your Stay - Bafana Hotel Kaduna</title>
+    <title>Book Your Stay - Bafana's Embassy Hotel & Suites</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
@@ -50,8 +50,8 @@
                     B
                 </div>
                 <div>
-                    <span class="font-serif text-2xl font-bold tracking-tight text-slate-900 block leading-none">Bafana</span>
-                    <span class="text-[10px] font-bold tracking-widest text-brand-600 uppercase block mt-1">Hotel Kaduna</span>
+                    <span class="font-serif text-2xl font-bold tracking-tight text-slate-900 block leading-none">Bafana's Embassy</span>
+                    <span class="text-[10px] font-bold tracking-widest text-brand-600 uppercase block mt-1">Hotel & Suites</span>
                 </div>
             </a>
             
@@ -67,7 +67,7 @@
         <div class="max-w-2xl mb-10">
             <span class="text-xs font-bold tracking-wider text-brand-600 uppercase bg-brand-50 px-3 py-1.5 rounded-full border border-brand-100">Direct Reservation</span>
             <h1 class="font-serif text-4xl sm:text-5xl font-bold text-slate-900 mt-3 tracking-tight">Reserve Your Stay</h1>
-            <p class="text-slate-600 mt-2 text-base sm:text-lg">Select your preferred room type and customize your accommodation details below.</p>
+            <p class="text-slate-600 mt-2 text-base sm:text-lg">Select your preferred room type or event space and customize your booking details below.</p>
         </div>
 
         <div class="grid lg:grid-cols-12 gap-8 items-start">
@@ -75,9 +75,16 @@
             <section class="lg:col-span-7 space-y-4">
                 <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2 mb-2">
                     <i class="fa-solid fa-bed text-brand-600"></i>
-                    <span>1. Select Room Type</span>
+                    <span>1. Select Room or Space</span>
                 </h2>
+                
                 <div id="room-list" class="space-y-3">
+                    </div>
+
+                <div class="p-4 bg-brand-50/60 rounded-2xl border border-brand-100/80 text-xs text-slate-600 space-y-1 mt-6">
+                    <p class="font-semibold text-brand-800"><i class="fa-solid fa-circle-info mr-1"></i> Additional Information:</p>
+                    <p>• All prices are inclusive of 10% service charge, 7.5% VAT, and 5% state levy.</p>
+                    <p>• Check-in & Check-out time is 12:00 noon.</p>
                 </div>
             </section>
 
@@ -102,8 +109,9 @@
                     </div>
                     
                     <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 mb-6">
-                        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-1">Accommodation</span>
-                        <p id="selected-name" class="font-bold text-lg text-slate-800">Deluxe Room</p>
+                        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-1">Accommodation / Space</span>
+                        <p id="selected-name" class="font-bold text-lg text-slate-800">Standard Room</p>
+                        <p id="selected-area" class="text-xs text-slate-500 mt-0.5"><i class="fa-solid fa-ruler-combined mr-1"></i> Area: 22 m² (237 sq ft)</p>
                     </div>
 
                     <div class="grid grid-cols-2 gap-4 mb-6">
@@ -121,7 +129,7 @@
 
                     <div class="grid grid-cols-2 gap-4 mb-6">
                         <div class="p-4 border border-slate-200 rounded-2xl">
-                            <span class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Rooms</span>
+                            <span class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Rooms / Spaces</span>
                             <div class="flex items-center justify-between">
                                 <button type="button" onclick="changeRoomCount(-1)" aria-label="Decrease room count"
                                         class="w-8 h-8 rounded-lg border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-100 hover:border-slate-300 transition-all font-bold">-</button>
@@ -142,10 +150,11 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="border-t border-slate-100 pt-6 mb-6">
                         <div class="flex justify-between items-baseline mb-1">
                             <span id="total-label" class="text-sm font-medium text-slate-500">Total (1 room × 1 night)</span>
-                            <span id="total-price" class="text-3xl font-extrabold text-brand-700">₦45,000</span>
+                            <span id="total-price" class="text-3xl font-extrabold text-brand-700">₦20,000</span>
                         </div>
                         <p class="text-xs text-slate-400 text-right">Includes all taxes & fees</p>
                     </div>
@@ -170,17 +179,20 @@
                     </button>
                 </form>
             </section>
+
         </div>
     </main>
-
     <script>
         const roomsData = [
-            { id: 0, name: "Deluxe Room", price: 45000, desc: "King bed, High-speed Wi-Fi, City view" },
-            { id: 1, name: "Executive Suite", price: 85000, desc: "Separate lounge, Work desk, Free breakfast" },
-            { id: 2, name: "Family Suite", price: 110000, desc: "2 Bedrooms, Living room, Kitchenette" },
-            { id: 3, name: "Ocean View Twin", price: 55000, desc: "2 Twin beds, Scenic view, Smart TV" },
-            { id: 4, name: "Junior Suite", price: 75000, desc: "King bed, Balcony, Express check-in" },
-            { id: 5, name: "Presidential Suite", price: 250000, desc: "VIP Service, Private lounge, Panoramic views" }
+            { id: 0, name: "Standard Room", price: 20000, available: "8 Available", area: "22 m² (237 sq ft)", desc: "Comfortable bed, Free Wi-Fi, Air conditioning" },
+            { id: 1, name: "Deluxe Room", price: 25000, available: "17 Available", area: "28 m² (301 sq ft)", desc: "Queen bed, Work desk, Flat screen TV" },
+            { id: 2, name: "Luxury Room", price: 30000, available: "10 Available", area: "35 m² (376 sq ft)", desc: "King bed, Seating area, Mini fridge" },
+            { id: 3, name: "Suites", price: 50000, available: "2 Available", area: "55 m² (592 sq ft)", desc: "Master bedroom, Separate living room, Executive desk" },
+            { id: 4, name: "Lounge", price: 150000, available: "1 Available", area: "120 m² (1,291 sq ft)", desc: "Lounge seating, Bar access, Ambient lighting" },
+            { id: 5, name: "VIP Lounge", price: 300000, available: "1 Available", area: "180 m² (1,937 sq ft)", desc: "Exclusive private access, Plush seating, Private bar" },
+            { id: 6, name: "Unice Hall", price: 400000, available: "1 Available", area: "350 m² (3,767 sq ft)", desc: "Event & conference space, High capacity seating" },
+            { id: 7, name: "Tehila Hall", price: 700000, available: "1 Available", area: "600 m² (6,458 sq ft)", desc: "Grand banquet venue, Stage setup, Large seating" },
+            { id: 8, name: "Open Space", price: 200000, available: "1 Available", area: "800 m² (8,611 sq ft)", desc: "Outdoor event lawn, Flexible layout, Evening lights" }
         ];
 
         let state = {
@@ -197,8 +209,12 @@
                      id="room-${room.id}"
                      class="room-card bg-white border border-slate-200/80 p-5 rounded-2xl cursor-pointer hover:border-brand-600 flex justify-between items-center group ${room.id === state.selectedRoomIndex ? 'selected' : ''}">
                     <div>
-                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-700 transition-colors">${room.name}</h3>
-                        <p class="text-xs text-slate-500 mb-2">${room.desc}</p>
+                        <div class="flex items-center gap-2">
+                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-700 transition-colors">${room.name}</h3>
+                            <span class="text-[10px] font-semibold bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md">${room.available}</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mb-1">${room.desc}</p>
+                        <p class="text-xs text-slate-400 mb-2"><i class="fa-solid fa-ruler-combined mr-1"></i> Area: ${room.area}</p>
                         <p class="text-brand-700 font-extrabold text-lg">₦${room.price.toLocaleString()} 
                             <span class="text-xs font-normal text-slate-400">/ night</span>
                         </p>
@@ -266,6 +282,7 @@
             const total = room.price * state.roomCount * state.nights;
             
             document.getElementById('selected-name').textContent = room.name;
+            document.getElementById('selected-area').innerHTML = `<i class="fa-solid fa-ruler-combined mr-1"></i> Area: ${room.area}`;
             document.getElementById('total-price').textContent = `₦${total.toLocaleString()}`;
             document.getElementById('total-label').textContent = 
                 `Total (${state.roomCount} room${state.roomCount > 1 ? 's' : ''} × ${state.nights} night${state.nights > 1 ? 's' : ''})`;
@@ -297,7 +314,6 @@
             const nameInput = document.getElementById('guest-name');
             const emailInput = document.getElementById('guest-email');
 
-            // Form validation before sending
             if (!nameInput.checkValidity() || !emailInput.checkValidity()) {
                 nameInput.reportValidity();
                 emailInput.reportValidity();
@@ -306,17 +322,17 @@
 
             const room = roomsData[state.selectedRoomIndex];
             const total = room.price * state.roomCount * state.nights;
-            const phoneNumber = "2347068226081"; // Format for WhatsApp API
+            const phoneNumber = "2347068226081";
 
-            const message = `Hello *Bafana Hotel Kaduna*,\nI would like to make a reservation and *Pay on Arrival*.\n\n` +
+            const message = `Hello *Bafana's Embassy Hotel & Suites*,\nI would like to make a reservation and *Pay on Arrival*.\n\n` +
                 `📋 *Booking Details:*\n` +
                 `• *Name:* ${nameInput.value}\n` +
                 `• *Email:* ${emailInput.value}\n` +
-                `• *Room:* ${room.name}\n` +
+                `• *Room/Space:* ${room.name}\n` +
                 `• *Check-in:* ${document.getElementById('checkin').value}\n` +
                 `• *Check-out:* ${document.getElementById('checkout').value}\n` +
-                `• *Duration:* ${state.nights} Night(s)\n` +
-                `• *Rooms:* ${state.roomCount}\n` +
+                `• *Duration:* ${state.nights} Night(s)/Day(s)\n` +
+                `• *Rooms/Spaces:* ${state.roomCount}\n` +
                 `• *Guests:* ${state.adults}\n` +
                 `• *Total Estimated Amount:* ₦${total.toLocaleString()}\n\n` +
                 `Please confirm availability. Thank you!`;
@@ -327,9 +343,7 @@
             window.open(whatsappUrl, '_blank');
         }
 
-        // Initialize Page
         window.onload = () => {
-            // Auto-select room based on URL search query (e.g., ?room=Executive Suite or ?roomId=1)
             const urlParams = new URLSearchParams(window.location.search);
             const roomParam = urlParams.get('room') || urlParams.get('roomId');
 
@@ -345,7 +359,6 @@
             populateRooms();
             selectRoom(state.selectedRoomIndex);
 
-            // Set default check-in / check-out dates
             const today = new Date();
             const tomorrow = new Date();
             tomorrow.setDate(today.getDate() + 1);
