@@ -181,202 +181,225 @@
 
         </div>
     </main>
-    <script>
-        const roomsData = [
-            { id: 0, name: "Standard Room", price: 20000, available: "8 Available", area: "22 m² (237 sq ft)", desc: "Comfortable bed, Free Wi-Fi, Air conditioning" },
-            { id: 1, name: "Deluxe Room", price: 25000, available: "17 Available", area: "28 m² (301 sq ft)", desc: "Queen bed, Work desk, Flat screen TV" },
-            { id: 2, name: "Luxury Room", price: 30000, available: "10 Available", area: "35 m² (376 sq ft)", desc: "King bed, Seating area, Mini fridge" },
-            { id: 3, name: "Suites", price: 50000, available: "2 Available", area: "55 m² (592 sq ft)", desc: "Master bedroom, Separate living room, Executive desk" },
-            { id: 4, name: "Lounge", price: 150000, available: "1 Available", area: "120 m² (1,291 sq ft)", desc: "Lounge seating, Bar access, Ambient lighting" },
-            { id: 5, name: "VIP Lounge", price: 300000, available: "1 Available", area: "180 m² (1,937 sq ft)", desc: "Exclusive private access, Plush seating, Private bar" },
-            { id: 6, name: "Unice Hall", price: 400000, available: "1 Available", area: "350 m² (3,767 sq ft)", desc: "Event & conference space, High capacity seating" },
-            { id: 7, name: "Tehila Hall", price: 700000, available: "1 Available", area: "600 m² (6,458 sq ft)", desc: "Grand banquet venue, Stage setup, Large seating" },
-            { id: 8, name: "Open Space", price: 200000, available: "1 Available", area: "800 m² (8,611 sq ft)", desc: "Outdoor event lawn, Flexible layout, Evening lights" }
-        ];
+  
+<script>
+    const roomsData = [
+        { id: 0, name: "Standard Room", price: 20000, available: "8 Available", area: "22 m² (237 sq ft)", desc: "Comfortable bed, Free Wi-Fi, Air conditioning" },
+        { id: 1, name: "Deluxe Room", price: 25000, available: "17 Available", area: "28 m² (301 sq ft)", desc: "Queen bed, Work desk, Flat screen TV" },
+        { id: 2, name: "Luxury Room", price: 30000, available: "10 Available", area: "35 m² (376 sq ft)", desc: "King bed, Seating area, Mini fridge" },
+        { id: 3, name: "Suites", price: 50000, available: "2 Available", area: "55 m² (592 sq ft)", desc: "Master bedroom, Separate living room, Executive desk" },
+        { id: 4, name: "Lounge", price: 150000, available: "1 Available", area: "120 m² (1,291 sq ft)", desc: "Lounge seating, Bar access, Ambient lighting" },
+        { id: 5, name: "VIP Lounge", price: 300000, available: "1 Available", area: "180 m² (1,937 sq ft)", desc: "Exclusive private access, Plush seating, Private bar" },
+        { id: 6, name: "Unice Hall", price: 400000, available: "1 Available", area: "350 m² (3,767 sq ft)", desc: "Event & conference space, High capacity seating" },
+        { id: 7, name: "Tehila Hall", price: 700000, available: "1 Available", area: "600 m² (6,458 sq ft)", desc: "Grand banquet venue, Stage setup, Large seating" },
+        { id: 8, name: "Open Space", price: 200000, available: "1 Available", area: "800 m² (8,611 sq ft)", desc: "Outdoor event lawn, Flexible layout, Evening lights" }
+    ];
 
-        let state = {
-            selectedRoomIndex: 0,
-            roomCount: 1,
-            adults: 2,
-            nights: 1
+    let state = {
+        selectedRoomIndex: 0,
+        roomCount: 1,
+        adults: 2,
+        nights: 1
+    };
+
+    function populateRooms() {
+        const container = document.getElementById('room-list');
+        if (!container) return;
+        
+        container.innerHTML = roomsData.map(room => `
+            <div onclick="selectRoom(${room.id})" 
+                 id="room-${room.id}"
+                 class="room-card bg-white border border-slate-200/80 p-5 rounded-2xl cursor-pointer hover:border-brand-600 flex justify-between items-center group ${room.id === state.selectedRoomIndex ? 'selected' : ''}">
+                <div>
+                    <div class="flex items-center gap-2">
+                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-700 transition-colors">${room.name}</h3>
+                        <span class="text-[10px] font-semibold bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md">${room.available}</span>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-1">${room.desc}</p>
+                    <p class="text-xs text-slate-400 mb-2"><i class="fa-solid fa-ruler-combined mr-1"></i> Area: ${room.area}</p>
+                    <p class="text-brand-700 font-extrabold text-lg">₦${room.price.toLocaleString()} 
+                        <span class="text-xs font-normal text-slate-400">/ night</span>
+                    </p>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center group-hover:bg-brand-50 group-hover:text-brand-700 transition-colors">
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function selectRoom(index) {
+        document.querySelectorAll('.room-card').forEach(el => el.classList.remove('selected'));
+        const targetEl = document.getElementById(`room-${index}`);
+        if (targetEl) targetEl.classList.add('selected');
+        
+        state.selectedRoomIndex = index;
+        
+        updateSummary();
+
+        const detailsSection = document.getElementById('booking-summary') || document.getElementById('selected-name');
+        if (detailsSection) {
+            detailsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
+    function changeRoomCount(change) {
+        state.roomCount = Math.max(1, Math.min(10, state.roomCount + change));
+        const countEl = document.getElementById('room-count');
+        if (countEl) countEl.textContent = state.roomCount;
+        updateSummary();
+    }
+
+    function changeAdults(change) {
+        state.adults = Math.max(1, Math.min(20, state.adults + change));
+        const adultsEl = document.getElementById('adults-count');
+        if (adultsEl) adultsEl.textContent = state.adults;
+    }
+
+    function calculateNights() {
+        const checkinVal = document.getElementById('checkin').value;
+        const checkoutVal = document.getElementById('checkout').value;
+        
+        if (!checkinVal || !checkoutVal) return 1;
+
+        const date1 = new Date(checkinVal);
+        const date2 = new Date(checkoutVal);
+        
+        const diffTime = date2 - date1;
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        
+        return diffDays > 0 ? diffDays : 1;
+    }
+
+    function handleDateChange() {
+        const checkin = document.getElementById('checkin');
+        const checkout = document.getElementById('checkout');
+        
+        if (new Date(checkout.value) <= new Date(checkin.value)) {
+            const nextDay = new Date(checkin.value);
+            nextDay.setDate(nextDay.getDate() + 1);
+            checkout.value = nextDay.toISOString().split('T')[0];
+        }
+        
+        checkout.min = checkin.value;
+        state.nights = calculateNights();
+        updateSummary();
+    }
+
+    function updateSummary() {
+        if (state.selectedRoomIndex === null || !roomsData[state.selectedRoomIndex]) return;
+        
+        const room = roomsData[state.selectedRoomIndex];
+        const total = room.price * state.roomCount * state.nights;
+        
+        const nameEl = document.getElementById('selected-name');
+        const areaEl = document.getElementById('selected-area');
+        const priceEl = document.getElementById('total-price');
+        const labelEl = document.getElementById('total-label');
+
+        if (nameEl) nameEl.textContent = room.name;
+        if (areaEl) areaEl.innerHTML = `<i class="fa-solid fa-ruler-combined mr-1"></i> Area: ${room.area}`;
+        if (priceEl) priceEl.textContent = `₦${total.toLocaleString()}`;
+        if (labelEl) {
+            labelEl.textContent = `Total (${state.roomCount} room${state.roomCount > 1 ? 's' : ''} × ${state.nights} night${state.nights > 1 ? 's' : ''})`;
+        }
+    }
+
+    function proceedToPayment(event) {
+        event.preventDefault();
+
+        const room = roomsData[state.selectedRoomIndex];
+        const total = room.price * state.roomCount * state.nights;
+
+        const bookingData = {
+            guestName: document.getElementById('guest-name').value,
+            guestEmail: document.getElementById('guest-email').value,
+            roomName: room.name,
+            checkin: document.getElementById('checkin').value,
+            checkout: document.getElementById('checkout').value,
+            nights: state.nights,
+            roomCount: state.roomCount,
+            adults: state.adults,
+            totalAmount: total
         };
 
-        function populateRooms() {
-            const container = document.getElementById('room-list');
-            container.innerHTML = roomsData.map(room => `
-                <div onclick="selectRoom(${room.id})" 
-                     id="room-${room.id}"
-                     class="room-card bg-white border border-slate-200/80 p-5 rounded-2xl cursor-pointer hover:border-brand-600 flex justify-between items-center group ${room.id === state.selectedRoomIndex ? 'selected' : ''}">
-                    <div>
-                        <div class="flex items-center gap-2">
-                            <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-700 transition-colors">${room.name}</h3>
-                            <span class="text-[10px] font-semibold bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md">${room.available}</span>
-                        </div>
-                        <p class="text-xs text-slate-500 mb-1">${room.desc}</p>
-                        <p class="text-xs text-slate-400 mb-2"><i class="fa-solid fa-ruler-combined mr-1"></i> Area: ${room.area}</p>
-                        <p class="text-brand-700 font-extrabold text-lg">₦${room.price.toLocaleString()} 
-                            <span class="text-xs font-normal text-slate-400">/ night</span>
-                        </p>
-                    </div>
-                    <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center group-hover:bg-brand-50 group-hover:text-brand-700 transition-colors">
-                        <i class="fa-solid fa-chevron-right text-xs"></i>
-                    </div>
-                </div>
-            `).join('');
+        sessionStorage.setItem('bookingDetails', JSON.stringify(bookingData));
+        window.location.href = "payment.html";
+    }
+
+    function payOnArrivalWhatsApp() {
+        const nameInput = document.getElementById('guest-name');
+        const emailInput = document.getElementById('guest-email');
+
+        if (!nameInput.checkValidity() || !emailInput.checkValidity()) {
+            nameInput.reportValidity();
+            emailInput.reportValidity();
+            return;
         }
 
-        function selectRoom(index) {
-            document.querySelectorAll('.room-card').forEach(el => el.classList.remove('selected'));
-            const targetEl = document.getElementById(`room-${index}`);
-            if (targetEl) targetEl.classList.add('selected');
-            state.selectedRoomIndex = index;
-            updateSummary();
-        }
+        const room = roomsData[state.selectedRoomIndex];
+        const total = room.price * state.roomCount * state.nights;
+        const phoneNumber = "2347068226081";
 
-        function changeRoomCount(change) {
-            state.roomCount = Math.max(1, Math.min(10, state.roomCount + change));
-            document.getElementById('room-count').textContent = state.roomCount;
-            updateSummary();
-        }
+        const message = `Hello *Bafana's Embassy Hotel & Suites*,\nI would like to make a reservation and *Pay on Arrival*.\n\n` +
+            `📋 *Booking Details:*\n` +
+            `• *Name:* ${nameInput.value}\n` +
+            `• *Email:* ${emailInput.value}\n` +
+            `• *Room/Space:* ${room.name}\n` +
+            `• *Check-in:* ${document.getElementById('checkin').value}\n` +
+            `• *Check-out:* ${document.getElementById('checkout').value}\n` +
+            `• *Duration:* ${state.nights} Night(s)/Day(s)\n` +
+            `• *Rooms/Spaces:* ${state.roomCount}\n` +
+            `• *Guests:* ${state.adults}\n` +
+            `• *Total Estimated Amount:* ₦${total.toLocaleString()}\n\n` +
+            `Please confirm availability. Thank you!`;
 
-        function changeAdults(change) {
-            state.adults = Math.max(1, Math.min(20, state.adults + change));
-            document.getElementById('adults-count').textContent = state.adults;
-        }
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+        
+        window.open(whatsappUrl, '_blank');
+    }
 
-        function calculateNights() {
-            const checkinVal = document.getElementById('checkin').value;
-            const checkoutVal = document.getElementById('checkout').value;
-            
-            if (!checkinVal || !checkoutVal) return 1;
+    window.onload = () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const roomParam = urlParams.get('room') || urlParams.get('roomId');
 
-            const date1 = new Date(checkinVal);
-            const date2 = new Date(checkoutVal);
-            
-            const diffTime = date2 - date1;
-            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-            
-            return diffDays > 0 ? diffDays : 1;
-        }
-
-        function handleDateChange() {
-            const checkin = document.getElementById('checkin');
-            const checkout = document.getElementById('checkout');
-            
-            if (new Date(checkout.value) <= new Date(checkin.value)) {
-                const nextDay = new Date(checkin.value);
-                nextDay.setDate(nextDay.getDate() + 1);
-                checkout.value = nextDay.toISOString().split('T')[0];
+        if (roomParam !== null) {
+            const foundIndex = roomsData.findIndex(r => 
+                r.id == roomParam || r.name.toLowerCase() === decodeURIComponent(roomParam).toLowerCase()
+            );
+            if (foundIndex !== -1) {
+                state.selectedRoomIndex = foundIndex;
             }
-            
-            checkout.min = checkin.value;
-            state.nights = calculateNights();
-            updateSummary();
         }
 
-        function updateSummary() {
-            if (state.selectedRoomIndex === null || !roomsData[state.selectedRoomIndex]) return;
-            
-            const room = roomsData[state.selectedRoomIndex];
-            const total = room.price * state.roomCount * state.nights;
-            
-            document.getElementById('selected-name').textContent = room.name;
-            document.getElementById('selected-area').innerHTML = `<i class="fa-solid fa-ruler-combined mr-1"></i> Area: ${room.area}`;
-            document.getElementById('total-price').textContent = `₦${total.toLocaleString()}`;
-            document.getElementById('total-label').textContent = 
-                `Total (${state.roomCount} room${state.roomCount > 1 ? 's' : ''} × ${state.nights} night${state.nights > 1 ? 's' : ''})`;
-        }
-
-        function proceedToPayment(event) {
-            event.preventDefault();
-
-            const room = roomsData[state.selectedRoomIndex];
-            const total = room.price * state.roomCount * state.nights;
-
-            const bookingData = {
-                guestName: document.getElementById('guest-name').value,
-                guestEmail: document.getElementById('guest-email').value,
-                roomName: room.name,
-                checkin: document.getElementById('checkin').value,
-                checkout: document.getElementById('checkout').value,
-                nights: state.nights,
-                roomCount: state.roomCount,
-                adults: state.adults,
-                totalAmount: total
-            };
-
-            sessionStorage.setItem('bookingDetails', JSON.stringify(bookingData));
-            window.location.href = "payment.html";
-        }
-
-        function payOnArrivalWhatsApp() {
-            const nameInput = document.getElementById('guest-name');
-            const emailInput = document.getElementById('guest-email');
-
-            if (!nameInput.checkValidity() || !emailInput.checkValidity()) {
-                nameInput.reportValidity();
-                emailInput.reportValidity();
-                return;
-            }
-
-            const room = roomsData[state.selectedRoomIndex];
-            const total = room.price * state.roomCount * state.nights;
-            const phoneNumber = "2347068226081";
-
-            const message = `Hello *Bafana's Embassy Hotel & Suites*,\nI would like to make a reservation and *Pay on Arrival*.\n\n` +
-                `📋 *Booking Details:*\n` +
-                `• *Name:* ${nameInput.value}\n` +
-                `• *Email:* ${emailInput.value}\n` +
-                `• *Room/Space:* ${room.name}\n` +
-                `• *Check-in:* ${document.getElementById('checkin').value}\n` +
-                `• *Check-out:* ${document.getElementById('checkout').value}\n` +
-                `• *Duration:* ${state.nights} Night(s)/Day(s)\n` +
-                `• *Rooms/Spaces:* ${state.roomCount}\n` +
-                `• *Guests:* ${state.adults}\n` +
-                `• *Total Estimated Amount:* ₦${total.toLocaleString()}\n\n` +
-                `Please confirm availability. Thank you!`;
-
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-            
-            window.open(whatsappUrl, '_blank');
-        }
-
-        window.onload = () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const roomParam = urlParams.get('room') || urlParams.get('roomId');
-
-            if (roomParam !== null) {
-                const foundIndex = roomsData.findIndex(r => 
-                    r.id == roomParam || r.name.toLowerCase() === decodeURIComponent(roomParam).toLowerCase()
-                );
-                if (foundIndex !== -1) {
-                    state.selectedRoomIndex = foundIndex;
-                }
-            }
-
-            populateRooms();
-            selectRoom(state.selectedRoomIndex);
-
-            const today = new Date();
-            const tomorrow = new Date();
-            tomorrow.setDate(today.getDate() + 1);
-            
-            const todayStr = today.toISOString().split('T')[0];
-            const tomorrowStr = tomorrow.toISOString().split('T')[0];
-            
-            const checkinInput = document.getElementById('checkin');
-            const checkoutInput = document.getElementById('checkout');
-            
+        const today = new Date();
+        const tomorrow = new Date();
+        tomorrow.setDate(today.getDate() + 1);
+        
+        const todayStr = today.toISOString().split('T')[0];
+        const tomorrowStr = tomorrow.toISOString().split('T')[0];
+        
+        const checkinInput = document.getElementById('checkin');
+        const checkoutInput = document.getElementById('checkout');
+        
+        if (checkinInput) {
             checkinInput.value = todayStr;
             checkinInput.min = todayStr;
-            
+            checkinInput.addEventListener('change', handleDateChange);
+        }
+        
+        if (checkoutInput) {
             checkoutInput.value = tomorrowStr;
             checkoutInput.min = tomorrowStr;
-            
-            state.nights = 1;
-            updateSummary();
-        };
-    </script>
+            checkoutInput.addEventListener('change', handleDateChange);
+        }
+        
+        state.nights = calculateNights();
+
+        populateRooms();
+        selectRoom(state.selectedRoomIndex);
+    };
+</script>
 </body>
 </html>
