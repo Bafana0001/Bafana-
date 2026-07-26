@@ -12,25 +12,51 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>  
+        :root {
+            --dark-blue-main: #0b132b;
+            --dark-blue-secondary: #1c2541;
+            --liquid-white: rgba(240, 248, 255, 0.85);
+            --liquid-white-glow: rgba(255, 255, 255, 0.15);
+        }
+
         body {
             font-family: 'Inter', sans-serif;
+            background-color: var(--dark-blue-main);
+            color: var(--liquid-white);
         }
 
         .heading-font {  
             font-family: 'Playfair Display', serif;  
         }
 
-        .gold-gradient-text {
-            background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #b8860b 100%);
+        /* Mysterious Liquid White Text Gradient */
+        .liquid-white-text {
+            background: linear-gradient(135deg, #ffffff 0%, #e0f2fe 50%, #93c5fd 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
         }
 
+        /* Liquid Glass / Mysterious White Card Styling */
         .glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            background: rgba(240, 248, 255, 0.07);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .liquid-white-btn {
+            background: rgba(255, 255, 255, 0.9);
+            color: #0b132b;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .liquid-white-btn:hover {
+            background: #ffffff;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+            transform: translateY(-1px);
         }
 
         .slider-container {
@@ -62,84 +88,84 @@
         }
     </style>
 </head>  
-<body class="bg-slate-900 text-slate-100 overflow-x-hidden antialiased">  
+<body class="overflow-x-hidden antialiased">  
 
-<div class="bg-amber-500/10 border-b border-amber-500/20 text-amber-300 text-xs py-2 px-6 hidden sm:block">
+<div class="bg-sky-950/40 border-b border-white/10 text-sky-100/80 text-xs py-2 px-6 hidden sm:block backdrop-blur-sm">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
         <div class="flex items-center gap-6">
-            <span><i class="fas fa-location-dot mr-1"></i> Express Way, Goni Gora, Kaduna</span>
-            <span><i class="fas fa-phone mr-1"></i> +234 XXX XXX XXXX</span>
+            <span><i class="fas fa-location-dot mr-1 text-white/70"></i> Express Way, Goni Gora, Kaduna</span>
+            <span><i class="fas fa-phone mr-1 text-white/70"></i> +234 XXX XXX XXXX</span>
         </div>
         <div class="flex items-center gap-4">
-            <span class="text-slate-300">24/7 Front Desk Support</span>
-            <span class="text-amber-500">|</span>
-            <a href="faq.html" class="hover:underline">Need Help? FAQ</a>
+            <span class="text-white/60">24/7 Front Desk Support</span>
+            <span class="text-white/20">|</span>
+            <a href="faq.html" class="hover:text-white transition hover:underline">Need Help? FAQ</a>
         </div>
     </div>
 </div>
 
-<nav id="navbar" class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur-md border-b border-amber-500/20 shadow-lg transition-all duration-300">  
+<nav id="navbar" class="sticky top-0 z-40 bg-[#0b132b]/85 backdrop-blur-md border-b border-white/10 shadow-xl transition-all duration-300">  
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">  
         <a href="index.html" class="flex items-center gap-x-3 group">  
-            <div class="w-10 h-10 bg-slate-900 border border-amber-500/60 rounded-lg flex items-center justify-center text-amber-400 font-bold text-2xl shadow-md group-hover:border-amber-400 transition">B</div>  
+            <div class="w-10 h-10 bg-white/10 border border-white/30 rounded-lg flex items-center justify-center text-white font-bold text-2xl shadow-lg backdrop-blur-md group-hover:border-white transition">B</div>  
             <div>  
-                <span class="heading-font text-2xl font-bold tracking-wide text-white group-hover:text-amber-300 transition">Bafana</span>  
-                <span class="text-[9px] block -mt-1 text-amber-500 font-bold uppercase tracking-widest">Hotel & Embassy</span>  
+                <span class="heading-font text-2xl font-bold tracking-wide liquid-white-text">Bafana</span>  
+                <span class="text-[9px] block -mt-1 text-sky-200/70 font-bold uppercase tracking-widest">Hotel & Embassy</span>  
             </div>  
         </a>  
 
-        <div class="hidden lg:flex items-center gap-x-6 text-sm font-medium text-slate-300">  
-            <a href="index.html" class="text-amber-400 font-semibold border-b-2 border-amber-400 pb-0.5">Home</a>  
-            <a href="about.html" class="hover:text-amber-400 transition">About</a>  
-            <a href="rooms.html" class="hover:text-amber-400 transition">Rooms</a>  
-            <a href="facilities.html" class="hover:text-amber-400 transition">Facilities</a>  
-            <a href="restaurant.html" class="hover:text-amber-400 transition">Restaurant</a>  
-            <a href="gallery.html" class="hover:text-amber-400 transition">Gallery</a>  
-            <a href="booking.html" class="hover:text-amber-400 transition">Booking</a>  
-            <a href="contact.html" class="hover:text-amber-400 transition">Contact</a>  
-            <a href="faq.html" class="hover:text-amber-400 transition">FAQ</a>  
+        <div class="hidden lg:flex items-center gap-x-6 text-sm font-medium text-white/80">  
+            <a href="index.html" class="text-white font-semibold border-b-2 border-white pb-0.5">Home</a>  
+            <a href="about.html" class="hover:text-white transition">About</a>  
+            <a href="rooms.html" class="hover:text-white transition">Rooms</a>  
+            <a href="facilities.html" class="hover:text-white transition">Facilities</a>  
+            <a href="restaurant.html" class="hover:text-white transition">Restaurant</a>  
+            <a href="gallery.html" class="hover:text-white transition">Gallery</a>  
+            <a href="booking.html" class="hover:text-white transition">Booking</a>  
+            <a href="contact.html" class="hover:text-white transition">Contact</a>  
+            <a href="faq.html" class="hover:text-white transition">FAQ</a>  
         </div>  
 
         <div class="flex items-center gap-4">
             <a href="booking.html"   
-               class="hidden sm:inline-block bg-amber-500 hover:bg-amber-400 text-slate-950 px-6 py-2.5 rounded-lg font-bold text-sm transition shadow-md hover:scale-105 active:scale-95">  
+               class="hidden sm:inline-block liquid-white-btn px-6 py-2.5 rounded-lg font-bold text-sm">  
                 Book Now  
             </a> 
-            <button id="openMenu" class="lg:hidden text-2xl text-amber-400 hover:text-amber-300 focus:outline-none p-2">
+            <button id="openMenu" class="lg:hidden text-2xl text-white hover:text-sky-200 focus:outline-none p-2">
                 <i class="fas fa-bars"></i>
             </button>
         </div> 
     </div>  
 </nav>  
 
-<div id="menuOverlay" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm hidden z-40 transition-opacity"></div>  
+<div id="menuOverlay" class="fixed inset-0 bg-[#0b132b]/80 backdrop-blur-sm hidden z-40 transition-opacity"></div>  
 
-<div id="sideMenu" class="fixed top-0 right-0 h-full w-4/5 sm:w-80 bg-slate-950 text-white border-l border-amber-500/30 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col justify-between">  
+<div id="sideMenu" class="fixed top-0 right-0 h-full w-4/5 sm:w-80 bg-[#0b132b] text-white border-l border-white/10 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col justify-between">  
     <div>
-        <div class="flex justify-between items-center p-6 border-b border-slate-800">  
-            <span class="heading-font text-xl font-bold text-amber-400">Navigation</span>
-            <button id="closeMenu" class="text-2xl text-slate-400 hover:text-amber-400">  
+        <div class="flex justify-between items-center p-6 border-b border-white/10">  
+            <span class="heading-font text-xl font-bold liquid-white-text">Navigation</span>
+            <button id="closeMenu" class="text-2xl text-white/60 hover:text-white">  
                 <i class="fas fa-xmark"></i> 
             </button>  
         </div>  
 
         <nav class="px-6 py-6">  
-            <ul id="dynamicMenuLinks" class="space-y-4 text-base font-medium text-slate-300">  
-                <li><a href="index.html" class="block text-amber-400 font-semibold py-1">Home</a></li>  
-                <li><a href="about.html" class="block hover:text-amber-400 transition py-1">About Us</a></li>  
-                <li><a href="rooms.html" class="block hover:text-amber-400 transition py-1">Rooms & Suites</a></li>  
-                <li><a href="facilities.html" class="block hover:text-amber-400 transition py-1">Hotel Facilities</a></li>  
-                <li><a href="restaurant.html" class="block hover:text-amber-400 transition py-1">Dining & Restaurant</a></li>  
-                <li><a href="gallery.html" class="block hover:text-amber-400 transition py-1">Photo Gallery</a></li>  
-                <li><a href="booking.html" class="block hover:text-amber-400 transition py-1">Online Booking</a></li>  
-                <li><a href="contact.html" class="block hover:text-amber-400 transition py-1">Contact Us</a></li>  
-                <li><a href="faq.html" class="block hover:text-amber-400 transition py-1">FAQ & Support</a></li>  
+            <ul id="dynamicMenuLinks" class="space-y-4 text-base font-medium text-white/70">  
+                <li><a href="index.html" class="block text-white font-semibold py-1">Home</a></li>  
+                <li><a href="about.html" class="block hover:text-white transition py-1">About Us</a></li>  
+                <li><a href="rooms.html" class="block hover:text-white transition py-1">Rooms & Suites</a></li>  
+                <li><a href="facilities.html" class="block hover:text-white transition py-1">Hotel Facilities</a></li>  
+                <li><a href="restaurant.html" class="block hover:text-white transition py-1">Dining & Restaurant</a></li>  
+                <li><a href="gallery.html" class="block hover:text-white transition py-1">Photo Gallery</a></li>  
+                <li><a href="booking.html" class="block hover:text-white transition py-1">Online Booking</a></li>  
+                <li><a href="contact.html" class="block hover:text-white transition py-1">Contact Us</a></li>  
+                <li><a href="faq.html" class="block hover:text-white transition py-1">FAQ & Support</a></li>  
             </ul>  
         </nav>
     </div>
 
-    <div class="p-6 border-t border-slate-800 space-y-3">  
-        <a href="booking.html" class="block text-center bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3 rounded-lg transition shadow-md">  
+    <div class="p-6 border-t border-white/10 space-y-3">  
+        <a href="booking.html" class="block text-center liquid-white-btn font-bold py-3 rounded-lg">  
             Reserve Room  
         </a> 
         <a href="https://wa.me/xxxxxx" target="_blank" class="block text-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-lg transition shadow-lg">  
