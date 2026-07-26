@@ -1,106 +1,112 @@
-
 <!DOCTYPE html>  
-<html lang="en">  
+<html lang="en" class="scroll-smooth">  
 <head>  
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <meta name="description" content="Bafana Hotel Kaduna - Luxury accommodation, world-class dining, and premium hospitality in Kaduna, Nigeria.">  
     <title>Bafana Hotel Kaduna | Premium Luxury & Hospitality</title>  
-</head>  
-<body>  
+    
+    <link rel="stylesheet" href="styles.css">
 
-<div>
-    <div></div>
-    <div></div>
+    <script src="https://cdn.tailwindcss.com"></script>  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">  
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>  
+<body class="antialiased">  
+
+<div class="liquid-bg-container">
+    <div class="liquid-orb-1"></div>
+    <div class="liquid-orb-2"></div>
 </div>
 
-<div>
-    <div>
-        <div>
-            <span><i></i> Express Way, Goni Gora, Kaduna</span>
-            <span><i></i> +234 XXX XXX XXXX</span>
+<div class="bg-maroon text-white/90 text-xs py-2 px-6 hidden sm:block border-b border-yellow-500/20">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="flex items-center gap-6">
+            <span><i class="fas fa-location-dot mr-1.5 text-gold"></i> Express Way, Goni Gora, Kaduna</span>
+            <span><i class="fas fa-phone mr-1.5 text-gold"></i> +234 XXX XXX XXXX</span>
         </div>
-        <div>
-            <span>24/7 Front Desk Support</span>
-            <span>|</span>
-            <a href="faq.html">Need Help? FAQ</a>
+        <div class="flex items-center gap-4">
+            <span class="text-white/80">24/7 Front Desk Support</span>
+            <span class="text-gold">|</span>
+            <a href="faq.html" class="hover:text-gold transition hover:underline">Need Help? FAQ</a>
         </div>
     </div>
 </div>
 
-<nav id="navbar">  
-    <div>  
-        <a href="index.html">  
-            <div>B</div>  
+<nav id="navbar" class="sticky top-0 z-40">  
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">  
+        <a href="index.html" class="flex items-center gap-x-3 group">  
+            <div class="w-10 h-10 bg-maroon rounded-lg flex items-center justify-center text-gold font-bold text-2xl shadow-md border border-yellow-500/30 group-hover:scale-105 transition">B</div>  
             <div>  
-                <span>Bafana</span>  
-                <span>Hotel & Embassy</span>  
+                <span class="heading-font text-2xl font-bold tracking-wide text-maroon">Bafana</span>  
+                <span class="text-[9px] block -mt-1 text-gold font-bold uppercase tracking-widest">Hotel & Embassy</span>  
             </div>  
         </a>  
 
-        <div>  
-            <a href="index.html">Home</a>  
-            <a href="about.html">About</a>  
-            <a href="rooms.html">Rooms</a>  
-            <a href="facilities.html">Facilities</a>  
-            <a href="restaurant.html">Restaurant</a>  
-            <a href="gallery.html">Gallery</a>  
-            <a href="booking.html">Booking</a>  
-            <a href="contact.html">Contact</a>  
-            <a href="faq.html">FAQ</a>  
+        <div class="hidden lg:flex items-center gap-x-8 text-sm font-semibold text-slate-700">  
+            <a href="index.html" class="text-maroon border-b-2 border-maroon pb-0.5">Home</a>  
+            <a href="about.html" class="hover:text-maroon transition">About</a>  
+            <a href="rooms.html" class="hover:text-maroon transition">Rooms</a>  
+            <a href="facilities.html" class="hover:text-maroon transition">Facilities</a>  
+            <a href="restaurant.html" class="hover:text-maroon transition">Restaurant</a>  
+            <a href="gallery.html" class="hover:text-maroon transition">Gallery</a>  
+            <a href="booking.html" class="hover:text-maroon transition">Booking</a>  
+            <a href="contact.html" class="hover:text-maroon transition">Contact</a>  
+            <a href="faq.html" class="hover:text-maroon transition">FAQ</a>  
         </div>  
 
-        <div>
-            <a href="booking.html">  
+        <div class="flex items-center gap-4">
+            <a href="booking.html" class="hidden sm:inline-block btn-primary">  
                 Book Now  
             </a> 
-            <button id="openMenu">
-                <i></i>
+            <button id="openMenu" class="lg:hidden text-2xl text-maroon hover:text-rose focus:outline-none p-2">
+                <i class="fas fa-bars"></i>
             </button>
         </div> 
     </div>  
 </nav>  
 
-<div id="menuOverlay"></div>  
+<div id="menuOverlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden z-40 transition-opacity"></div>  
 
-<div id="sideMenu">  
+<div id="sideMenu" class="fixed top-0 right-0 h-full w-4/5 sm:w-80 bg-white text-slate-800 border-l border-yellow-500/30 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col justify-between">  
     <div>
-        <div>  
-            <span>Navigation</span>
-            <button id="closeMenu">  
-                <i></i> 
+        <div class="flex justify-between items-center p-6 border-b border-slate-100">  
+            <span class="heading-font text-xl font-bold text-maroon">Navigation</span>
+            <button id="closeMenu" class="text-2xl text-slate-400 hover:text-maroon">  
+                <i class="fas fa-xmark"></i> 
             </button>  
         </div>  
 
-        <nav>  
-            <ul id="dynamicMenuLinks">  
-                <li><a href="index.html">Home</a></li>  
-                <li><a href="about.html">About Us</a></li>  
-                <li><a href="rooms.html">Rooms & Suites</a></li>  
-                <li><a href="facilities.html">Hotel Facilities</a></li>  
-                <li><a href="restaurant.html">Dining & Restaurant</a></li>  
-                <li><a href="gallery.html">Photo Gallery</a></li>  
-                <li><a href="booking.html">Online Booking</a></li>  
-                <li><a href="contact.html">Contact Us</a></li>  
-                <li><a href="faq.html">FAQ & Support</a></li>  
+        <nav class="px-6 py-6">  
+            <ul id="dynamicMenuLinks" class="space-y-4 text-base font-semibold text-slate-600">  
+                <li><a href="index.html" class="block text-maroon py-1">Home</a></li>  
+                <li><a href="about.html" class="block hover:text-maroon transition py-1">About Us</a></li>  
+                <li><a href="rooms.html" class="block hover:text-maroon transition py-1">Rooms & Suites</a></li>  
+                <li><a href="facilities.html" class="block hover:text-maroon transition py-1">Hotel Facilities</a></li>  
+                <li><a href="restaurant.html" class="block hover:text-maroon transition py-1">Dining & Restaurant</a></li>  
+                <li><a href="gallery.html" class="block hover:text-maroon transition py-1">Photo Gallery</a></li>  
+                <li><a href="booking.html" class="block hover:text-maroon transition py-1">Online Booking</a></li>  
+                <li><a href="contact.html" class="block hover:text-maroon transition py-1">Contact Us</a></li>  
+                <li><a href="faq.html" class="block hover:text-maroon transition py-1">FAQ & Support</a></li>  
             </ul>  
         </nav>
     </div>
 
-    <div>  
-        <a href="booking.html">  
+    <div class="p-6 border-t border-slate-100 space-y-3">  
+        <a href="booking.html" class="block text-center btn-primary w-full py-3">  
             Reserve Room  
         </a> 
-        <a href="https://wa.me/xxxxxx" target="_blank">  
-            <i></i> WhatsApp Support  
+        <a href="https://wa.me/xxxxxx" target="_blank" class="block text-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl transition shadow-md">  
+            <i class="fab fa-whatsapp mr-2"></i> WhatsApp Support  
         </a>  
     </div>  
 </div>
 
-<section>  
-    <div>
-        <div>
-            <div>
+<section class="relative min-h-[85vh] flex items-center justify-start overflow-hidden bg-slate-900">  
+    <div class="absolute inset-0 z-0 opacity-40">
+        <div class="slider-container">
+            <div class="slider-wrapper">
                 <img src="IMG_20260721_115436_891.jpg" alt="Bafana Hotel Exterior">
                 <img src="IMG_20260721_115818_762.jpg" alt="Luxury Suite View">
                 <img src="IMG_20260721_120016_547.jpg" alt="Hotel Amenities">
@@ -109,243 +115,240 @@
         </div>
     </div>
 
-    <div>  
-        <div>  
-            <div>
-                <span></span>
-                <span>Welcome to Bafana Hotel Kaduna</span>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 py-20 w-full">  
+        <div class="max-w-3xl">  
+            <div data-aos="fade-down" class="inline-flex items-center gap-3 bg-white/10 border border-yellow-500/40 px-5 py-2 rounded-full mb-8 backdrop-blur-md">
+                <span class="w-2.5 h-2.5 rounded-full bg-gold animate-pulse"></span>
+                <span class="text-gold font-semibold text-xs md:text-sm tracking-wide uppercase">Welcome to Bafana Hotel Kaduna</span>
             </div>
 
-            <h1>
+            <h1 data-aos="fade-right" class="heading-font text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.1] mb-6">
                 Unmatched Comfort, <br>
-                <span>Pure Luxury</span>
+                <span class="italic font-normal gold-gradient-text">Pure Luxury</span>
             </h1>
 
-            <p>
+            <p data-aos="fade-up" data-aos-delay="200" class="text-lg md:text-2xl text-slate-200 font-light max-w-2xl mb-10 leading-relaxed">
                 Experience world-class accommodation, exquisite dining, and authentic Northern Nigerian hospitality.
             </p>
 
-            <div>  
-                <a href="booking.html">  
+            <div data-aos="fade-up" data-aos-delay="400" class="flex flex-wrap gap-5">  
+                <a href="booking.html" class="btn-gold">  
                     Book Your Stay
                 </a>  
-                <a href="rooms.html">  
+                <a href="rooms.html" class="btn-primary border border-yellow-500/30">  
                     Explore Rooms  
                 </a>  
             </div>  
         </div>  
     </div>  
-</section> 
-
-<section>  
-    <div>  
-        <div>  
-            <div>
+</section>
+<section class="py-24 relative">  
+    <div class="max-w-7xl mx-auto px-6">  
+        <div data-aos="zoom-in" class="glass-card p-8 md:p-12 relative overflow-hidden">  
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 mb-10">
                 <div>
-                    <div>  
-                        <span>🏨</span>  
-                        <span>Bafana Hotel Embassy</span>  
+                    <div class="inline-flex items-center gap-3 bg-maroon/10 border border-maroon/20 px-6 py-2 rounded-full mb-4">  
+                        <span class="text-xl">🏨</span>  
+                        <span class="heading-font text-lg md:text-xl font-bold tracking-wider text-maroon">Bafana Hotel Embassy</span>  
                     </div>
-                    <h2>"The Place To Be"</h2>
-                    <p>Located along the Abuja-Kaduna-Zaria Expressway, offering top-tier tranquility and luxury accessibility.</p>
+                    <h2 class="heading-font text-3xl md:text-5xl font-bold text-slate-900">"The Place To Be"</h2>
+                    <p class="text-slate-600 mt-2 max-w-xl">Located along the Abuja-Kaduna-Zaria Expressway, offering top-tier tranquility and luxury accessibility.</p>
                 </div>
-                <a href="gallery.html">
-                    View Full Gallery <i></i>
+                <a href="gallery.html" class="btn-primary">
+                    View Full Gallery <i class="fas fa-arrow-right ml-2 text-xs"></i>
                 </a>
             </div>
             
-            <div>
-                <div>
-                    <img src="IMG_20260721_115346_979.jpg" alt="Bafana Hotel Main View">
-                    <div></div>
-                    <span>Exterior View</span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="gallery-img-wrapper h-60 shadow-md">
+                    <img src="IMG_20260721_115346_979.jpg" alt="Bafana Hotel Main View" class="gallery-img">
+                    <span class="absolute bottom-3 left-3 text-xs font-bold text-white bg-maroon/80 px-3 py-1 rounded-md backdrop-blur-sm">Exterior View</span>
                 </div>
-                <div>
-                    <img src="IMG_20260721_115436_891.jpg" alt="Hotel Lounge">
-                    <div></div>
-                    <span>Executive Lounge</span>
+                <div class="gallery-img-wrapper h-60 shadow-md">
+                    <img src="IMG_20260721_115436_891.jpg" alt="Hotel Lounge" class="gallery-img">
+                    <span class="absolute bottom-3 left-3 text-xs font-bold text-white bg-maroon/80 px-3 py-1 rounded-md backdrop-blur-sm">Executive Lounge</span>
                 </div>
-                <div>
-                    <i></i>
-                    <span>Reserved Image Slot #1</span>
-                    <span>Replace with custom URL</span>
+                <div class="h-60 bg-white border-2 border-dashed border-maroon/20 rounded-2xl flex flex-col items-center justify-center text-center p-4 hover:border-gold transition cursor-pointer group">
+                    <i class="fas fa-image text-3xl text-maroon/40 group-hover:text-maroon mb-2 transition"></i>
+                    <span class="text-xs font-bold text-slate-700">Reserved Image Slot #1</span>
+                    <span class="text-[10px] text-slate-400 mt-1">Replace with custom URL</span>
                 </div>
-                <div>
-                    <i></i>
-                    <span>Reserved Image Slot #2</span>
-                    <span>Replace with custom URL</span>
+                <div class="h-60 bg-white border-2 border-dashed border-maroon/20 rounded-2xl flex flex-col items-center justify-center text-center p-4 hover:border-gold transition cursor-pointer group">
+                    <i class="fas fa-image text-3xl text-maroon/40 group-hover:text-maroon mb-2 transition"></i>
+                    <span class="text-xs font-bold text-slate-700">Reserved Image Slot #2</span>
+                    <span class="text-[10px] text-slate-400 mt-1">Replace with custom URL</span>
                 </div>
             </div>
         </div>  
     </div>
 </section>
 
-<section>  
-    <div>  
-        <div>
-            <h2>Why Choose Bafana</h2>  
-            <p>Designed for corporate travelers, holidaymakers, and esteemed guests seeking standard excellence.</p>
+<section class="py-20 bg-white/60 border-y border-yellow-500/10">  
+    <div class="max-w-7xl mx-auto px-6">  
+        <div data-aos="fade-up" class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="heading-font text-4xl sm:text-5xl font-bold text-maroon mb-4">Why Choose Bafana</h2>  
+            <p class="text-slate-600 text-lg">Designed for corporate travelers, holidaymakers, and esteemed guests seeking standard excellence.</p>
         </div>
 
-        <div>  
-            <a href="rooms.html">  
-                <div>
-                    <i></i>
+        <div class="grid md:grid-cols-3 gap-8">  
+            <a href="rooms.html" data-aos="fade-up" data-aos-delay="100" class="room-card p-8 block group">  
+                <div class="w-16 h-16 rounded-2xl bg-maroon/10 border border-maroon/20 flex items-center justify-center text-3xl text-maroon mb-6 group-hover:bg-maroon group-hover:text-gold transition-colors duration-300">
+                    <i class="fas fa-bed"></i>
                 </div>  
-                <h3>Luxury Rooms</h3>  
-                <p>Elegantly furnished suites equipped with high-grade bedding, smart TV screens, and serene ambience.</p>  
+                <h3 class="font-bold text-2xl mb-3 text-slate-900">Luxury Rooms</h3>  
+                <p class="text-slate-600 leading-relaxed text-sm">Elegantly furnished suites equipped with high-grade bedding, smart TV screens, and serene ambience.</p>  
             </a>  
 
-            <a href="facilities.html">  
-                <div>
-                    <i></i>
+            <a href="facilities.html" data-aos="fade-up" data-aos-delay="200" class="room-card p-8 block group">  
+                <div class="w-16 h-16 rounded-2xl bg-maroon/10 border border-maroon/20 flex items-center justify-center text-3xl text-maroon mb-6 group-hover:bg-maroon group-hover:text-gold transition-colors duration-300">
+                    <i class="fas fa-wifi"></i>
                 </div>  
-                <h3>High-Speed Wi-Fi</h3>  
-                <p>Uninterrupted high-speed optic fiber connectivity throughout all hotel corridors and private suites.</p>  
+                <h3 class="font-bold text-2xl mb-3 text-slate-900">High-Speed Wi-Fi</h3>  
+                <p class="text-slate-600 leading-relaxed text-sm">Uninterrupted high-speed optic fiber connectivity throughout all hotel corridors and private suites.</p>  
             </a>  
 
-            <a href="facilities.html">  
-                <div>
-                    <i></i>
+            <a href="facilities.html" data-aos="fade-up" data-aos-delay="300" class="room-card p-8 block group">  
+                <div class="w-16 h-16 rounded-2xl bg-maroon/10 border border-maroon/20 flex items-center justify-center text-3xl text-maroon mb-6 group-hover:bg-maroon group-hover:text-gold transition-colors duration-300">
+                    <i class="fas fa-swimming-pool"></i>
                 </div>  
-                <h3>Swimming Pool</h3>  
-                <p>Refresh and relax in our well-maintained swimming facility with dedicated poolside lounge service.</p>  
+                <h3 class="font-bold text-2xl mb-3 text-slate-900">Swimming Pool</h3>  
+                <p class="text-slate-600 leading-relaxed text-sm">Refresh and relax in our well-maintained swimming facility with dedicated poolside lounge service.</p>  
             </a>  
         </div>  
     </div>  
 </section>
 
-<section>  
-    <div>  
-        <div>
+<section class="py-24">  
+    <div class="max-w-7xl mx-auto px-6">  
+        <div data-aos="fade-up" class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
             <div>
-                <h2>Featured Accommodations</h2>  
-                <p>Pick the room that best matches your lifestyle and budget.</p>  
+                <h2 class="heading-font text-4xl sm:text-5xl font-bold text-maroon mb-2">Featured Accommodations</h2>  
+                <p class="text-slate-600 text-lg">Pick the room that best matches your lifestyle and budget.</p>  
             </div>
-            <a href="rooms.html">
-                View All Categories <i></i>
+            <a href="rooms.html" class="text-maroon font-bold hover:text-gold transition flex items-center gap-2">
+                View All Categories <i class="fas fa-chevron-right text-xs"></i>
             </a>
         </div>
 
-        <div>  
-            <div>  
-                <div>
-                    <img src="IMG_20260721_115818_762.jpg" alt="Deluxe Room">  
-                    <div>Popular</div>
+        <div class="grid md:grid-cols-3 gap-8">  
+            <div data-aos="fade-up" data-aos-delay="100" class="room-card overflow-hidden flex flex-col justify-between group">  
+                <div class="gallery-img-wrapper h-64 rounded-b-none">
+                    <img src="IMG_20260721_115818_762.jpg" class="gallery-img" alt="Deluxe Room">  
+                    <div class="absolute top-4 right-4 bg-maroon text-gold text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-yellow-500/30">Popular</div>
                 </div>
-                <div>  
-                    <h3>Deluxe Room</h3>  
-                    <p>Queen bed • Air Conditioning • Free Wi-Fi</p>
-                    <p>₦45,000 <span>/ night</span></p>  
-                    <a href="booking.html?room=deluxe">Book Suite</a>  
+                <div class="p-8">  
+                    <h3 class="text-2xl font-bold mb-2 text-slate-900">Deluxe Room</h3>  
+                    <p class="text-slate-500 text-xs mb-4">Queen bed • Air Conditioning • Free Wi-Fi</p>
+                    <p class="text-maroon text-2xl font-bold mb-6">₦45,000 <span class="text-xs font-normal text-slate-400">/ night</span></p>  
+                    <a href="booking.html?room=deluxe" class="block text-center btn-primary w-full">Book Suite</a>  
                 </div>  
             </div>  
 
-            <div>  
-                <div>
-                    <img src="IMG_20260721_120016_547.jpg" alt="Executive Suite">  
-                    <div>Executive</div>
+            <div data-aos="fade-up" data-aos-delay="200" class="room-card overflow-hidden flex flex-col justify-between group">  
+                <div class="gallery-img-wrapper h-64 rounded-b-none">
+                    <img src="IMG_20260721_120016_547.jpg" class="gallery-img" alt="Executive Suite">  
+                    <div class="absolute top-4 right-4 bg-gold text-maroon text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">Executive</div>
                 </div>
-                <div>  
-                    <h3>Executive Suite</h3>  
-                    <p>King bed • Living Area • Breakfast Included</p>
-                    <p>₦85,000 <span>/ night</span></p>  
-                    <a href="booking.html?room=executive">Book Suite</a>  
+                <div class="p-8">  
+                    <h3 class="text-2xl font-bold mb-2 text-slate-900">Executive Suite</h3>  
+                    <p class="text-slate-500 text-xs mb-4">King bed • Living Area • Breakfast Included</p>
+                    <p class="text-maroon text-2xl font-bold mb-6">₦85,000 <span class="text-xs font-normal text-slate-400">/ night</span></p>  
+                    <a href="booking.html?room=executive" class="block text-center btn-primary w-full">Book Suite</a>  
                 </div>  
             </div>  
 
-            <div>  
-                <div>
-                    <img src="IMG_20260721_115436_891.jpg" alt="Family Suite">  
-                    <div>Spacious</div>
+            <div data-aos="fade-up" data-aos-delay="300" class="room-card overflow-hidden flex flex-col justify-between group">  
+                <div class="gallery-img-wrapper h-64 rounded-b-none">
+                    <img src="IMG_20260721_115436_891.jpg" class="gallery-img" alt="Family Suite">  
+                    <div class="absolute top-4 right-4 bg-emerald-700 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Spacious</div>
                 </div>
-                <div>  
-                    <h3>Family Suite</h3>  
-                    <p>2 Bedrooms • Mini Kitchenette • VIP Access</p>
-                    <p>₦110,000 <span>/ night</span></p>  
-                    <a href="booking.html?room=family">Book Suite</a>  
+                <div class="p-8">  
+                    <h3 class="text-2xl font-bold mb-2 text-slate-900">Family Suite</h3>  
+                    <p class="text-slate-500 text-xs mb-4">2 Bedrooms • Mini Kitchenette • VIP Access</p>
+                    <p class="text-maroon text-2xl font-bold mb-6">₦110,000 <span class="text-xs font-normal text-slate-400">/ night</span></p>  
+                    <a href="booking.html?room=family" class="block text-center btn-primary w-full">Book Suite</a>  
                 </div>  
             </div>  
         </div>  
     </div>  
 </section>  
 
-<section>  
-    <div>  
-        <div><div>68+</div><div>Luxury Rooms</div></div>  
-        <div><div>6+</div><div>Years Active</div></div>  
-        <div><div>4.9★</div><div>Guest Rating</div></div>  
-        <div><div>100%</div><div>Secure Parking</div></div>  
-        <div><div>✓</div><div>Airport Shuttle</div></div>  
-        <div><div>24/7</div><div>Power & Front Desk</div></div>  
+<section class="py-16 bg-maroon text-white border-y border-yellow-500/30">  
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-6 gap-8 text-center">  
+        <div data-aos="zoom-in"><div class="text-4xl font-bold text-gold">68+</div><div class="text-xs text-slate-200 mt-1 uppercase tracking-wider">Luxury Rooms</div></div>  
+        <div data-aos="zoom-in" data-aos-delay="100"><div class="text-4xl font-bold text-gold">6+</div><div class="text-xs text-slate-200 mt-1 uppercase tracking-wider">Years Active</div></div>  
+        <div data-aos="zoom-in" data-aos-delay="200"><div class="text-4xl font-bold text-gold">4.9★</div><div class="text-xs text-slate-200 mt-1 uppercase tracking-wider">Guest Rating</div></div>  
+        <div data-aos="zoom-in" data-aos-delay="300"><div class="text-4xl font-bold text-gold">100%</div><div class="text-xs text-slate-200 mt-1 uppercase tracking-wider">Secure Parking</div></div>  
+        <div data-aos="zoom-in" data-aos-delay="400"><div class="text-4xl font-bold text-gold">✓</div><div class="text-xs text-slate-200 mt-1 uppercase tracking-wider">Airport Shuttle</div></div>  
+        <div data-aos="zoom-in" data-aos-delay="500"><div class="text-4xl font-bold text-gold">24/7</div><div class="text-xs text-slate-200 mt-1 uppercase tracking-wider">Power & Front Desk</div></div>  
     </div>  
 </section>  
 
-<section>  
-    <div>  
-        <h2>Ready for an Unforgettable Stay?</h2>  
-        <p>Book direct to enjoy guaranteed low rates and customizable room requests.</p>
-        <a href="booking.html">  
+<section class="py-24 bg-gradient-to-r from-maroon via-slate-900 to-maroon text-white text-center relative overflow-hidden">  
+    <div data-aos="zoom-in" class="max-w-3xl mx-auto px-6 relative z-10">  
+        <h2 class="heading-font text-4xl sm:text-6xl font-bold mb-6">Ready for an Unforgettable Stay?</h2>  
+        <p class="text-lg text-slate-200 mb-8 font-light">Book direct to enjoy guaranteed low rates and customizable room requests.</p>
+        <a href="booking.html" class="btn-gold inline-block text-lg px-10 py-4">  
             Reserve Your Room Now  
         </a>  
     </div>  
 </section>  
 
-<footer>  
-    <div>  
-        <div>  
+<footer class="bg-slate-950 text-slate-400 py-16 border-t border-yellow-500/10">  
+    <div class="max-w-7xl mx-auto px-6">  
+        <div class="grid md:grid-cols-4 gap-10 mb-12">  
             <div>  
-                <div>  
-                    <div>B</div>  
+                <div class="flex items-center gap-x-3 mb-6">  
+                    <div class="w-10 h-10 bg-maroon rounded-lg flex items-center justify-center text-gold font-bold text-2xl border border-yellow-500/30">B</div>  
                     <div>  
-                        <span>Bafana</span>  
-                        <span>International Hotel</span>  
+                        <span class="heading-font text-2xl font-bold text-white">Bafana</span>  
+                        <span class="text-[9px] block -mt-1 text-gold font-bold tracking-widest uppercase">International Hotel</span>  
                     </div>  
                 </div>  
-                <p>Unmatched hospitality, luxurious accommodation, and premium event options in Kaduna, Nigeria.</p>  
+                <p class="text-slate-400 text-sm leading-relaxed">Unmatched hospitality, luxurious accommodation, and premium event options in Kaduna, Nigeria.</p>  
             </div>  
               
             <div>  
-                <h4>Menu Navigation</h4>  
-                <ul>  
-                    <li><a href="index.html">Home</a></li>  
-                    <li><a href="about.html">About Us</a></li>  
-                    <li><a href="rooms.html">Rooms & Suites</a></li>  
-                    <li><a href="facilities.html">Facilities</a></li>  
-                    <li><a href="restaurant.html">Dining & Restaurant</a></li>  
+                <h4 class="font-semibold mb-4 text-gold uppercase text-xs tracking-wider">Menu Navigation</h4>  
+                <ul class="space-y-2 text-sm">  
+                    <li><a href="index.html" class="hover:text-gold transition">Home</a></li>  
+                    <li><a href="about.html" class="hover:text-gold transition">About Us</a></li>  
+                    <li><a href="rooms.html" class="hover:text-gold transition">Rooms & Suites</a></li>  
+                    <li><a href="facilities.html" class="hover:text-gold transition">Facilities</a></li>  
+                    <li><a href="restaurant.html" class="hover:text-gold transition">Dining & Restaurant</a></li>  
                 </ul>  
             </div>  
 
             <div>  
-                <h4>Quick Actions</h4>  
-                <ul>  
-                    <li><a href="gallery.html">Photo Gallery</a></li>  
-                    <li><a href="booking.html">Online Booking</a></li>  
-                    <li><a href="contact.html">Contact Us</a></li>  
-                    <li><a href="faq.html">FAQs & Help</a></li>  
+                <h4 class="font-semibold mb-4 text-gold uppercase text-xs tracking-wider">Quick Actions</h4>  
+                <ul class="space-y-2 text-sm">  
+                    <li><a href="gallery.html" class="hover:text-gold transition">Photo Gallery</a></li>  
+                    <li><a href="booking.html" class="hover:text-gold transition">Online Booking</a></li>  
+                    <li><a href="contact.html" class="hover:text-gold transition">Contact Us</a></li>  
+                    <li><a href="faq.html" class="hover:text-gold transition">FAQs & Help</a></li>  
                 </ul>  
             </div>  
               
             <div>  
-                <h4>Address & Contact</h4>  
-                <ul>  
-                    <li><i></i> <span>CCJ3+MVR, Abuja - Kaduna - Zaria Express Way, Goni Gora, Kaduna 800104</span></li>  
-                    <li><i></i> <span>+234 XXX XXX XXXX</span></li>  
-                    <li><i></i> <span>info@bafanahotel.com</span></li>  
+                <h4 class="font-semibold mb-4 text-gold uppercase text-xs tracking-wider">Address & Contact</h4>  
+                <ul class="space-y-3 text-sm">  
+                    <li class="flex items-start gap-2"><i class="fas fa-location-dot mt-1 text-gold"></i> <span>CCJ3+MVR, Abuja - Kaduna - Zaria Express Way, Goni Gora, Kaduna 800104</span></li>  
+                    <li class="flex items-center gap-2"><i class="fas fa-phone text-gold"></i> <span>+234 XXX XXX XXXX</span></li>  
+                    <li class="flex items-center gap-2"><i class="fas fa-envelope text-gold"></i> <span>info@bafanahotel.com</span></li>  
                 </ul>  
-                <div>  
-                    <a href="#"><i></i></a>  
-                    <a href="#"><i></i></a>  
-                    <a href="#"><i></i></a>  
+                <div class="flex gap-4 text-xl text-slate-400 mt-6">  
+                    <a href="#" class="hover:text-gold transition"><i class="fab fa-instagram"></i></a>  
+                    <a href="#" class="hover:text-gold transition"><i class="fab fa-facebook"></i></a>  
+                    <a href="#" class="hover:text-gold transition"><i class="fab fa-twitter"></i></a>  
                 </div>  
             </div>  
         </div>  
           
-        <div>  
+        <div class="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-4">  
             <p>© 2026 Bafana Hotel International. All Rights Reserved.</p>  
-            <div>
-                <a href="faq.html">Privacy Policy</a>
-                <a href="faq.html">Terms of Service</a>
+            <div class="flex gap-6">
+                <a href="faq.html" class="hover:underline">Privacy Policy</a>
+                <a href="faq.html" class="hover:underline">Terms of Service</a>
             </div>
         </div>  
     </div>  
@@ -357,6 +360,16 @@
         duration: 800,
         once: true,
         easing: 'ease-in-out',
+    });
+
+    // Navigation Scroll Blur State
+    window.addEventListener('scroll', () => {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 20) {
+            navbar.classList.add('nav-scrolled');
+        } else {
+            navbar.classList.remove('nav-scrolled');
+        }
     });
 
     // Mobile Drawer Logic
@@ -384,4 +397,3 @@
 
 </body>  
 </html>
-
