@@ -13,16 +13,62 @@
 
     <style>  
         :root {
+            --dark-blue-deep: #050b18;
             --dark-blue-main: #0b132b;
             --dark-blue-secondary: #1c2541;
-            --liquid-white: rgba(240, 248, 255, 0.85);
-            --liquid-white-glow: rgba(255, 255, 255, 0.15);
+            --liquid-white-pure: rgba(255, 255, 255, 0.95);
+            --liquid-white-glass: rgba(240, 248, 255, 0.08);
+            --liquid-white-border: rgba(255, 255, 255, 0.2);
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--dark-blue-main);
-            color: var(--liquid-white);
+            background-color: var(--dark-blue-deep);
+            color: var(--liquid-white-pure);
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Mysterious Liquid White Animated Background */
+        .liquid-bg-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            background: radial-gradient(circle at 50% 20%, #1c2541 0%, #0b132b 50%, #050b18 100%);
+        }
+
+        .liquid-orb-1 {
+            position: absolute;
+            top: -10%;
+            left: 20%;
+            width: 650px;
+            height: 650px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, rgba(224, 242, 254, 0.04) 45%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            filter: blur(60px);
+            animation: floatOrb 18s ease-in-out infinite alternate;
+        }
+
+        .liquid-orb-2 {
+            position: absolute;
+            bottom: -20%;
+            right: 10%;
+            width: 750px;
+            height: 750px;
+            background: radial-gradient(circle, rgba(186, 230, 253, 0.1) 0%, rgba(147, 197, 253, 0.03) 50%, rgba(0,0,0,0) 75%);
+            border-radius: 50%;
+            filter: blur(80px);
+            animation: floatOrb 22s ease-in-out infinite alternate-reverse;
+        }
+
+        @keyframes floatOrb {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-40px, 60px) scale(1.08); }
+            100% { transform: translate(50px, -30px) scale(0.95); }
         }
 
         .heading-font {  
@@ -31,32 +77,32 @@
 
         /* Mysterious Liquid White Text Gradient */
         .liquid-white-text {
-            background: linear-gradient(135deg, #ffffff 0%, #e0f2fe 50%, #93c5fd 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #e0f2fe 60%, #93c5fd 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            text-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
         }
 
-        /* Liquid Glass / Mysterious White Card Styling */
+        /* Glassmorphic Liquid Cards */
         .glass-card {
-            background: rgba(240, 248, 255, 0.07);
+            background: var(--liquid-white-glass);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            border: 1px solid var(--liquid-white-border);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
         }
 
         .liquid-white-btn {
-            background: rgba(255, 255, 255, 0.9);
-            color: #0b132b;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.92);
+            color: var(--dark-blue-deep);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
             transition: all 0.3s ease;
         }
 
         .liquid-white-btn:hover {
             background: #ffffff;
-            box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
-            transform: translateY(-1px);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
         }
 
         .slider-container {
@@ -90,7 +136,12 @@
 </head>  
 <body class="overflow-x-hidden antialiased">  
 
-<div class="bg-sky-950/40 border-b border-white/10 text-sky-100/80 text-xs py-2 px-6 hidden sm:block backdrop-blur-sm">
+<div class="liquid-bg-container">
+    <div class="liquid-orb-1"></div>
+    <div class="liquid-orb-2"></div>
+</div>
+
+<div class="bg-black/20 border-b border-white/10 text-sky-100/80 text-xs py-2 px-6 hidden sm:block backdrop-blur-md">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
         <div class="flex items-center gap-6">
             <span><i class="fas fa-location-dot mr-1 text-white/70"></i> Express Way, Goni Gora, Kaduna</span>
@@ -104,7 +155,7 @@
     </div>
 </div>
 
-<nav id="navbar" class="sticky top-0 z-40 bg-[#0b132b]/85 backdrop-blur-md border-b border-white/10 shadow-xl transition-all duration-300">  
+<nav id="navbar" class="sticky top-0 z-40 bg-[#0b132b]/80 backdrop-blur-xl border-b border-white/10 shadow-2xl transition-all duration-300">  
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">  
         <a href="index.html" class="flex items-center gap-x-3 group">  
             <div class="w-10 h-10 bg-white/10 border border-white/30 rounded-lg flex items-center justify-center text-white font-bold text-2xl shadow-lg backdrop-blur-md group-hover:border-white transition">B</div>  
@@ -138,9 +189,9 @@
     </div>  
 </nav>  
 
-<div id="menuOverlay" class="fixed inset-0 bg-[#0b132b]/80 backdrop-blur-sm hidden z-40 transition-opacity"></div>  
+<div id="menuOverlay" class="fixed inset-0 bg-[#050b18]/80 backdrop-blur-md hidden z-40 transition-opacity"></div>  
 
-<div id="sideMenu" class="fixed top-0 right-0 h-full w-4/5 sm:w-80 bg-[#0b132b] text-white border-l border-white/10 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col justify-between">  
+<div id="sideMenu" class="fixed top-0 right-0 h-full w-4/5 sm:w-80 bg-[#0b132b]/95 backdrop-blur-2xl text-white border-l border-white/10 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col justify-between">  
     <div>
         <div class="flex justify-between items-center p-6 border-b border-white/10">  
             <span class="heading-font text-xl font-bold liquid-white-text">Navigation</span>
@@ -171,8 +222,7 @@
         <a href="https://wa.me/xxxxxx" target="_blank" class="block text-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-lg transition shadow-lg">  
             <i class="fab fa-whatsapp mr-2"></i> WhatsApp Support  
         </a>  
-    </div>  
-</div>
+    </div> 
 
 <section class="relative min-h-[90vh] flex items-center justify-start overflow-hidden bg-slate-950">  
     <div class="absolute inset-0 z-0 opacity-25">
