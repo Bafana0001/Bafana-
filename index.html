@@ -1,10 +1,10 @@
 <!DOCTYPE html>  
-<html lang="en">  
+<html lang="en" class="scroll-smooth">  
 <head>  
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <meta name="description" content="Bafana Hotel Kaduna - Luxury accommodation in Kaduna, Nigeria.">  
-    <title>Bafana Hotel Kaduna | Luxury Stays</title>  
+    <meta name="description" content="Bafana Hotel Kaduna - Luxury accommodation, world-class dining, and premium hospitality in Kaduna, Nigeria.">  
+    <title>Bafana Hotel Kaduna | Premium Luxury & Hospitality</title>  
     
     <script src="https://cdn.tailwindcss.com"></script>  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">  
@@ -14,7 +14,6 @@
     <style>  
         body {
             font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
         }
 
         .heading-font {  
@@ -22,16 +21,16 @@
         }
 
         .gold-gradient-text {
-            background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+            background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #b8860b 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(15, 23, 42, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
         }
 
         .slider-container {
@@ -45,7 +44,7 @@
             display: flex;
             width: 400%;
             height: 100%;
-            animation: slide 16s infinite;
+            animation: slide 16s infinite ease-in-out;
         }
 
         .slider-wrapper img {
@@ -55,276 +54,338 @@
         }
 
         @keyframes slide {
-            0% { transform: translateX(0%); }
-            20% { transform: translateX(0%); }
-            25% { transform: translateX(-25%); }
-            45% { transform: translateX(-25%); }
-            50% { transform: translateX(-50%); }
-            70% { transform: translateX(-50%); }
-            75% { transform: translateX(-75%); }
-            95% { transform: translateX(-75%); }
+            0%, 20% { transform: translateX(0%); }
+            25%, 45% { transform: translateX(-25%); }
+            50%, 70% { transform: translateX(-50%); }
+            75%, 95% { transform: translateX(-75%); }
             100% { transform: translateX(0%); }
         }
     </style>
 </head>  
-<body class="bg-white text-slate-900 overflow-x-hidden">  
+<body class="bg-slate-900 text-slate-100 overflow-x-hidden antialiased">  
 
-<nav id="navbar" class="fixed top-0 w-full z-40 bg-white/95 backdrop-blur-md border-b border-amber-500/20 shadow-sm transition-all duration-300">  
+<div class="bg-amber-500/10 border-b border-amber-500/20 text-amber-300 text-xs py-2 px-6 hidden sm:block">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="flex items-center gap-6">
+            <span><i class="fas fa-location-dot mr-1"></i> Express Way, Goni Gora, Kaduna</span>
+            <span><i class="fas fa-phone mr-1"></i> +234 XXX XXX XXXX</span>
+        </div>
+        <div class="flex items-center gap-4">
+            <span class="text-slate-300">24/7 Front Desk Support</span>
+            <span class="text-amber-500">|</span>
+            <a href="faq.html" class="hover:underline">Need Help? FAQ</a>
+        </div>
+    </div>
+</div>
+
+<nav id="navbar" class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur-md border-b border-amber-500/20 shadow-lg transition-all duration-300">  
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">  
-        <div class="flex items-center gap-x-3">  
-            <div class="w-10 h-10 bg-slate-900 border border-amber-500/50 rounded-lg flex items-center justify-center text-amber-400 font-bold text-2xl shadow-md">B</div>  
+        <a href="index.html" class="flex items-center gap-x-3 group">  
+            <div class="w-10 h-10 bg-slate-900 border border-amber-500/60 rounded-lg flex items-center justify-center text-amber-400 font-bold text-2xl shadow-md group-hover:border-amber-400 transition">B</div>  
             <div>  
-                <span class="heading-font text-2xl font-bold tracking-wide text-slate-900">Bafana</span>  
-                <span class="text-[10px] block -mt-1 text-amber-600 font-bold uppercase tracking-widest">Hotel</span>  
+                <span class="heading-font text-2xl font-bold tracking-wide text-white group-hover:text-amber-300 transition">Bafana</span>  
+                <span class="text-[9px] block -mt-1 text-amber-500 font-bold uppercase tracking-widest">Hotel & Embassy</span>  
             </div>  
-        </div>  
+        </a>  
 
-        <div class="hidden md:flex items-center gap-x-8 text-sm font-semibold text-slate-700">  
-            <a href="index.html" class="hover:text-amber-600 transition">Home</a>  
-            <a href="about.html" class="hover:text-amber-600 transition">About</a>  
-            <a href="rooms.html" class="hover:text-amber-600 transition">Rooms</a>  
-            <a href="facilities.html" class="hover:text-amber-600 transition">Facilities</a>  
-            <a href="restaurant.html" class="hover:text-amber-600 transition">Restaurant</a>  
-            <a href="gallery.html" class="hover:text-amber-600 transition">Gallery</a>  
-            <a href="booking.html" class="hover:text-amber-600 transition">Booking</a>  
-            <a href="contact.html" class="hover:text-amber-600 transition">Contact</a>  
+        <div class="hidden lg:flex items-center gap-x-6 text-sm font-medium text-slate-300">  
+            <a href="index.html" class="text-amber-400 font-semibold border-b-2 border-amber-400 pb-0.5">Home</a>  
+            <a href="about.html" class="hover:text-amber-400 transition">About</a>  
+            <a href="rooms.html" class="hover:text-amber-400 transition">Rooms</a>  
+            <a href="facilities.html" class="hover:text-amber-400 transition">Facilities</a>  
+            <a href="restaurant.html" class="hover:text-amber-400 transition">Restaurant</a>  
+            <a href="gallery.html" class="hover:text-amber-400 transition">Gallery</a>  
+            <a href="booking.html" class="hover:text-amber-400 transition">Booking</a>  
+            <a href="contact.html" class="hover:text-amber-400 transition">Contact</a>  
+            <a href="faq.html" class="hover:text-amber-400 transition">FAQ</a>  
         </div>  
 
         <div class="flex items-center gap-4">
-            <button onclick="window.location.href='booking.html'"   
-                    class="hidden md:block bg-amber-500 hover:bg-amber-600 text-slate-950 px-6 py-2.5 rounded-lg font-bold transition shadow-md hover:scale-105 active:scale-95">  
+            <a href="booking.html"   
+               class="hidden sm:inline-block bg-amber-500 hover:bg-amber-400 text-slate-950 px-6 py-2.5 rounded-lg font-bold text-sm transition shadow-md hover:scale-105 active:scale-95">  
                 Book Now  
-            </button> 
-            <button id="openMenu" class="md:hidden text-2xl text-slate-900 focus:outline-none">
+            </a> 
+            <button id="openMenu" class="lg:hidden text-2xl text-amber-400 hover:text-amber-300 focus:outline-none p-2">
                 <i class="fas fa-bars"></i>
             </button>
         </div> 
     </div>  
 </nav>  
 
-<div id="menuOverlay" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm hidden z-40 transition-opacity"></div>  
+<div id="menuOverlay" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm hidden z-40 transition-opacity"></div>  
 
-<div id="sideMenu" class="fixed top-0 right-0 h-full w-4/5 md:w-1/2 bg-slate-900 text-white border-l border-amber-500/30 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50">  
-    <div class="flex justify-end p-6">  
-        <button id="closeMenu" class="text-3xl text-amber-400 hover:text-amber-300">  
-            &times;  
-        </button>  
-    </div>  
-
-    <nav class="px-8">  
-        <ul id="dynamicMenuLinks" class="space-y-5 text-lg font-medium text-slate-200">  
-            <li><a href="index.html" class="hover:text-amber-400 transition">Home</a></li>  
-            <li><a href="about.html" class="hover:text-amber-400 transition">About</a></li>  
-            <li><a href="rooms.html" class="hover:text-amber-400 transition">Rooms</a></li>  
-            <li><a href="facilities.html" class="hover:text-amber-400 transition">Facilities</a></li>  
-            <li><a href="restaurant.html" class="hover:text-amber-400 transition">Restaurant</a></li>  
-            <li><a href="gallery.html" class="hover:text-amber-400 transition">Gallery</a></li>  
-            <li><a href="booking.html" class="hover:text-amber-400 transition">Booking</a></li>  
-            <li><a href="contact.html" class="hover:text-amber-400 transition">Contact</a></li>  
-            <li><a href="faq.html" class="hover:text-amber-400 transition">FAQ</a></li>  
-        </ul>  
-
-        <div class="mt-10">  
-            <a href="https://wa.me/xxxxxx" target="_blank" class="block text-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-lg transition shadow-lg">  
-                <i class="fab fa-whatsapp mr-2"></i> WhatsApp  
-            </a>  
+<div id="sideMenu" class="fixed top-0 right-0 h-full w-4/5 sm:w-80 bg-slate-950 text-white border-l border-amber-500/30 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col justify-between">  
+    <div>
+        <div class="flex justify-between items-center p-6 border-b border-slate-800">  
+            <span class="heading-font text-xl font-bold text-amber-400">Navigation</span>
+            <button id="closeMenu" class="text-2xl text-slate-400 hover:text-amber-400">  
+                <i class="fas fa-xmark"></i> 
+            </button>  
         </div>  
-    </nav>
+
+        <nav class="px-6 py-6">  
+            <ul id="dynamicMenuLinks" class="space-y-4 text-base font-medium text-slate-300">  
+                <li><a href="index.html" class="block text-amber-400 font-semibold py-1">Home</a></li>  
+                <li><a href="about.html" class="block hover:text-amber-400 transition py-1">About Us</a></li>  
+                <li><a href="rooms.html" class="block hover:text-amber-400 transition py-1">Rooms & Suites</a></li>  
+                <li><a href="facilities.html" class="block hover:text-amber-400 transition py-1">Hotel Facilities</a></li>  
+                <li><a href="restaurant.html" class="block hover:text-amber-400 transition py-1">Dining & Restaurant</a></li>  
+                <li><a href="gallery.html" class="block hover:text-amber-400 transition py-1">Photo Gallery</a></li>  
+                <li><a href="booking.html" class="block hover:text-amber-400 transition py-1">Online Booking</a></li>  
+                <li><a href="contact.html" class="block hover:text-amber-400 transition py-1">Contact Us</a></li>  
+                <li><a href="faq.html" class="block hover:text-amber-400 transition py-1">FAQ & Support</a></li>  
+            </ul>  
+        </nav>
+    </div>
+
+    <div class="p-6 border-t border-slate-800 space-y-3">  
+        <a href="booking.html" class="block text-center bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3 rounded-lg transition shadow-md">  
+            Reserve Room  
+        </a> 
+        <a href="https://wa.me/xxxxxx" target="_blank" class="block text-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-lg transition shadow-lg">  
+            <i class="fab fa-whatsapp mr-2"></i> WhatsApp Support  
+        </a>  
+    </div>  
 </div>
 
-<section class="relative min-h-screen flex items-center justify-start overflow-hidden pt-20 bg-white">  
-    <div class="absolute inset-0 z-0 opacity-15">
+<section class="relative min-h-[90vh] flex items-center justify-start overflow-hidden bg-slate-950">  
+    <div class="absolute inset-0 z-0 opacity-25">
         <div class="slider-container">
             <div class="slider-wrapper">
-                <img src="IMG_20260721_115436_891.jpg" alt="Slide 1">
-                <img src="IMG_20260721_115818_762.jpg" alt="Slide 2">
-                <img src="IMG_20260721_120016_547.jpg" alt="Slide 3">
-                <img src="IMG_20260721_115346_979.jpg" alt="Slide 4">
+                <img src="IMG_20260721_115436_891.jpg" alt="Bafana Hotel Exterior">
+                <img src="IMG_20260721_115818_762.jpg" alt="Luxury Suite View">
+                <img src="IMG_20260721_120016_547.jpg" alt="Hotel Amenities">
+                <img src="IMG_20260721_115346_979.jpg" alt="Bafana Hotel Lounge">
             </div>
         </div>
     </div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-6 py-12 w-full">  
-        <div class="max-w-4xl">  
-            <div data-aos="fade-down" data-aos-duration="1000" class="inline-flex items-center gap-3 bg-amber-50 border border-amber-500/30 px-5 py-2 rounded-full mb-8 shadow-sm">
-                <span class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
-                <span class="text-slate-900 font-semibold text-xs md:text-sm tracking-wide uppercase">Welcome to Hotel Three Star</span>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 py-20 w-full">  
+        <div class="max-w-3xl">  
+            <div data-aos="fade-down" data-aos-duration="1000" class="inline-flex items-center gap-3 bg-amber-500/10 border border-amber-500/30 px-5 py-2 rounded-full mb-8 backdrop-blur-md">
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
+                <span class="text-amber-300 font-semibold text-xs md:text-sm tracking-wide uppercase">Welcome to Bafana Hotel Kaduna</span>
             </div>
 
-            <h1 data-aos="fade-right" data-aos-duration="1200" class="heading-font text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-6">
-                Enjoy Your Stay <br>
-                <span class="italic font-normal gold-gradient-text">With Hotel Luxury</span>
+            <h1 data-aos="fade-right" data-aos-duration="1200" class="heading-font text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.1] mb-6">
+                Unmatched Comfort, <br>
+                <span class="italic font-normal gold-gradient-text">Pure Luxury</span>
             </h1>
 
-            <p data-aos="fade-up" data-aos-delay="200" class="text-xl md:text-2xl text-slate-600 font-light max-w-2xl mb-10 leading-relaxed">
-                Experience luxury, comfort, and warm Nigerian hospitality in the heart of Kaduna.
+            <p data-aos="fade-up" data-aos-delay="200" class="text-lg md:text-2xl text-slate-300 font-light max-w-2xl mb-10 leading-relaxed">
+                Experience world-class accommodation, exquisite dining, and authentic Northern Nigerian hospitality.
             </p>
 
             <div data-aos="fade-up" data-aos-delay="400" class="flex flex-wrap gap-5">  
                 <a href="booking.html"   
-                   class="bg-slate-900 hover:bg-slate-800 text-amber-400 border border-amber-500/30 px-9 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">  
+                   class="bg-amber-500 hover:bg-amber-400 text-slate-950 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-amber-500/20 hover:-translate-y-1">  
                     Book Your Stay
                 </a>  
                 <a href="rooms.html"   
-                   class="bg-amber-500 hover:bg-amber-600 text-slate-950 px-9 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">  
+                   class="bg-slate-900/80 hover:bg-slate-800 text-amber-400 border border-amber-500/40 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:border-amber-400 hover:-translate-y-1">  
                     Explore Rooms  
                 </a>  
             </div>  
         </div>  
     </div>  
-</section>  
-
-<section class="py-24 bg-slate-50 border-t border-slate-200 relative">  
+</section> 
+<section class="py-24 bg-slate-900 border-t border-amber-500/20 relative">  
     <div class="max-w-7xl mx-auto px-6">  
-        <div data-aos="zoom-in" class="bg-white rounded-2xl p-8 mb-16 text-center border border-amber-500/20 shadow-xl">  
-            <div class="flex justify-center mb-6">  
-                <div class="inline-flex items-center gap-3 bg-slate-900 border border-amber-500/40 px-8 py-3 rounded-full shadow-md">  
-                    <span class="text-2xl">🏨</span>  
-                    <span class="heading-font text-xl md:text-3xl font-bold tracking-wider text-amber-400">Bafana Hotel Embassy</span>  
-                </div>  
-            </div>  
+        <div data-aos="zoom-in" class="bg-slate-950/80 rounded-3xl p-8 md:p-12 border border-amber-500/30 shadow-2xl relative overflow-hidden">  
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 mb-10">
+                <div>
+                    <div class="inline-flex items-center gap-3 bg-amber-500/10 border border-amber-500/30 px-6 py-2 rounded-full mb-4">  
+                        <span class="text-xl">🏨</span>  
+                        <span class="heading-font text-lg md:text-xl font-bold tracking-wider text-amber-400">Bafana Hotel Embassy</span>  
+                    </div>
+                    <h2 class="heading-font text-3xl md:text-5xl font-bold text-white">"The Place To Be"</h2>
+                    <p class="text-slate-400 mt-2 max-w-xl">Located along the Abuja-Kaduna-Zaria Expressway, offering top-tier tranquility and luxury accessibility.</p>
+                </div>
+                <a href="gallery.html" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-8 py-3.5 rounded-xl transition shadow-lg whitespace-nowrap">
+                    View Full Gallery <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
             
-            <a href="gallery.html" class="block max-w-lg mx-auto overflow-hidden rounded-xl group shadow-md border border-slate-200">  
-                <img src="IMG_20260721_115346_979.jpg"   
-                     alt="Bafana Hotel - The Place To Be"  
-                     class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-105">  
-                <p class="italic text-center mt-4 text-amber-600 font-bold text-lg font-serif group-hover:underline">"The Place To Be" - View Gallery</p>  
-            </a>  
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="relative overflow-hidden rounded-2xl h-56 group border border-slate-800">
+                    <img src="IMG_20260721_115346_979.jpg" alt="Bafana Hotel Main View" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition"></div>
+                    <span class="absolute bottom-3 left-3 text-xs font-semibold text-amber-300">Exterior View</span>
+                </div>
+                <div class="relative overflow-hidden rounded-2xl h-56 group border border-slate-800">
+                    <img src="IMG_20260721_115436_891.jpg" alt="Hotel Lounge" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition"></div>
+                    <span class="absolute bottom-3 left-3 text-xs font-semibold text-amber-300">Executive Lounge</span>
+                </div>
+                <div class="relative overflow-hidden rounded-2xl h-56 bg-slate-900 border-2 border-dashed border-amber-500/30 flex flex-col items-center justify-center text-center p-4 group hover:border-amber-400 transition cursor-pointer">
+                    <i class="fas fa-image text-3xl text-amber-500/50 group-hover:text-amber-400 mb-2 transition"></i>
+                    <span class="text-xs text-slate-400 group-hover:text-slate-200">Reserved Image Slot #1</span>
+                    <span class="text-[10px] text-slate-500 mt-1">Replace with custom URL</span>
+                </div>
+                <div class="relative overflow-hidden rounded-2xl h-56 bg-slate-900 border-2 border-dashed border-amber-500/30 flex flex-col items-center justify-center text-center p-4 group hover:border-amber-400 transition cursor-pointer">
+                    <i class="fas fa-image text-3xl text-amber-500/50 group-hover:text-amber-400 mb-2 transition"></i>
+                    <span class="text-xs text-slate-400 group-hover:text-slate-200">Reserved Image Slot #2</span>
+                    <span class="text-[10px] text-slate-500 mt-1">Replace with custom URL</span>
+                </div>
+            </div>
         </div>  
     </div>
 </section>
 
-<section class="py-20 bg-white border-t border-slate-200">  
+<section class="py-24 bg-slate-950 border-t border-slate-800">  
     <div class="max-w-7xl mx-auto px-6">  
-        <h2 data-aos="fade-up" class="heading-font text-4xl sm:text-5xl font-bold text-center mb-16 text-slate-900">Why Choose Us</h2>  
-        <div class="grid md:grid-cols-3 gap-8">  
-            
-            <a href="rooms.html" data-aos="fade-up" data-aos-delay="100" class="block bg-slate-900 text-white p-8 rounded-2xl text-center border border-amber-500/30 shadow-xl hover:-translate-y-2 hover:border-amber-400 transition duration-300 group">  
-                <div class="text-5xl mb-6 text-amber-400 group-hover:scale-110 transition"><i class="fas fa-bed"></i></div>  
-                <h3 class="font-bold text-2xl mb-3 text-white">Luxury Rooms</h3>  
-                <p class="text-slate-300 leading-relaxed">Elegantly designed rooms with modern amenities and scenic city views.</p>  
-            </a>  
-
-            <a href="facilities.html" data-aos="fade-up" data-aos-delay="200" class="block bg-slate-900 text-white p-8 rounded-2xl text-center border border-amber-500/30 shadow-xl hover:-translate-y-2 hover:border-amber-400 transition duration-300 group">  
-                <div class="text-5xl mb-6 text-amber-400 group-hover:scale-110 transition"><i class="fas fa-wifi"></i></div>  
-                <h3 class="font-bold text-2xl mb-3 text-white">Free High-Speed Wi-Fi</h3>  
-                <p class="text-slate-300 leading-relaxed">Uninterrupted high-speed internet connectivity across all suites.</p>  
-            </a>  
-
-            <a href="facilities.html" data-aos="fade-up" data-aos-delay="300" class="block bg-slate-900 text-white p-8 rounded-2xl text-center border border-amber-500/30 shadow-xl hover:-translate-y-2 hover:border-amber-400 transition duration-300 group">  
-                <div class="text-5xl mb-6 text-amber-400 group-hover:scale-110 transition"><i class="fas fa-swimming-pool"></i></div>  
-                <h3 class="font-bold text-2xl mb-3 text-white">Swimming Pool</h3>  
-                <p class="text-slate-300 leading-relaxed">Relax and unwind in our temperature-controlled outdoor pool.</p>  
-            </a>  
-
-        </div>  
-    </div>  
-</section>
-<section class="py-24 bg-slate-900">  
-    <div class="max-w-7xl mx-auto px-6">  
-        <div data-aos="fade-up" class="text-center mb-16">
-            <h2 class="heading-font text-4xl sm:text-5xl font-bold text-amber-100 mb-4">Featured Accommodations</h2>  
-            <p class="text-gray-400 text-lg">Choose your perfect stay with unparalleled comfort</p>  
+        <div data-aos="fade-up" class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="heading-font text-4xl sm:text-5xl font-bold text-white mb-4">Why Choose Bafana</h2>  
+            <p class="text-slate-400 text-lg">Designed for corporate travelers, holidaymakers, and esteemed guests seeking standard excellence.</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">  
-            <div data-aos="fade-up" data-aos-delay="100" class="glass-card rounded-3xl overflow-hidden group hover:border-amber-500/50 transition duration-500 flex flex-col justify-between">  
+            <a href="rooms.html" data-aos="fade-up" data-aos-delay="100" class="block bg-slate-900/60 p-8 rounded-3xl border border-amber-500/20 hover:border-amber-400 hover:-translate-y-2 transition duration-300 group">  
+                <div class="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-3xl text-amber-400 mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition duration-300">
+                    <i class="fas fa-bed"></i>
+                </div>  
+                <h3 class="font-bold text-2xl mb-3 text-white">Luxury Rooms</h3>  
+                <p class="text-slate-400 leading-relaxed text-sm">Elegantly furnished suites equipped with high-grade bedding, smart TV screens, and serene ambience.</p>  
+            </a>  
+
+            <a href="facilities.html" data-aos="fade-up" data-aos-delay="200" class="block bg-slate-900/60 p-8 rounded-3xl border border-amber-500/20 hover:border-amber-400 hover:-translate-y-2 transition duration-300 group">  
+                <div class="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-3xl text-amber-400 mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition duration-300">
+                    <i class="fas fa-wifi"></i>
+                </div>  
+                <h3 class="font-bold text-2xl mb-3 text-white">High-Speed Wi-Fi</h3>  
+                <p class="text-slate-400 leading-relaxed text-sm">Uninterrupted high-speed optic fiber connectivity throughout all hotel corridors and private suites.</p>  
+            </a>  
+
+            <a href="facilities.html" data-aos="fade-up" data-aos-delay="300" class="block bg-slate-900/60 p-8 rounded-3xl border border-amber-500/20 hover:border-amber-400 hover:-translate-y-2 transition duration-300 group">  
+                <div class="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-3xl text-amber-400 mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition duration-300">
+                    <i class="fas fa-swimming-pool"></i>
+                </div>  
+                <h3 class="font-bold text-2xl mb-3 text-white">Swimming Pool</h3>  
+                <p class="text-slate-400 leading-relaxed text-sm">Refresh and relax in our well-maintained swimming facility with dedicated poolside lounge service.</p>  
+            </a>  
+        </div>  
+    </div>  
+</section>
+
+<section class="py-24 bg-slate-900 border-t border-slate-800">  
+    <div class="max-w-7xl mx-auto px-6">  
+        <div data-aos="fade-up" class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
+            <div>
+                <h2 class="heading-font text-4xl sm:text-5xl font-bold text-white mb-2">Featured Accommodations</h2>  
+                <p class="text-slate-400 text-lg">Pick the room that best matches your lifestyle and budget.</p>  
+            </div>
+            <a href="rooms.html" class="text-amber-400 font-semibold hover:underline flex items-center gap-2">
+                View All Categories <i class="fas fa-chevron-right text-xs"></i>
+            </a>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">  
+            <div data-aos="fade-up" data-aos-delay="100" class="bg-slate-950 rounded-3xl overflow-hidden border border-amber-500/20 hover:border-amber-400 transition duration-500 flex flex-col justify-between group">  
                 <div class="relative overflow-hidden h-64">
-                    <img src="https://picsum.photos/id/201/800/500" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Deluxe Room">  
-                    <div class="absolute top-4 right-4 bg-rose-600 text-white text-xs font-bold px-3 py-1.5 rounded-full">Popular</div>
+                    <img src="IMG_20260721_115818_762.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Deluxe Room">  
+                    <div class="absolute top-4 right-4 bg-amber-500 text-slate-950 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Popular</div>
                 </div>
                 <div class="p-8">  
-                    <h3 class="text-2xl font-bold mb-2 text-slate-900">Deluxe Room</h3>  
-                    <p class="text-amber-600 text-xl font-semibold mb-6">₦45,000 <span class="text-sm font-normal text-gray-500">/ night</span></p>  
-                    <a href="rooms.html#deluxe" class="block text-center py-3.5 border border-amber-500/50 text-slate-900 rounded-2xl hover:bg-amber-500 hover:text-slate-950 transition font-medium">View Details</a>  
+                    <h3 class="text-2xl font-bold mb-2 text-white">Deluxe Room</h3>  
+                    <p class="text-slate-400 text-xs mb-4">Queen bed • Air Conditioning • Free Wi-Fi</p>
+                    <p class="text-amber-400 text-2xl font-bold mb-6">₦45,000 <span class="text-xs font-normal text-slate-400">/ night</span></p>  
+                    <a href="booking.html?room=deluxe" class="block text-center py-3.5 bg-amber-500/10 hover:bg-amber-500 text-amber-300 hover:text-slate-950 rounded-xl transition font-semibold border border-amber-500/30">Book Suite</a>  
                 </div>  
             </div>  
 
-            <div data-aos="fade-up" data-aos-delay="200" class="glass-card rounded-3xl overflow-hidden group hover:border-amber-500/50 transition duration-500 flex flex-col justify-between">  
+            <div data-aos="fade-up" data-aos-delay="200" class="bg-slate-950 rounded-3xl overflow-hidden border border-amber-500/20 hover:border-amber-400 transition duration-500 flex flex-col justify-between group">  
                 <div class="relative overflow-hidden h-64">
-                    <img src="https://picsum.photos/id/251/800/500" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Executive Suite">  
-                    <div class="absolute top-4 right-4 bg-amber-600 text-white text-xs font-bold px-3 py-1.5 rounded-full">Executive</div>
+                    <img src="IMG_20260721_120016_547.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Executive Suite">  
+                    <div class="absolute top-4 right-4 bg-amber-500 text-slate-950 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Executive</div>
                 </div>
                 <div class="p-8">  
-                    <h3 class="text-2xl font-bold mb-2 text-slate-900">Executive Suite</h3>  
-                    <p class="text-amber-600 text-xl font-semibold mb-6">₦85,000 <span class="text-sm font-normal text-gray-500">/ night</span></p>  
-                    <a href="rooms.html#executive" class="block text-center py-3.5 border border-amber-500/50 text-slate-900 rounded-2xl hover:bg-amber-500 hover:text-slate-950 transition font-medium">View Details</a>  
+                    <h3 class="text-2xl font-bold mb-2 text-white">Executive Suite</h3>  
+                    <p class="text-slate-400 text-xs mb-4">King bed • Living Area • Breakfast Included</p>
+                    <p class="text-amber-400 text-2xl font-bold mb-6">₦85,000 <span class="text-xs font-normal text-slate-400">/ night</span></p>  
+                    <a href="booking.html?room=executive" class="block text-center py-3.5 bg-amber-500/10 hover:bg-amber-500 text-amber-300 hover:text-slate-950 rounded-xl transition font-semibold border border-amber-500/30">Book Suite</a>  
                 </div>  
             </div>  
 
-            <div data-aos="fade-up" data-aos-delay="300" class="glass-card rounded-3xl overflow-hidden group hover:border-amber-500/50 transition duration-500 flex flex-col justify-between">  
+            <div data-aos="fade-up" data-aos-delay="300" class="bg-slate-950 rounded-3xl overflow-hidden border border-amber-500/20 hover:border-amber-400 transition duration-500 flex flex-col justify-between group">  
                 <div class="relative overflow-hidden h-64">
-                    <img src="https://picsum.photos/id/316/800/500" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Family Suite">  
-                    <div class="absolute top-4 right-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-full">Spacious</div>
+                    <img src="IMG_20260721_115436_891.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Family Suite">  
+                    <div class="absolute top-4 right-4 bg-emerald-500 text-slate-950 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Spacious</div>
                 </div>
                 <div class="p-8">  
-                    <h3 class="text-2xl font-bold mb-2 text-slate-900">Family Suite</h3>  
-                    <p class="text-amber-600 text-xl font-semibold mb-6">₦110,000 <span class="text-sm font-normal text-gray-500">/ night</span></p>  
-                    <a href="rooms.html#family" class="block text-center py-3.5 border border-amber-500/50 text-slate-900 rounded-2xl hover:bg-amber-500 hover:text-slate-950 transition font-medium">View Details</a>  
+                    <h3 class="text-2xl font-bold mb-2 text-white">Family Suite</h3>  
+                    <p class="text-slate-400 text-xs mb-4">2 Bedrooms • Mini Kitchenette • VIP Access</p>
+                    <p class="text-amber-400 text-2xl font-bold mb-6">₦110,000 <span class="text-xs font-normal text-slate-400">/ night</span></p>  
+                    <a href="booking.html?room=family" class="block text-center py-3.5 bg-amber-500/10 hover:bg-amber-500 text-amber-300 hover:text-slate-950 rounded-xl transition font-semibold border border-amber-500/30">Book Suite</a>  
                 </div>  
             </div>  
         </div>  
     </div>  
 </section>  
 
-<section class="py-16 bg-slate-950 text-white border-y border-white/10">  
+<section class="py-16 bg-slate-950 text-white border-y border-amber-500/20">  
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-6 gap-8 text-center">  
-        <div data-aos="zoom-in"><div class="text-4xl font-bold text-amber-400">68</div><div class="text-sm text-gray-400 mt-1">Luxury Rooms</div></div>  
-        <div data-aos="zoom-in" data-aos-delay="100"><div class="text-4xl font-bold text-amber-400">6+</div><div class="text-sm text-gray-400 mt-1">Years Experience</div></div>  
-        <div data-aos="zoom-in" data-aos-delay="200"><div class="text-4xl font-bold text-amber-400">4.9★</div><div class="text-sm text-gray-400 mt-1">Guest Rating</div></div>  
-        <div data-aos="zoom-in" data-aos-delay="300"><div class="text-4xl font-bold text-amber-400">Free</div><div class="text-sm text-gray-400 mt-1">Secure Parking</div></div>  
-        <div data-aos="zoom-in" data-aos-delay="400"><div class="text-4xl font-bold text-amber-400">✓</div><div class="text-sm text-gray-400 mt-1">Airport Shuttle</div></div>  
-        <div data-aos="zoom-in" data-aos-delay="500"><div class="text-4xl font-bold text-amber-400">24/7</div><div class="text-sm text-gray-400 mt-1">Front Desk</div></div>  
+        <div data-aos="zoom-in"><div class="text-4xl font-bold text-amber-400">68+</div><div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Luxury Rooms</div></div>  
+        <div data-aos="zoom-in" data-aos-delay="100"><div class="text-4xl font-bold text-amber-400">6+</div><div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Years Active</div></div>  
+        <div data-aos="zoom-in" data-aos-delay="200"><div class="text-4xl font-bold text-amber-400">4.9★</div><div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Guest Rating</div></div>  
+        <div data-aos="zoom-in" data-aos-delay="300"><div class="text-4xl font-bold text-amber-400">100%</div><div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Secure Parking</div></div>  
+        <div data-aos="zoom-in" data-aos-delay="400"><div class="text-4xl font-bold text-amber-400">✓</div><div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Airport Shuttle</div></div>  
+        <div data-aos="zoom-in" data-aos-delay="500"><div class="text-4xl font-bold text-amber-400">24/7</div><div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Power & Front Desk</div></div>  
     </div>  
 </section>  
 
-<section class="py-24 bg-gradient-to-r from-slate-900 via-amber-900 to-slate-900 text-white text-center relative overflow-hidden">  
+<section class="py-24 bg-gradient-to-r from-slate-950 via-amber-950 to-slate-950 text-white text-center relative overflow-hidden border-b border-amber-500/20">  
     <div data-aos="zoom-in" class="max-w-3xl mx-auto px-6 relative z-10">  
-        <h2 class="heading-font text-5xl font-bold mb-6">Ready for an Unforgettable Experience?</h2>  
-        <p class="text-xl text-amber-100/90 mb-8 font-light">Book directly with us for exclusive rates and personalized service.</p>
-        <a href="booking.html" class="inline-block bg-amber-500 text-slate-950 px-12 py-5 rounded-full text-xl font-bold hover:bg-amber-400 transition-all duration-300 hover:scale-105 shadow-2xl">  
+        <h2 class="heading-font text-4xl sm:text-6xl font-bold mb-6">Ready for an Unforgettable Stay?</h2>  
+        <p class="text-lg text-amber-100/80 mb-8 font-light">Book direct to enjoy guaranteed low rates and customizable room requests.</p>
+        <a href="booking.html" class="inline-block bg-amber-500 text-slate-950 px-10 py-4 rounded-xl text-lg font-bold hover:bg-amber-400 transition-all duration-300 hover:scale-105 shadow-xl">  
             Reserve Your Room Now  
         </a>  
     </div>  
 </section>  
 
-<footer class="bg-black text-white py-16 border-t border-white/10">  
+<footer class="bg-black text-slate-400 py-16">  
     <div class="max-w-7xl mx-auto px-6">  
-        <div class="grid md:grid-cols-4 gap-10">  
+        <div class="grid md:grid-cols-4 gap-10 mb-12">  
             <div>  
                 <div class="flex items-center gap-x-3 mb-6">  
-                    <div class="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center text-white font-bold text-2xl">B</div>  
+                    <div class="w-10 h-10 bg-amber-500 rounded-lg flex items-center justify-center text-slate-950 font-bold text-2xl">B</div>  
                     <div>  
-                        <span class="heading-font text-2xl font-bold">Bafana</span>  
-                        <span class="text-[10px] block -mt-1 text-amber-500 font-semibold tracking-widest">INTERNATIONAL</span>  
+                        <span class="heading-font text-2xl font-bold text-white">Bafana</span>  
+                        <span class="text-[9px] block -mt-1 text-amber-500 font-semibold tracking-widest uppercase">International Hotel</span>  
                     </div>  
                 </div>  
-                <p class="text-gray-400 text-sm leading-relaxed">Unmatched hospitality, elegance, and comfort in Kaduna.</p>  
+                <p class="text-slate-400 text-sm leading-relaxed">Unmatched hospitality, luxurious accommodation, and premium event options in Kaduna, Nigeria.</p>  
             </div>  
               
             <div>  
-                <h4 class="font-semibold mb-4 text-amber-200">Quick Links</h4>  
-                <ul class="space-y-2 text-gray-400 text-sm">  
+                <h4 class="font-semibold mb-4 text-amber-300 uppercase text-xs tracking-wider">Menu Navigation</h4>  
+                <ul class="space-y-2 text-sm">  
+                    <li><a href="index.html" class="hover:text-amber-400 transition">Home</a></li>  
+                    <li><a href="about.html" class="hover:text-amber-400 transition">About Us</a></li>  
                     <li><a href="rooms.html" class="hover:text-amber-400 transition">Rooms & Suites</a></li>  
                     <li><a href="facilities.html" class="hover:text-amber-400 transition">Facilities</a></li>  
-                    <li><a href="restaurant.html" class="hover:text-amber-400 transition">Dining</a></li>  
-                    <li><a href="gallery.html" class="hover:text-amber-400 transition">Gallery</a></li>  
+                    <li><a href="restaurant.html" class="hover:text-amber-400 transition">Dining & Restaurant</a></li>  
+                </ul>  
+            </div>  
+
+            <div>  
+                <h4 class="font-semibold mb-4 text-amber-300 uppercase text-xs tracking-wider">Quick Actions</h4>  
+                <ul class="space-y-2 text-sm">  
+                    <li><a href="gallery.html" class="hover:text-amber-400 transition">Photo Gallery</a></li>  
+                    <li><a href="booking.html" class="hover:text-amber-400 transition">Online Booking</a></li>  
+                    <li><a href="contact.html" class="hover:text-amber-400 transition">Contact Us</a></li>  
+                    <li><a href="faq.html" class="hover:text-amber-400 transition">FAQs & Help</a></li>  
                 </ul>  
             </div>  
               
             <div>  
-                <h4 class="font-semibold mb-4 text-amber-200">Contact</h4>  
-                <ul class="space-y-2 text-gray-400 text-sm">  
-                    <li>CCJ3+MVR, Abuja - Kaduna - Zaria Express Way</li>  
-                    <li>Goni Gora, Kaduna 800104</li>  
-                    <li class="mt-4">+234 XXX XXX XXXX</li>  
-                    <li>info@bafanahotel.com</li>  
+                <h4 class="font-semibold mb-4 text-amber-300 uppercase text-xs tracking-wider">Address & Contact</h4>  
+                <ul class="space-y-2 text-sm">  
+                    <li class="flex items-start gap-2"><i class="fas fa-location-dot mt-1 text-amber-500"></i> <span>CCJ3+MVR, Abuja - Kaduna - Zaria Express Way, Goni Gora, Kaduna 800104</span></li>  
+                    <li class="flex items-center gap-2"><i class="fas fa-phone text-amber-500"></i> <span>+234 XXX XXX XXXX</span></li>  
+                    <li class="flex items-center gap-2"><i class="fas fa-envelope text-amber-500"></i> <span>info@bafanahotel.com</span></li>  
                 </ul>  
-            </div>  
-              
-            <div>  
-                <h4 class="font-semibold mb-4 text-amber-200">Follow Us</h4>  
-                <div class="flex gap-4 text-2xl text-gray-400">  
+                <div class="flex gap-4 text-xl text-slate-400 mt-6">  
                     <a href="#" class="hover:text-amber-400 transition"><i class="fab fa-instagram"></i></a>  
                     <a href="#" class="hover:text-amber-400 transition"><i class="fab fa-facebook"></i></a>  
                     <a href="#" class="hover:text-amber-400 transition"><i class="fab fa-twitter"></i></a>  
@@ -332,21 +393,25 @@
             </div>  
         </div>  
           
-        <div class="border-t border-white/10 mt-12 pt-8 text-center text-gray-500 text-xs">  
-            © 2026 Bafana Hotel International. All Rights Reserved.  
+        <div class="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-4">  
+            <p>© 2026 Bafana Hotel International. All Rights Reserved.</p>  
+            <div class="flex gap-6">
+                <a href="faq.html" class="hover:underline">Privacy Policy</a>
+                <a href="faq.html" class="hover:underline">Terms of Service</a>
+            </div>
         </div>  
     </div>  
 </footer>  
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
 <script>  
     AOS.init({
-        duration: 900,
+        duration: 800,
         once: true,
         easing: 'ease-in-out',
     });
 
+    // Mobile Drawer Logic
     const openMenuBtn = document.getElementById('openMenu');
     const closeMenuBtn = document.getElementById('closeMenu');
     const sideMenu = document.getElementById('sideMenu');
@@ -355,11 +420,13 @@
     function openMenu() {
         sideMenu.classList.remove('translate-x-full');
         menuOverlay.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
     }
 
     function closeMenu() {
         sideMenu.classList.add('translate-x-full');
         menuOverlay.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
     }
 
     if (openMenuBtn) openMenuBtn.addEventListener('click', openMenu);
@@ -369,3 +436,5 @@
 
 </body>  
 </html>
+
+
