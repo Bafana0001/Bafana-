@@ -1,30 +1,31 @@
+
 /* styles.css */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
     /* Color Palette */
-    --maroon-deep: #400712;
+    --maroon-deep: #580a18;
     --maroon-main: #800020;
     --maroon-light: #a31635;
     
     --gold-main: #d4af37;
     --gold-light: #f3e5ab;
     --gold-dark: #aa820a;
-    --gold-gradient: linear-gradient(135deg, #d4af37 0%, #aa820a 100%);
+    --gold-gradient: linear-gradient(135deg, #d4af37 0%, #fef08a 50%, #aa820a 100%);
 
     --white-pure: #ffffff;
     --white-soft: #fcfbf9;
-    --white-liquid: rgba(255, 255, 255, 0.95);
+    --white-liquid: rgba(255, 255, 255, 0.85);
 
-    --slate-dark: #090d16;
-    --slate-muted: #475569;
+    --slate-dark: #0f172a;
+    --slate-muted: #64748b;
 
     /* Shadows & Effects */
     --shadow-soft: 0 10px 30px -10px rgba(88, 10, 24, 0.08);
     --shadow-gold: 0 12px 35px -10px rgba(212, 175, 55, 0.3);
     --shadow-card: 0 20px 40px -15px rgba(0, 0, 0, 0.12);
-    --glass-border: 1px solid rgba(212, 175, 55, 0.35);
+    --glass-border: 1px solid rgba(212, 175, 55, 0.25);
 }
 
 /* Base Body Styles */
@@ -34,35 +35,14 @@ body {
     color: var(--slate-dark);
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
 }
 
 .heading-font {
     font-family: 'Playfair Display', Georgia, serif;
-    font-weight: 700;
-    letter-spacing: -0.02em;
 }
 
 /* -------------------------------------------------------------
-   TEXT CLARITY & CONTRAST ENHANCEMENTS
-------------------------------------------------------------- */
-h1, h2, h3, h4, h5, h6 {
-    color: var(--slate-dark);
-    text-rendering: optimizeLegibility;
-}
-
-p, span, li {
-    color: var(--slate-dark);
-    font-weight: 400;
-}
-
-.text-muted {
-    color: var(--slate-muted) !important;
-}
-
-/* -------------------------------------------------------------
-   BACKGROUND ORB ANIMATIONS
+   BACKGROUND ORB ANIMATIONS (Liquid Background Effect)
 ------------------------------------------------------------- */
 .liquid-bg-container {
     position: fixed;
@@ -106,51 +86,6 @@ p, span, li {
 }
 
 /* -------------------------------------------------------------
-   GALLERY LEAD-IN SECTION (2 IMAGE SLOTS: LEFT & RIGHT)
-------------------------------------------------------------- */
-.gallery-lead-section {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr 1fr;
-    gap: 1.5rem;
-    align-items: center;
-    padding: 4rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.gallery-lead-img-left,
-.gallery-lead-img-right {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 1rem;
-    box-shadow: var(--shadow-card);
-    border: var(--glass-border);
-    transition: transform 0.4s ease;
-}
-
-.gallery-lead-img-left:hover,
-.gallery-lead-img-right:hover {
-    transform: scale(1.03);
-}
-
-.gallery-lead-content {
-    text-align: center;
-    padding: 0 1rem;
-}
-
-.gallery-lead-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 0.75rem;
-    color: var(--maroon-deep);
-}
-
-.gallery-lead-content p {
-    font-size: 1.125rem;
-    color: var(--slate-muted);
-}
-
-/* -------------------------------------------------------------
    SLIDER & IMAGE ANIMATIONS
 ------------------------------------------------------------- */
 .slider-container {
@@ -171,7 +106,7 @@ p, span, li {
     width: 25%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.9);
+    filter: brightness(0.85);
     transition: transform 8s ease-out;
 }
 
@@ -206,7 +141,7 @@ p, span, li {
    NAVIGATION & GLASSMORPHISM
 ------------------------------------------------------------- */
 #navbar {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.88);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: var(--glass-border);
@@ -214,13 +149,13 @@ p, span, li {
 }
 
 .nav-scrolled {
-    background-color: #ffffff !important;
-    box-shadow: 0 10px 25px -5px rgba(88, 10, 24, 0.1);
+    background-color: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 10px 25px -5px rgba(88, 10, 24, 0.05);
 }
 
 /* Glass Card */
 .glass-card {
-    background: rgba(255, 255, 255, 0.88);
+    background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: var(--glass-border);
@@ -233,7 +168,7 @@ p, span, li {
 ------------------------------------------------------------- */
 .room-card {
     background: var(--white-pure);
-    border: 1px solid rgba(212, 175, 55, 0.25);
+    border: 1px solid rgba(212, 175, 55, 0.15);
     border-radius: 1.25rem;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -241,7 +176,7 @@ p, span, li {
 .room-card:hover {
     transform: translateY(-10px);
     border-color: var(--gold-main);
-    box-shadow: 0 20px 30px -10px rgba(128, 0, 32, 0.15);
+    box-shadow: 0 20px 30px -10px rgba(128, 0, 32, 0.12);
 }
 
 .testimonial-card {
@@ -264,7 +199,7 @@ p, span, li {
 .btn-primary {
     background: linear-gradient(135deg, var(--maroon-main) 0%, var(--maroon-deep) 100%);
     color: var(--white-pure);
-    border: 1px solid rgba(212, 175, 55, 0.4);
+    border: 1px solid rgba(212, 175, 55, 0.3);
     border-radius: 0.75rem;
     padding: 0.85rem 1.75rem;
     font-weight: 600;
@@ -298,10 +233,8 @@ p, span, li {
    FORM INPUTS
 ------------------------------------------------------------- */
 input, select, textarea {
-    background-color: var(--white-pure);
-    border: 1px solid rgba(128, 0, 32, 0.25);
-    color: var(--slate-dark);
-    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(128, 0, 32, 0.15);
     border-radius: 0.75rem;
     padding: 0.75rem 1rem;
     transition: all 0.3s ease;
@@ -311,45 +244,7 @@ input:focus, select:focus, textarea:focus {
     border-color: var(--gold-main);
     background-color: var(--white-pure);
     outline: none;
-    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2);
-}
-
-/* -------------------------------------------------------------
-   FOOTER STYLES (GOLD TEXT)
-------------------------------------------------------------- */
-footer, 
-.site-footer {
-    background-color: var(--maroon-deep);
-    color: var(--gold-light);
-    padding: 3rem 1.5rem 1.5rem;
-    border-top: var(--glass-border);
-}
-
-footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
-    color: var(--gold-main);
-}
-
-footer p, 
-footer span, 
-footer li, 
-footer a {
-    color: var(--gold-light);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: var(--gold-main);
-    text-decoration: underline;
-}
-
-.footer-bottom {
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
-    margin-top: 2rem;
-    padding-top: 1rem;
-    text-align: center;
-    color: var(--gold-light);
-    font-size: 0.875rem;
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15);
 }
 
 /* -------------------------------------------------------------
@@ -359,7 +254,6 @@ footer a:hover {
     background: var(--gold-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: 700;
 }
 
 .text-maroon {
@@ -393,15 +287,5 @@ footer a:hover {
     .liquid-orb-1, .liquid-orb-2 {
         width: 350px;
         height: 350px;
-    }
-
-    .gallery-lead-section {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .gallery-lead-img-left,
-    .gallery-lead-img-right {
-        height: 200px;
     }
 }
